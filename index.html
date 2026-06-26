@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEELZE</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #111;
+    min-height: 100vh;
+  }
+
+  /* ── HOME SCREEN ── */
+  #homeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: #fff;
+  }
+
+  .beelze-title {
+    font-size: clamp(52px, 12vw, 100px);
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: transparent;
+    -webkit-text-stroke: 2px #111;
+    text-stroke: 2px #111;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    user-select: none;
+  }
+
+  .beelze-sub {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #bbb;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  /* ── SEARCH BAR ── */
+  .search-wrapper {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .search-wrapper input {
+    width: 100%;
+    padding: 18px 60px 18px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    color: #111;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-wrapper input:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
+  }
+
+  .search-wrapper input::placeholder { color: #aaa; }
+
+  .search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .search-btn:hover { background: #333; }
+
+  /* ── ADD BROWSER BUTTON ── */
+  .add-browser-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .add-browser-btn:hover {
+    border-color: #111;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  /* ── BROWSERS GRID ── */
+  #browsersSection {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 40px;
+  }
+
+  .browsers-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #ccc;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .browsers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .browser-card {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 18px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+  }
+  .browser-card:hover {
+    border-color: #111;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .browser-card-icon {
+    width: 44px;
+    height: 44px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    border: 1px solid #eee;
+  }
+
+  .browser-card-name {
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .browser-card-ip {
+    font-size: 10px;
+    color: #aaa;
+    letter-spacing: 0.5px;
+  }
+
+  .browser-card-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ddd;
+    display: flex;
+    padding: 2px;
+    border-radius: 50%;
+    transition: color 0.2s;
+  }
+  .browser-card-delete:hover { color: #ef4444; }
+
+  /* ── BROWSER VIEW ── */
+  #browserView {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    background: #fff;
+  }
+
+  .browser-topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .browser-back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+  .browser-back-btn:hover { background: #f5f5f5; }
+
+  .browser-name-tag {
+    font-weight: 800;
+    font-size: 13px;
+    color: #111;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .browser-url-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f9f9f9;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    padding: 8px 16px;
+    transition: border-color 0.2s;
+  }
+  .browser-url-bar:focus-within {
+    border-color: #111;
+    background: #fff;
+  }
+
+  .browser-url-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    color: #111;
+    outline: none;
+  }
+  .browser-url-bar input::placeholder { color: #bbb; }
+
+  .browser-go-btn {
+    background: #111;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .browser-go-btn:hover { background: #333; }
+
+  .browser-frame-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #siteFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+  }
+
+  .frame-blocker {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .frame-blocker.show { display: flex; }
+
+  .frame-blocker-icon {
+    width: 72px;
+    height: 72px;
+    background: #f9f9f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #eee;
+  }
+
+  .frame-blocker h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+  }
+
+  .frame-blocker p {
+    font-size: 13px;
+    color: #888;
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .open-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .open-tab-btn:hover { background: #333; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.show { display: flex; }
+
+  .modal-box {
+    background: #fff;
+    border-radius: 24px;
+    padding: 32px 28px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .modal-icon {
+    width: 48px;
+    height: 48px;
+    background: #f5f5f5;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: #eee; }
+
+  .modal-field {
+    margin-bottom: 14px;
+  }
+
+  .modal-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .modal-field input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #111;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+  .modal-field input:focus { border-color: #111; }
+  .modal-field input::placeholder { color: #bbb; }
+
+  .modal-hint {
+    font-size: 11px;
+    color: #bbb;
+    margin-top: 5px;
+  }
+
+  .modal-submit {
+    width: 100%;
+    padding: 14px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .modal-submit:hover { background: #333; }
+
+  /* ── LOADING BAR ── */
+  #loadingBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #111;
+    z-index: 9999;
+    transition: width 0.3s ease;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ── HISTORY DROPDOWN ── */
+  .history-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    z-index: 100;
+    overflow: hidden;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .history-dropdown.show { display: block; }
+
+  .history-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.15s;
+  }
+  .history-item:hover { background: #fafafa; }
+  .history-item:last-child { border-bottom: none; }
+
+  .history-item-text {
+    flex: 1;
+    font-size: 13px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .history-item-time {
+    font-size: 10px;
+    color: #bbb;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div id="loadingBar"></div>
+
+<!-- ══════════════ HOME SCREEN ══════════════ -->
+<div id="homeScreen">
+
+  <div class="beelze-title">BEELZE</div>
+  <div class="beelze-sub">Your private browser</div>
+
+  <!-- Search Bar -->
+  <div class="search-wrapper" style="position:relative;">
+    <input
+      id="homeSearch"
+      type="text"
+      placeholder="Search or enter a website URL..."
+      onkeypress="if(event.key==='Enter') openSite()"
+      onfocus="showHistory()"
+      onblur="setTimeout(()=>hideHistory(),200)"
+      oninput="filterHistory(this.value)"
+      autocomplete="off"
+    />
+    <button class="search-btn" onclick="openSite()">
+      <i data-lucide="search" style="width:18px;height:18px;color:white;"></i>
+    </button>
+
+    <!-- History Dropdown -->
+    <div class="history-dropdown" id="historyDropdown"></div>
+  </div>
+
+  <!-- Add Browser Button -->
+  <button class="add-browser-btn" onclick="openAddBrowserModal()">
+    <i data-lucide="plus-circle" style="width:18px;height:18px;"></i>
+    Add a Browser
+  </button>
+
+  <!-- Browsers Section -->
+  <div id="browsersSection" style="display:none;">
+    <p class="browsers-label">Your Browsers</p>
+    <div class="browsers-grid" id="browsersGrid"></div>
+  </div>
+
+</div>
+
+<!-- ══════════════ BROWSER VIEW ══════════════ -->
+<div id="browserView">
+
+  <div class="browser-topbar">
+    <!-- Back -->
+    <button class="browser-back-btn" onclick="goHome()">
+      <i data-lucide="arrow-left" style="width:20px;height:20px;"></i>
+    </button>
+
+    <!-- Browser Name Tag -->
+    <div class="browser-name-tag" id="activeBrowserName">BEELZE</div>
+
+    <!-- URL Bar -->
+    <div class="browser-url-bar">
+      <i data-lucide="globe" style="width:14px;height:14px;color:#bbb;flex-shrink:0;"></i>
+      <input
+        id="urlBar"
+        type="text"
+        placeholder="Enter website URL..."
+        onkeypress="if(event.key==='Enter') loadUrl(this.value)"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Go Button -->
+    <button class="browser-go-btn" onclick="loadUrl(document.getElementById('urlBar').value)">
+      <i data-lucide="arrow-right" style="width:16px;height:16px;color:white;"></i>
+    </button>
+  </div>
+
+  <div class="browser-frame-wrapper">
+    <iframe id="siteFrame" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe>
+
+    <!-- Blocked Site Message -->
+    <div class="frame-blocker" id="frameBlocker">
+      <div class="frame-blocker-icon">
+        <i data-lucide="shield-off" style="width:32px;height:32px;color:#888;"></i>
+      </div>
+      <h3>Site Can't Load Here</h3>
+      <p>This website blocks being shown inside other apps (X-Frame-Options). You can open it in a new tab instead.</p>
+      <button class="open-tab-btn" id="openTabBtn">
+        <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+        Open in New Tab
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ ADD BROWSER MODAL ══════════════ -->
+<div class="modal-overlay" id="addBrowserModal">
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeAddBrowserModal()">
+      <i data-lucide="x" style="width:16px;height:16px;"></i>
+    </button>
+
+    <div class="modal-header">
+      <div class="modal-icon">
+        <i data-lucide="monitor" style="width:24px;height:24px;color:#111;"></i>
+      </div>
+      <div>
+        <div class="modal-title">Add Browser</div>
+        <div style="font-size:12px;color:#aaa;">Create a separate browsing identity</div>
+      </div>
+    </div>
+
+    <div class="modal-field">
+      <label>Browser Name *</label>
+      <input type="text" id="newBrowserName" placeholder="e.g. Work, Personal, Private..." />
+    </div>
+
+    <div class="modal-field">
+      <label>Custom IP / Proxy (optional)</label>
+      <input type="text" id="newBrowserIP" placeholder="e.g. 192.168.1.100 or proxy address" />
+      <div class="modal-hint">Leave blank to use your real connection</div>
+    </div>
+
+    <div class="modal-field">
+      <label>Notes (optional)</label>
+      <input type="text" id="newBrowserNotes" placeholder="Any info about this browser..." />
+    </div>
+
+    <button class="modal-submit" onclick="saveBrowser()">
+      <i data-lucide="plus" style="width:18px;height:18px;"></i>
+      Create Browser
+    </button>
+
+  </div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  // ── STATE ──
+  let browsers = JSON.parse(localStorage.getItem('beelze_browsers') || '[]');
+  let history  = JSON.parse(localStorage.getItem('beelze_history')  || '[]');
+  let activeBrowserId = null;
+  let currentUrl = '';
+
+  // ── RENDER BROWSERS ──
+  function renderBrowsers() {
+    const section = document.getElementById('browsersSection');
+    const grid    = document.getElementById('browsersGrid');
+
+    if (browsers.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+
+    section.style.display = 'block';
+    grid.innerHTML = browsers.map(b => `
+      <div class="browser-card" onclick="openBrowser('${b.id}')">
+        <button class="browser-card-delete" onclick="event.stopPropagation(); deleteBrowser('${b.id}')">
+          <i data-lucide="x" style="width:12px;height:12px;"></i>
+        </button>
+        <div class="browser-card-icon">
+          <i data-lucide="monitor" style="width:22px;height:22px;color:#111;"></i>
+        </div>
+        <div class="browser-card-name">${b.name}</div>
+        <div class="browser-card-ip">${b.ip ? b.ip : 'Default IP'}</div>
+      </div>
+    `).join('');
+    lucide.createIcons();
+  }
+
+  // ── OPEN BROWSER ──
+  function openBrowser(id) {
+    activeBrowserId = id;
+    const b = browsers.find(x => x.id === id);
+    document.getElementById('activeBrowserName').textContent = b ? b.name.toUpperCase() : 'BEELZE';
+    document.getElementById('urlBar').value = '';
+    document.getElementById('frameBlocker').classList.remove('show');
+    document.getElementById('siteFrame').src = 'about:blank';
+    document.getElementById('homeScreen').style.display  = 'none';
+    document.getElementById('browserView').style.display = 'flex';
+  }
+
+  // ── GO HOME ──
+  function goHome() {
+    activeBrowserId = null;
+    document.getElementById('homeScreen').style.display  = 'flex';
+    document.getElementById('browserView').style.display = 'none';
+    document.getElementById('siteFrame').src = 'about:blank';
+  }
+
+  // ── OPEN SITE FROM HOME SEARCH ──
+  function openSite() {
+    const val = document.getElementById('homeSearch').value.trim();
+    if (!val) return;
+    // Open in default (no browser selected) — just go to browser view
+    activeBrowserId = null;
+    document.getElementById('activeBrowserName').textContent = 'BEELZE';
+    document.getElementById('homeScreen').style.display  = 'none';
+    document.getElementById('browserView').style.display = 'flex';
+    loadUrl(val);
+  }
+
+  // ── LOAD URL ──
+  function loadUrl(input) {
+    if (!input) return;
+    input = input.trim();
+
+    let url = input;
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      // Check if it looks like a domain
+      if (url.includes('.') && !url.includes(' ')) {
+        url = 'https://' + url;
+      } else {
+        url = 'https://www.google.com/search?q=' + encodeURIComponent(url);
+      }
+    }
+
+    currentUrl = url;
+    document.getElementById('urlBar').value = url;
+    document.getElementById('frameBlocker').classList.remove('show');
+
+    // Loading bar animation
+    const bar = document.getElementById('loadingBar');
+    bar.style.width = '0%';
+    bar.style.transition = 'none';
+    setTimeout(() => {
+      bar.style.transition = 'width 1.5s ease';
+      bar.style.width = '85%';
+    }, 50);
+
+    const frame = document.getElementById('siteFrame');
+    window.open(url, '_blank');
+    return;
+
+    frame.onload = () => {
+      bar.style.width = '100%';
+      setTimeout(() => { bar.style.width = '0%'; bar.style.transition = 'none'; }, 600);
+    };
+
+    frame.onerror = () => {
+      showFrameBlocker(url);
+    };
+
+    // Save to history
+    addToHistory(url);
+
+    // Auto-open in new tab if blocked after 3s
+    setTimeout(() => {
+      try {
+        const doc = frame.contentDocument || frame.contentWindow?.document;
+        if (!doc || doc.body.innerHTML === '') {
+          window.open(url, '_blank');
+          showFrameBlocker(url);
+        }
+      } catch(e) {}
+    }, 3000);
+  }
+
+  function showFrameBlocker(url) {
+    document.getElementById('frameBlocker').classList.add('show');
+    document.getElementById('openTabBtn').onclick = () => window.open(url, '_blank');
+    const bar = document.getElementById('loadingBar');
+    bar.style.width = '0%';
+  }
+
+  // ── HISTORY ──
+  function addToHistory(url) {
+    history = history.filter(h => h.url !== url);
+    history.unshift({ url, time: new Date().toLocaleTimeString() });
+    if (history.length > 50) history = history.slice(0, 50);
+    localStorage.setItem('beelze_history', JSON.stringify(history));
+  }
+
+  function showHistory() {
+    renderHistoryDropdown(history.slice(0, 8));
+  }
+
+  function hideHistory() {
+    document.getElementById('historyDropdown').classList.remove('show');
+  }
+
+  function filterHistory(val) {
+    if (!val) { renderHistoryDropdown(history.slice(0, 8)); return; }
+    const filtered = history.filter(h => h.url.toLowerCase().includes(val.toLowerCase())).slice(0, 8);
+    renderHistoryDropdown(filtered);
+  }
+
+  function renderHistoryDropdown(items) {
+    const dd = document.getElementById('historyDropdown');
+    if (items.length === 0) { dd.classList.remove('show'); return; }
+    dd.innerHTML = items.map(h => `
+      <div class="history-item" onclick="document.getElementById('homeSearch').value='${h.url.replace(/'/g,"\\'")}'; openSite();">
+        <i data-lucide="clock" style="width:14px;height:14px;color:#bbb;flex-shrink:0;"></i>
+        <span class="history-item-text">${h.url}</span>
+        <span class="history-item-time">${h.time}</span>
+      </div>
+    `).join('');
+    dd.classList.add('show');
+    lucide.createIcons();
+  }
+
+  // ── ADD BROWSER MODAL ──
+  function openAddBrowserModal() {
+    document.getElementById('addBrowserModal').classList.add('show');
+  }
+
+  function closeAddBrowserModal() {
+    document.getElementById('addBrowserModal').classList.remove('show');
+    document.getElementById('newBrowserName').value = '';
+    document.getElementById('newBrowserIP').value   = '';
+    document.getElementById('newBrowserNotes').value = '';
+  }
+
+  function saveBrowser() {
+    const name  = document.getElementById('newBrowserName').value.trim();
+    const ip    = document.getElementById('newBrowserIP').value.trim();
+    const notes = document.getElementById('newBrowserNotes').value.trim();
+
+    if (!name) {
+      document.getElementById('newBrowserName').focus();
+      document.getElementById('newBrowserName').style.borderColor = '#ef4444';
+      setTimeout(() => document.getElementById('newBrowserName').style.borderColor = '#eee', 2000);
+      return;
+    }
+
+    const newBrowser = {
+      id: 'b_' + Date.now(),
+      name, ip, notes,
+      createdAt: new Date().toLocaleString()
+    };
+
+    browsers.push(newBrowser);
+    localStorage.setItem('beelze_browsers', JSON.stringify(browsers));
+    closeAddBrowserModal();
+    renderBrowsers();
+  }
+
+  function deleteBrowser(id) {
+    browsers = browsers.filter(b => b.id !== id);
+    localStorage.setItem('beelze_browsers', JSON.stringify(browsers));
+    renderBrowsers();
+  }
+
+  // ── INIT ──
+  renderBrowsers();
+</script>
+</body>
+</html>
