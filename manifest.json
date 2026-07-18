@@ -1,0 +1,19 @@
+{
+  "name": "AdsMoney",
+  "short_name": "AdsMoney",
+  "description": "Earn money by watching ads and completing tasks.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff0000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/MKHb2QXz/Screenshot-20260718-073150-Gallery.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
