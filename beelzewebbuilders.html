@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beelze Web Builders — We Build Websites That Build Your Business</title>
+<meta name="description" content="Professional website development starting from R15,000. Face-to-face delivery, secure payments, custom built websites for any industry.">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<link rel="preconnect" href__="https://fonts.googleapis.com">
+<link rel="preconnect" href__="https://fonts.gstatic.com" crossorigin>
+<link href__="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+   * { margin: 0; padding: 0; box-sizing: border-box; }
+  *::selection { background: #ffc107; color: #000; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  :root {
+    --bg: #ffffff; --bg-2: #f8f9fa; --bg-3: #f1f3f5; --bg-4: #e9ecef;
+    --yellow: #ffc107; --yellow-2: #e0a800; --yellow-dim: rgba(255,193,7,0.12); --yellow-glow: rgba(255,193,7,0.35);
+    --ink: #1a1a1a; --gray-1: #555555; --gray-2: #888888;
+    --border: #e5e7eb; --border-2: #d1d5db;
+    --radius: 12px; --radius-lg: 20px; --transition: all .3s cubic-bezier(.4,0,.2,1);
+    --font: 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --accent: #1a1a1a;
+  }
+  body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.6; overflow-x: clip; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+  img { display: block; max-width: 100%; height: auto; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; border-radius: var(--radius); transition: var(--transition); font-size: 14px; white-space: nowrap; }
+  .btn svg, .btn i { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn-primary { background: var(--accent); color: #fff; padding: 13px 28px; }
+  .btn-primary:hover { background: #000; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(26,26,26,0.35); }
+   .header { position: fixed; top: 12px; left: 12px; right: 12px; z-index: 1000; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.6); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: var(--transition); }
+  .header.scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; }
+  .logo-img { width: 46px; height: 46px; object-fit: contain; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-text .name { font-size: 17px; font-weight: 900; letter-spacing: 0.5px; color: var(--ink); }
+  .logo-text .sub { font-size: 9px; font-weight: 600; color: var(--yellow-2); letter-spacing: 2px; text-transform: uppercase; }
+  .menu-btn { background: none; padding: 6px; display: flex; align-items: center; color: var(--ink); }
+  .menu-btn svg { width: 26px; height: 26px; }
+.menu-pop { position: fixed; top: 84px; right: 16px; z-index: 1100; background: rgba(255,255,255,0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.6); border-radius: 14px; padding: 8px; min-width: 150px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); display: none; }
+  .menu-pop.open { display: block; }
+  .menu-pop button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; background: none; font-size: 15px; font-weight: 600; color: var(--ink); border-radius: 10px; }
+  .menu-pop button:hover { background: var(--bg-3); }
+  .menu-pop svg { width: 20px; height: 20px; }
+  .menu-pop .ic-email { color: #dc2626; }
+  .menu-pop .ic-phone { color: #16a34a; }
+  .overlay { position: fixed; inset: 0; z-index: 2000; background: #fff; display: none; flex-direction: column; padding: 0; }
+  .overlay.open { display: flex; }
+  .overlay-bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; z-index: 5; }
+  .overlay-bar h2 { font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+  .overlay-bar svg { width: 24px; height: 24px; }
+  .overlay-close { background: none; padding: 6px; color: var(--ink); }
+  .overlay-close svg { width: 26px; height: 26px; }
+  .overlay-body { padding: 24px 20px 48px; max-width: 560px; margin: 0 auto; width: 100%; overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
+  .overlay-icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .overlay-icon svg { width: 34px; height: 34px; }
+  .ov-red { background: rgba(220,38,38,0.1); color: #dc2626; }
+  .ov-green { background: rgba(22,163,74,0.1); color: #16a34a; }
+  .overlay-steps { list-style: none; counter-reset: s; margin-top: 18px; }
+  .overlay-steps li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px dashed var(--border); font-size: 15px; line-height: 1.6; color: var(--ink); }
+  .overlay-steps li svg { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; color: #dc2626; }
+  .overlay-steps.green li svg { color: #16a34a; }
+  .overlay-cta { margin-top: 26px; }
+  .overlay-cta a { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; padding: 14px 30px; border-radius: 12px; font-size: 15px; }
+  .overlay-cta.email a { background: #dc2626; color: #fff; }
+  .overlay-cta.phone a { background: #16a34a; color: #fff; }
+   .ov-box { max-width: 320px; margin: 8px auto 24px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+   .ov-box.red { border-color: rgba(220,38,38,0.3); }
+   .ov-box.green { border-color: rgba(22,163,74,0.3); }
+   .ov-img { width: 100%; height: 150px; overflow: hidden; }
+   .ov-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+   .ov-num { padding: 14px 16px; font-size: 15px; font-weight: 700; }
+   .ov-num.red { background: rgba(220,38,38,0.08); color: #dc2626; }
+   .ov-num.green { background: rgba(22,163,74,0.08); color: #16a34a; }
+  .hero { padding-top: 120px; padding-bottom: 50px; position: relative; overflow: hidden; }
+  .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; position: relative; z-index: 2; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--yellow-dim); border: 1px solid rgba(255,193,7,0.25); padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--yellow-2); }
+  .hero-badge .dot { width: 8px; height: 8px; background: var(--yellow); border-radius: 50%; box-shadow: 0 0 10px var(--yellow); animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+  .hero h1 { font-size: 44px; font-weight: 900; line-height: 1.12; letter-spacing: -1.5px; }
+  .hero h1 .yellow { color: var(--yellow-2); }
+  .hero-subtitle { font-size: 16px; color: var(--gray-1); line-height: 1.7; max-width: 620px; }
+  .hero-inner { padding: 0; width: 100%; }
+     .hero-image { width: 100%; margin: 0 auto; border-radius: 14px; overflow: hidden; max-width: 100%; }
+  .hero-image img { width: 100%; height: auto; display: block; }
+  .pricing { padding: 30px 0 90px; }
+  .pricing-box { max-width: 760px; margin: 0 auto; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px; text-align: center; }
+   .pricing-tag { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--yellow-2); margin-bottom: 16px; padding: 6px 20px; background: var(--yellow-dim); border-radius: 50px; border: 1px solid rgba(255,193,7,0.3); }
+    .pricing-price { font-size: 44px; font-weight: 900; color: var(--ink); letter-spacing: -1px; margin-bottom: 8px; }
+   .pricing-price .cur { font-size: 44px; font-weight: 900; color: var(--ink); margin-right: 4px; }
+  .pricing-title { font-size: 20px; font-weight: 800; margin-bottom: 24px; }
+    .pricing-features { display: flex; flex-direction: column; gap: 12px; text-align: left; margin: 0 auto 32px; max-width: 560px; }
+  .pricing-feature { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .pricing-feature svg { display: none; }
+  .pricing-feature::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow-2); flex-shrink: 0; margin-top: 9px; }
+  .footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 36px 0; }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .footer-contact { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .footer-contact a { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--gray-1); transition: var(--transition); }
+  .footer-contact a:hover { color: var(--yellow-2); }
+   .footer-contact svg { width: 18px; height: 18px; }
+   .footer-contact a:nth-child(1) svg { color: #16a34a; }
+   .footer-contact a:nth-child(2) svg { color: var(--ink); }
+   .footer-contact a:nth-child(3) svg { color: #2563eb; }
+   .footer-contact a:nth-child(4) svg { color: #dc2626; }
+    .footer-copy { font-size: 13px; color: var(--gray-2); }
+  .included { padding: 70px 0; background: var(--bg-2); }
+  .included-head { text-align: center; margin-bottom: 44px; }
+  .included-head h2 { font-size: 32px; font-weight: 900; letter-spacing: -1px; }
+  .included-head h2 .yel { color: var(--yellow-2); }
+  .included-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .included-item { text-align: center; padding: 20px 12px; }
+    .included-icon { width: 26px; height: 26px; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; background: none; border: none; }
+  .included-icon svg { width: 26px; height: 26px; color: #dc2626; }
+  .included-item h4 { font-size: 13px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 6px; text-transform: uppercase; }
+  .included-item p { font-size: 12px; color: var(--gray-1); line-height: 1.5; }
+  .process { padding: 70px 0 90px; }
+  .process-grid { display: flex; flex-direction: column; gap: 14px; }
+  .process-box { border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 18px; }
+  .process-box h3 { margin-bottom: 0; white-space: nowrap; }
+  .process-box .process-list { flex: 1; }
+    .process-box.gold { flex-direction: column; align-items: flex-start; }
+  .process-box.gold h3 { margin-bottom: 10px; }
+  .process-box.gold p { margin: 0; }
+  .process-box h3 { font-size: 16px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .process-box.dark { background: #1a1a1a; color: #fff; }
+  .process-box.gold { background: var(--yellow); color: #000; }
+  .process-box.light { background: #fff; color: var(--ink); border: 1px solid var(--border); }
+  .process-list { display: flex; flex-direction: column; gap: 12px; }
+  .process-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.5; }
+  .process-list svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+  .process-box.dark .process-list svg { color: var(--yellow); }
+  .process-box.gold .process-list svg { color: #000; }
+  .process-box p { font-size: 13px; line-height: 1.6; }
+  .process-contact { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
+  .process-contact a { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+  .process-contact svg { width: 18px; height: 18px; color: var(--yellow-2); }
+  .process-tag { font-size: 12px; font-weight: 700; color: var(--gray-1); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-in { animation: fadeInUp .6s ease forwards; }
+  .animate-in.delay-1 { animation-delay: .1s; opacity: 0; }
+  .animate-in.delay-2 { animation-delay: .2s; opacity: 0; }
+  .animate-in.delay-3 { animation-delay: .3s; opacity: 0; }
+
+  .scroll-icons { display: flex; gap: 20px; overflow-x: auto; padding: 10px 4px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .scroll-icons::-webkit-scrollbar { height: 6px; }
+  .scroll-icons::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 4px; }
+  .scroll-icons a { flex: 0 0 auto; }
+  @media (max-width: 700px) {
+    .included-grid { display: flex; overflow-x: auto; gap: 16px; padding-bottom: 12px; }
+    .included-grid .included-item { flex: 0 0 150px; }
+  }
+  
+  
+    /* Checkout */
+  .chk-title-box { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 800; color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .chk-title-box svg { width: 16px; height: 16px; color: var(--yellow-2); }
+  .chk-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-2); margin-bottom: 10px; }
+  .chk-summary { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 20px; }
+  .chk-summary .row { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+  .chk-summary .row + .row { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
+  .chk-summary .row span:first-child { color: var(--gray-1); }
+  .chk-summary .total { font-weight: 800; font-size: 16px; color: var(--ink); }
+  .chk-methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .chk-method { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: var(--transition); }
+  .chk-method:hover { border-color: var(--border-2); }
+  .chk-method.selected { border-color: var(--accent); background: rgba(26,26,26,0.04); }
+  .chk-method .radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border-2); flex-shrink: 0; position: relative; }
+  .chk-method.selected .radio { border-color: var(--accent); }
+  .chk-method.selected .!radio::after { content: ''; position: absolute; inset: 3px; background: var(--accent); border-radius: 50%; }
+  .chk-method .info { flex: 1; }
+  .chk-method .info .t { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .chk-method .info .d { font-size: 12px; color: var(--gray-2); margin-top: 2px; }
+  .chk-method svg { width: 20px; height: 20px; color: var(--gray-2); }
+  .chk-field { margin-bottom: 14px; }
+  .chk-field label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-1); margin-bottom: 6px; }
+  .chk-field input, .chk-field textarea, .chk-field select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius); font-size: 14px; font-family: inherit; color: var(--ink); background: #fff; transition: var(--transition); }
+  .chk-field input:focus, .chk-field textarea:focus, .chk-field select:focus { outline: none; border-color: var(--accent); }
+  .chk-field textarea { resize: vertical; min-height: 70px; }
+  .chk-field select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23888' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+  .chk-bank { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: 13px; line-height: 1.8; color: var(--ink); display: none; }
+  .chk-bank.show { display: block; }
+  .chk-bank .copy-line { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .chk-bank .copy-btn { background: none; border: 1px solid var(--border-2); border-radius: 6px; padding: 3px 8px; font-size: 11px; font-weight: 600; color: var(--gray-1); }
+  .chk-bank .copy-btn:hover { background: var(--bg-3); }
+  .chk-submit { width: 100%; background: var(--accent); color: #fff; padding: 14px; border-radius: var(--radius); font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition); margin-top: 4px; position: sticky; bottom: 0; }
+  .chk-submit:hover { background: #000; transform: translateY(-1px); }
+  .chk-submit svg { width: 18px; height: 18px; }
+  /* Success screen */
+  .chk-success { text-align: center; padding: 30px 16px; display: none; }
+  .chk-success.show { display: block; }
+  .chk-success .icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(22,163,74,0.1); color: #16a34a; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+  .chk-success .icon svg { width: 32px; height: 32px; }
+  .chk-success h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .chk-success p { font-size: 14px; color: var(--gray-1); line-height: 1.6; max-width: 360px; margin: 0 auto 18px; }
+  .chk-success .ref { display: inline-block; background: var(--yellow-dim); border: 1px solid rgba(255,193,7,0.3); color: var(--yellow-2); font-weight: 700; font-size: 13px; padding: 8px 18px; border-radius: 50px; margin-bottom: 20px; }
+  .chk-success .done { background: var(--ink); color: #fff; padding: 13px 30px; border-radius: var(--radius); font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+  .chk-success .done svg { width: 18px; height: 18px; }
+
+  /* Admin login */
+  .adm-login { text-align: center; padding: 40px 20px; max-width: 380px; margin: 0 auto; }
+  .adm-login .lock { width: 64px; height: 64px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+  .adm-login .lock svg { width: 30px; height: 30px; }
+  .adm-login h3 { font-size: 20px; font-weight: 900; margin-bottom: 6px; }
+  .adm-login p { font-size: 14px; color: var(--gray-1); margin-bottom: 22px; }
+  .adm-login input { width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: var(--radius); font-size: 15px; text-align: center; letter-spacing: 2px; margin-bottom: 10px; }
+  .adm-login input:focus { outline: none; border-color: var(--accent); }
+  .adm-login .err { color: #dc2626; font-size: 13px; font-weight: 600; min-height: 18px; margin-bottom: 8px; }
+  .adm-login button { width: 100%; background: var(--ink); color: #fff; padding: 14px; border-radius: var(--radius); font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .adm-login button:hover { background: #000; }
+
+  /* Admin panel */
+  .adm-bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; z-index: 5; }
+  .adm-bar h2 { font-size: 16px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
+  .adm-bar h2 svg { width: 22px; height: 22px; color: var(--yellow-2); }
+  .adm-actions { display: flex; gap: 8px; }
+  .adm-actions button { font-size: 13px; font-weight: 700; padding: 9px 14px; border-radius: 10px; display: flex; align-items: center; gap: 6px; }
+  .adm-actions button svg { width: 16px; height: 16px; }
+  .adm-actions .clear { background: #dc2626; color: #fff; }
+  .adm-actions .logout { background: var(--bg-3); color: var(--ink); }
+  .adm-stats { display: flex; gap: 10px; padding: 16px 20px; background: var(--bg-2); border-bottom: 1px solid var(--border); }
+  .adm-stat { flex: 1; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; }
+  .adm-stat .num { font-size: 24px; font-weight: 900; color: var(--ink); }
+  .adm-stat .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-2); margin-top: 2px; }
+  .adm-stat.accent .num { color: var(--yellow-2); }
+  .adm-list { padding: 16px 20px 48px; max-width: 640px; margin: 0 auto; width: 100%; overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
+  .adm-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
+  .adm-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .adm-card-head .ref { font-size: 12px; font-weight: 800; color: var(--yellow-2); background: var(--yellow-dim); padding: 4px 10px; border-radius: 50px; }
+  .adm-card-head .date { font-size: 11px; color: var(--gray-2); }
+  .adm-card-head .del { background: #fee2e2; color: #dc2626; border: none; border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+  .adm-card-head .del svg { width: 14px; height: 14px; }
+  .adm-card-head .del:hover { background: #dc2626; color: #fff; }
+  .adm-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+  .adm-card-body .item { font-size: 13px; line-height: 1.4; }
+  .adm-card-body .item .k { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-2); display: block; margin-bottom: 1px; }
+  .adm-card-body .item .v { font-weight: 700; color: var(--ink); word-break: break-word; }
+  .adm-card-body .item.full { grid-column: 1 / -1; }
+  .adm-card-body .badge { display: inline-block; font-size: 11px; font-weight: 800; padding: 3px 9px; border-radius: 50px; background: var(--bg-3); color: var(--ink); }
+  .adm-card-body .badge.eft { background: rgba(37,99,235,0.1); color: #2563eb; }
+  .adm-card-body .badge.card { background: rgba(124,58,237,0); color: var(--ink); }
+  .adm-card-body .badge.cash { background: rgba(22,163,74,0.1); color: #16a34a; }
+  .adm-empty { text-align: center; padding: 60px 20px; color: var(--gray-2); }
+  .adm-empty svg { width: 48px; height: 48px; margin: 0 auto 14px; opacity: 0.4; }
+  .adm-empty p { font-size: 15px; font-weight: 600; }
+  .adm-hint { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 50px; z-index: 3000; opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .adm-hint.show { opacity: 1; }
+
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="logo" onclick="scrollToSection('hero')">
+      <img src="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png" alt="Beelze Web Builders" class="logo-img">
+      <div class="logo-text">
+        <span class="name" id="logoName">BEELZE</span>
+        <span class="sub">Web Builders</span>
+      </div>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <i data-lucide="more-vertical"></i>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge animate-in">
+        <span class="dot"></span>
+        Professional Web Development
+      </div>
+      <h1 class="animate-in delay-1">
+        We Build Websites That <span class="yellow">Build Your Business</span>
+      </h1>
+      <p class="hero-subtitle animate-in delay-2">
+        Professional, fast and modern websites that help you attract more clients and grow your brand online.
+      </p>
+ <div class="hero-image animate-in delay-3">
+  <img src="https://i.postimg.cc/vBT8fjYj/file-00000000767081f4b5fe05974c05461f.png" alt="Beelze Web Builders — what's included">
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="contact">
+  <div class="container">
+    <div class="pricing-box">
+      <span class="pricing-tag">Website Building</span>
+      <div class="pricing-price"><span class="cur">R</span>15 000</div>
+      <div class="pricing-title">Custom Website Building Package — Once-off Setup</div>
+      <div class="pricing-features">
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Website for any industry — business, gambling, shopping, lifestyle, company</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Professional .co.za domain registered for you</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Professional email with full login details</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Free database hosting with major providers</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Monthly maintenance — R1,000/month for updates & support</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Full ownership — we visit you & hand over the code</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> APK conversion of your website</div>
+        <div class="pricing-feature"><i data-lucide="check-circle"></i> Ads placed on your website if you want them</div>
+      </div>
+            <button id="getStartedBtn" class="btn btn-primary" style="font-size:15px;padding:15px 32px;">
+        <i data-lucide="rocket"></i>
+        Pay for Website Creation 
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="included">
+  <div class="container">
+    <div class="included-head">
+      <h2>What's <span class="yel">Included</span> In Our Package</h2>
+    </div>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="code-2"></i></div>
+        <h4>Website Development</h4>
+        <p>Business, gambling, shopping, lifestyle, any industry</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="globe"></i></div>
+        <h4>Professional Domain</h4>
+        <p>.co.za registration included</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="mail"></i></div>
+        <h4>Professional Email</h4>
+        <p>With full login details</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="server"></i></div>
+        <h4>Free Database Hosting</h4>
+        <p>Your data safe with major providers</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="headphones"></i></div>
+        <h4>Monthly Maintenance</h4>
+        <p>R1,000/month for updates & support</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="code"></i></div>
+        <h4>Full Ownership</h4>
+        <p>We visit you & hand over the code</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="smartphone"></i></div>
+        <h4>Extra Features</h4>
+        <p>APK conversion & ads on your site</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><i data-lucide="shield-check"></i></div>
+        <h4>Secure & Reliable</h4>
+        <p>Your data, our priority</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div class="process-grid">
+      <div class="process-box dark">
+        <h3>How It Works</h3>
+        <ul class="process-list">
+          <li><i data-lucide="check"></i> You make the payment upfront</li>
+          <li><i data-lucide="check"></i> We start building your website</li>
+          <li><i data-lucide="check"></i> We use data, tools and resources</li>
+          <li><i data-lucide="check"></i> We deliver, visit you, and hand over everything</li>
+        </ul>
+      </div>
+      <div class="process-box gold">
+        <h3>Why Payment First?</h3>
+        <p>Upfront payment covers the transport fees, the data/MB used, and the development time to build your website together with the code.</p>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+
+<div class="menu-pop" id="menuPop">
+  <button id="emailBtn"><i data-lucide="mail" class="ic-email"></i> Email</button>
+  <button id="phoneBtn"><i data-lucide="phone" class="ic-phone"></i> Phone</button>
+</div>
+
+<div class="overlay" id="emailOverlay">
+  <div class="overlay-bar">
+    <h2 style="color:#dc2626;"><i data-lucide="mail"></i> Email Us</h2>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+<div class="overlay-body">
+    <div class="ov-box red">
+      <div class="ov-img"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=70" alt="Email professional"></div>
+      <div class="ov-num red">beelze.apps@darkmasterclothing.co.za</div>
+    </div>
+    <ol class="overlay-steps">
+      <li><i data-lucide="mail"></i> Open your email app.</li>
+      <li><i data-lucide="pen-line"></i> Text and tell us what kind of website you are looking for.</li>
+      <li><i data-lucide="share-2"></i> Share your info and your location including company name.</li>
+      <li><i data-lucide="check-circle-2"></i> When everything is fine we will ask for payment and start the work.</li>
+    </ol>
+    <div class="overlay-cta email">
+      <a href__="mailto:beelze.apps@darkmasterclothing.co.za"><i data-lucide="send"></i> Send Email</a>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="phoneOverlay">
+  <div class="overlay-bar">
+    <h2 style="color:#16a34a;"><i data-lucide="phone"></i> Call Us</h2>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body">
+    <div class="ov-box green">
+      <div class="ov-img"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=70" alt="Call professional"></div>
+      <div class="ov-num green">068 779 0223</div>
+    </div>
+    <ol class="overlay-steps green">
+      <li><i data-lucide="phone"></i> Call us and explain the website you want — explain everything.</li>
+      <li><i data-lucide="headphones"></i> We listen to all your needs with a call.</li>
+      <li><i data-lucide="credit-card"></i> We will request the payment and continue from there.</li>
+    </ol>
+        <div class="overlay-cta phone">
+      <a href__="tel:0687790223"><i data-lucide="phone-call"></i> 068 779 0223</a>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT OVERLAY -->
+<div class="overlay" id="payOverlay">
+  <div class="overlay-bar">
+    <div class="chk-title-box"><i data-lucide="credit-card"></i> Checkout</div>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body">
+
+    <!-- Checkout form -->
+    <div class="chk-form" id="chkForm">
+      <div class="chk-summary">
+        <div class="row"><span>Custom Website Package</span><span>R15,000</span></div>
+        <div class="row"><span>.co.za domain + email</span><span>Included</span></div>
+        <div class="row"><span>APK + delivery</span><span>Included</span></div>
+        <div class="row total"><span>Total once-off</span><span>R15,000</span></div>
+      </div>
+
+            <div class="chk-label">Choose a payment method</div>
+      <div class="chk-methods">
+        <!-- EFT (active) -->
+        <div class="chk-method selected" data-method="eft" style="border:2.5px solid #ff6600;background:#fff;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:34px;width:auto;object-fit:contain;flex-shrink:0;">
+          <div class="info"><div class="t">EFT / Bank Transfer</div><div class="d">Pay via bank deposit — details below</div></div>
+          <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">ACTIVE</span>
+        </div>
+        <!-- Capitec Pay -->
+        <div class="chk-method" data-method="capitec" style="opacity:.7;">
+          <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/791560577_CPIJO-7f69f481.png" alt="Capitec" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;background:#fff;border-radius:8px;padding:6px 10px;">
+          <div class="info"><div class="t">Capitec Pay</div><div class="d">Unavailable</div></div>
+          <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
+        </div>
+        <!-- PayFast -->
+        <div class="chk-method" data-method="payfast" style="opacity:.7;">
+          <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/1d0e3b189_White-on-Blue-2-1-1-1.jpg" alt="PayFast" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;border-radius:8px;">
+          <div class="info"><div class="t">PayFast</div><div class="d">Unavailable</div></div>
+          <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
+        </div>
+        <!-- Ozow -->
+        <div class="chk-method" data-method="ozow" style="opacity:.7;">
+          <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/90c3d812f_Ozow-Logo.png" alt="Ozow" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;border-radius:8px;">
+          <div class="info"><div class="t">Ozow</div><div class="d">Unavailable</div></div>
+          <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
+        </div>
+      </div>
+
+            <!-- Bank details — GoTyme (same account as Dark Master Store) -->
+      <div class="chk-bank show" id="chkBank">
+        <div class="copy-line"><span><strong>Bank:</strong> GoTyme Bank</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('GoTyme Bank')">copy</button></div>
+        <div class="copy-line"><span><strong>Account holder:</strong> Beelze Web Builders</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('Beelze Web Builders')">copy</button></div>
+        <div class="copy-line"><span><strong>Account no:</strong> 5300 3587 427</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('5300 3587 427')">copy</button></div>
+        <div class="copy-line"><span><strong>Branch code:</strong> 678 910</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('678 910')">copy</button></div>
+        <div class="copy-line"><span><strong>Account type:</strong> Business Cheque</span></div>
+        <div class="copy-line"><span><strong>Reference:</strong> Your order ref below</span></div>
+      </div>
+
+      <div class="chk-field">
+        <label>Full name *</label>
+        <input type="text" id="chkName" placeholder="Your full name">
+      </div>
+      <div class="chk-field">
+        <label>Business / Company name *</label>
+        <input type="text" id="chkBusiness" placeholder="e.g. Dark Master Clothing">
+      </div>
+      <div class="chk-field">
+        <label>Phone / WhatsApp *</label>
+        <input type="tel" id="chkPhone" placeholder="06x xxx xxxx">
+      </div>
+      <div class="chk-field">
+        <label>Email</label>
+        <input type="email" id="chkEmail" placeholder="you@email.com">
+      </div>
+      <div class="chk-field">
+        <label>Type of website you want *</label>
+        <select id="chkType">
+          <option value="">Select a type...</option>
+          <option>Business / Company</option>
+          <option>Gambling</option>
+          <option>Shopping / E-commerce</option>
+          <option>Lifestyle / Blog</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="chk-field">
+        <label>Extra details (optional)</label>
+        <textarea id="chkNotes" placeholder="Features, location, anything we should know..."></textarea>
+      </div>
+
+      <button class="chk-submit" id="chkSubmit">
+        <i data-lucide="check"></i> Confirm & Send Order
+      </button>
+    </div>
+
+    <!-- Success screen -->
+    <div class="chk-success" id="chkSuccess">
+      <div class="icon"><i data-lucide="check"></i></div>
+      <h3>Order received!</h3>
+      <p>Thank you. We've recorded your order and will contact you shortly to confirm payment and start building your website.</p>
+      <div class="ref" id="chkRef">Order ref: BWB-000000</div>
+      <p style="font-size:13px;color:var(--gray-2);">Keep this reference number. Our team will reach out on the phone/WhatsApp you provided.</p>
+      <button class="done" onclick="closeOverlay(document.getElementById('payOverlay')); resetCheckout();">
+        <i data-lucide="home"></i> Done
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ADMIN LOGIN OVERLAY -->
+<div class="overlay" id="adminLoginOverlay">
+  <div class="overlay-bar">
+    <h2 style="color:var(--ink);"><i data-lucide="shield"></i> Admin Access</h2>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body">
+    <div class="adm-login">
+      <div class="lock"><i data-lucide="lock-keyhole"></i></div>
+      <h3>Restricted Area</h3>
+      <p>Enter the admin password to view all payments and submitted orders.</p>
+      <input type="password" id="adminPass" placeholder="Password" autocomplete="off">
+      <div class="err" id="adminErr"></div>
+      <button id="adminLoginBtn"><i data-lucide="log-in"></i> Enter Admin</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL OVERLAY (full screen) -->
+<div class="overlay" id="adminPanelOverlay">
+  <div class="adm-bar">
+    <h2><i data-lucide="layout-dashboard"></i> Payments & Orders</h2>
+    <div class="adm-actions">
+      <button class="clear" id="admClear"><i data-lucide="trash-2"></i> Clear All</button>
+      <button class="logout" id="admLogout"><i data-lucide="log-out"></i> Logout</button>
+    </div>
+  </div>
+  <div class="adm-stats" id="admStats"></div>
+  <div class="adm-list" id="admList"></div>
+</div>
+
+<div class="adm-hint" id="admHint"></div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="logo">
+      <img src="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png" alt="Beelze" class="logo-img">
+      <div class="logo-text">
+        <span class="name">BEELZE</span>
+        <span class="sub">Web Builders</span>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <a href__="tel:0687790223"><i data-lucide="phone"></i> 068 779 0223</a>
+      <a href__="mailto:beelze.apps@darkmasterclothing.co.za"><i data-lucide="mail"></i> beelze.apps@darkmasterclothing.co.za</a>
+      <a href__="https://wa.me/27687790223"><i data-lucide="message-circle"></i> WhatsApp 27 68 779 0223</a>
+      <a><i data-lucide="map-pin"></i> Limpopo, South Africa</a>
+    </div>
+  </div>
+  <div class="footer-inner" style="margin-top:18px;">
+    <p class="footer-copy">&copy; 2024 Beelze Web Builders. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- FIREBASE (modular ESM, same as Dark Master Store) -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+  import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyC1ucCwM7ebqN-gWHT2NmkqYdK3KZBWv5o",
+    authDomain: "dark-master-store.firebaseapp.com",
+    projectId: "dark-master-store",
+    storageBucket: "dark-master-store.firebasestorage.app",
+    messagingSenderId: "245130963951",
+    appId: "1:245130963951:web:50cdae51f5c59fa8ad641a",
+    measurementId: "G-SZ9JXD2QCB"
+  };
+  const fbApp = initializeApp(firebaseConfig);
+  window.bwbDb = getFirestore(fbApp);
+  window.bwbOrdersCollection = collection(window.bwbDb, 'bwb_orders');
+  // expose helpers without breaking the ESM scope
+  window.bwbFb = { collection, getDocs, addDoc, deleteDoc, doc, onSnapshot, query, orderBy };
+
+
+
+  lucide.createIcons();
+  // EmailJS init — same account as Dark Master Store
+  if (window.emailjs) { try { emailjs.init('qCNJIG5387KRxY4Zn'); } catch(e){} }
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+  window.addEventListener('load', () => lucide.createIcons());
+  setTimeout(() => lucide.createIcons(), 300);
+
+  const menuPop = document.getElementById('menuPop');
+  document.getElementById('menuBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuPop.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!menuPop.contains(e.target) && e.target.id !== 'menuBtn') menuPop.classList.remove('open');
+  });
+  function openOverlay(id) {
+    document.getElementById(id).classList.add('open');
+    menuPop.classList.remove('open');
+    lucide.createIcons();
+  }
+  function closeOverlay(el) { el.classList.remove('open'); }
+  document.getElementById('emailBtn').addEventListener('click', () => openOverlay('emailOverlay'));
+  document.getElementById('phoneBtn').addEventListener('click', () => openOverlay('phoneOverlay'));
+
+    // Get Started payment flow
+  document.getElementById('getStartedBtn').addEventListener('click', () => {
+    resetCheckout();
+    openOverlay('payOverlay');
+  });
+  
+  
+    // Send order email to BOTH Beelze addresses + save to Firestore
+  async function bwbCreateOrder(order) {
+    // 1) Email — to ceo@beelzechat.co.za AND beelze.apps@gmail.com
+    try {
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: 'service_s5xw50d',
+          template_id: 'template_8w66avp',
+          user_id: 'qCNJIG5387KRxY4Zn',
+          template_params: {
+            email: 'ceo@beelzechat.co.za, beelze.apps@gmail.com',
+            order_id: order.ref,
+            customer_name: order.name,
+            customer_email: order.email || '—',
+            customer_phone: order.phone,
+            customer_address: order.business + ' · ' + order.type,
+            order_items: 'Website Package x1 = R15,000\nNotes: ' + (order.notes || '—'),
+            order_total: 'R' + Number(order.amount).toLocaleString(),
+            payment_method: order.method.toUpperCase(),
+            reply_to: order.email || 'ceo@beelzechat.co.za'
+          }
+        })
+      });
+    } catch(e) { console.log('EmailJS error', e); }
+
+    // 2) Firestore — save into bwb_orders so it shows in YOUR admin
+    try {
+      if (window.bwbOrdersCollection) {
+        await window.bwbFb.addDoc(window.bwbOrdersCollection, {
+          ...order,
+          status: 'pending',
+          createdAt: new Date().toISOString()
+        });
+      }
+    } catch(e) { console.log('Firestore save error', e); }
+  }
+
+    let chkMethod = 'eft';
+  document.querySelectorAll('.chk-method').forEach(m => {
+    m.addEventListener('click', () => {
+      if (m.dataset.method !== 'eft') { alert('This payment method is currently unavailable. Please use EFT / Bank Transfer.'); return; }
+      document.querySelectorAll('.chk-method').forEach(x => { x.classList.remove('selected'); x.style.border='1.5px solid var(--border)'; });
+      m.classList.add('selected'); m.style.border='2.5px solid #ff6600';
+      chkMethod = m.dataset.method;
+      document.getElementById('chkBank').classList.toggle('show', chkMethod === 'eft');
+      lucide.createIcons();
+    });
+  });
+
+  // ---- Orders stored in localStorage ----
+  const ORDERS_KEY = 'bwb_orders';
+  function getOrders() { try { return JSON.parse(localStorage.getItem(ORDERS_KEY)) || []; } catch(e) { return []; } }
+  function saveOrders(list) { localStorage.setItem(ORDERS_KEY, JSON.stringify(list)); }
+
+  
+
+  // Confirm & send order
+  document.getElementById('chkSubmit').addEventListener('click', async () => {
+    const name = document.getElementById('chkName').value.trim();
+    const business = document.getElementById('chkBusiness').value.trim();
+    const phone = document.getElementById('chkPhone').value.trim();
+    const type = document.getElementById('chkType').value;
+    if (!name || !business || !phone || !type) { alert('Please fill in all required fields.'); return; }
+
+    const ref = 'BWB-' + Date.now().toString().slice(-6);
+    document.getElementById('chkRef').textContent = 'Order ref: ' + ref;
+
+    const order = {
+      ref: ref,
+      name: name,
+      business: business,
+      phone: phone,
+      email: document.getElementById('chkEmail').value.trim(),
+      type: type,
+      notes: document.getElementById('chkNotes').value.trim(),
+      method: chkMethod,
+      amount: 15000,
+      created: new Date().toISOString()
+    };
+
+    const btn = document.getElementById('chkSubmit');
+    const oldText = btn.innerHTML;
+    btn.disabled = true; btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Sending...';
+    lucide.createIcons();
+
+    await bwbCreateOrder(order);   // email + firestore
+
+    btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
+    document.getElementById('chkForm').style.display = 'none';
+    document.getElementById('chkSuccess').classList.add('show');
+    lucide.createIcons();
+  });
+
+
+  function resetCheckout() {
+    document.getElementById('chkForm').style.display = '';
+    document.getElementById('chkSuccess').classList.remove('show');
+    document.getElementById('chkName').value = '';
+    document.getElementById('chkBusiness').value = '';
+    document.getElementById('chkPhone').value = '';
+    document.getElementById('chkEmail').value = '';
+    document.getElementById('chkType').value = '';
+    document.getElementById('chkNotes').value = '';
+  }
+
+  // ---- Admin access: triple-press the BEELZE name ----
+  let logoTaps = [];
+  const logoName = document.getElementById('logoName');
+  const hint = document.getElementById('admHint');
+  function showHint(msg) { hint.textContent = msg; hint.classList.add('show'); clearTimeout(hint._t); hint._t = setTimeout(() => hint.classList.remove('show'), 1500); }
+  logoName.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const now = Date.now();
+    logoTaps = logoTaps.filter(t => now - t < 1500);
+    logoTaps.push(now);
+    if (logoTaps.length === 1) showHint('Press BEELZE 2 more times for admin');
+    if (logoTaps.length === 2) showHint('Press BEELZE 1 more time');
+    if (logoTaps.length >= 3) {
+      logoTaps = [];
+      hint.classList.remove('show');
+      document.getElementById('adminPass').value = '';
+      document.getElementById('adminErr').textContent = '';
+      openOverlay('adminLoginOverlay');
+      setTimeout(() => document.getElementById('adminPass').focus(), 300);
+    }
+  });
+
+  // Admin login
+  const ADMIN_PASS = 'VNAXXTTM';
+  document.getElementById('adminLoginBtn').addEventListener('click', () => {
+    const val = document.getElementById('adminPass').value;
+    if (val === ADMIN_PASS) {
+      closeOverlay(document.getElementById('adminLoginOverlay'));
+      renderAdmin();
+      openOverlay('adminPanelOverlay');
+    } else {
+      document.getElementById('adminErr').textContent = 'Wrong password. Try again.';
+    }
+  });
+  document.getElementById('adminPass').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') document.getElementById('adminLoginBtn').click();
+  });
+
+  let _bwbUnsub = null;
+  function renderAdmin() {
+    if (!window.bwbOrdersCollection) { setTimeout(renderAdmin, 400); return; }
+    // Live listener — admin auto-updates when a new order lands in Firestore
+    if (_bwbUnsub) _bwbUnsub();
+    const q = window.bwbFb.query(window.bwbOrdersCollection, window.bwbFb.orderBy('created','desc'));
+    _bwbUnsub = window.bwbFb.onSnapshot(q, snap => {
+      const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      const total = list.length;
+      const eft = list.filter(o => (o.method||'eft')==='eft').length;
+      const revenue = total * 15000;
+      document.getElementById('admStats').innerHTML =
+        '<div class="adm-stat accent"><div class="num">'+total+'</div><div class="lbl">Total Orders</div></div>'+
+        '<div class="adm-stat"><div class="num">R'+revenue.toLocaleString()+'</div><div class="lbl">Revenue</div></div>'+
+        '<div class="adm-stat"><div class="num">'+eft+'</div><div class="lbl">EFT</div></div>'+
+        '<div class="adm-stat"><div class="num">'+(total-eft)+'</div><div class="lbl">Other</div></div>';
+
+      const el = document.getElementById('admList');
+      if (!list.length) { el.innerHTML = '<div class="adm-empty"><i data-lucide="inbox"></i><p>No orders yet.</p></div>'; lucide.createIcons(); return; }
+      el.innerHTML = list.map(o => {
+        const d = new Date(o.created);
+        const ds = d.toLocaleDateString('en-ZA') + ' ' + d.toLocaleTimeString('en-ZA',{hour:'2-digit',minute:'2-digit'});
+        return '<div class="adm-card" data-id="'+o.id+'">'+
+          '<div class="adm-card-head"><span class="ref">'+(o.ref||o.id)+'</span><span class="date">'+ds+'</span>'+
+          '<button class="del" onclick="deleteOrder(\''+o.id+'\')"><i data-lucide="trash-2"></i> Delete</button></div>'+
+          '<div class="adm-card-body">'+
+            '<div class="item"><span class="k">Name</span><span class="v">'+esc(o.name)+'</span></div>'+
+            '<div class="item"><span class="k">Business</span><span class="v">'+esc(o.business)+'</span></div>'+
+            '<div class="item"><span class="k">Phone</span><span class="v">'+esc(o.phone)+'</span></div>'+
+            '<div class="item"><span class="k">Email</span><span class="v">'+esc(o.email||'—')+'</span></div>'+
+            '<div class="item"><span class="k">Website Type</span><span class="v">'+esc(o.type)+'</span></div>'+
+            '<div class="item"><span class="k">Payment</span><span class="v"><span class="badge '+(o.method||'eft')+'">'+(o.method||'eft').toUpperCase()+' · R'+Number(o.amount||15000).toLocaleString()+'</span></span></div>'+
+            (o.notes?('<div class="item full"><span class="k">Notes</span><span class="v">'+esc(o.notes)+'</span></div>'):'')+
+          '</div></div>';
+      }).join('');
+      lucide.createIcons();
+    });
+  }
+
+  async function deleteOrder(id) {
+    if (!confirm('Delete this order?')) return;
+    try { await window.bwbFb.deleteDoc(window.bwbFb.doc(window.bwbDb,'bwb_orders',id)); } catch(e){ console.log(e); }
+  }
+  window.deleteOrder = deleteOrder;
+
+  document.getElementById('admClear').addEventListener('click', async () => {
+    if (!confirm('Delete ALL orders? This cannot be undone.')) return;
+    const { getDocs, deleteDoc } = window.bwbFb;
+    const snap = await getDocs(window.bwbOrdersCollection);
+    await Promise.all(snap.docs.map(d => deleteDoc(d.ref)));
+  });
+  document.getElementById('admLogout').addEventListener('click', () => {
+    closeOverlay(document.getElementById('adminPanelOverlay'));
+  });
+  function esc(s) { return String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+  
+  document.querySelectorAll('[data-close]').forEach(b => {
+    b.addEventListener('click', () => closeOverlay(b.closest('.overlay')));
+  });
+  document.querySelectorAll('.overlay').forEach(o => {
+    o.addEventListener('click', (e) => { if (e.target === o) closeOverlay(o); });
+  });
+
+</script>
+
+</body>
+</html>
