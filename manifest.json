@@ -1,18 +1,27 @@
 {
-  "name": "AdsMoney",
-  "short_name": "AdsMoney",
-  "description": "Earn money by watching ads and completing tasks.",
-  "start_url": "./",
+  "name": "Beelze Web Builders",
+  "short_name": "Beelze Builders",
+  "description": "Professional website development starting from R15,000. Face-to-face delivery, secure payments, custom built websites for any industry.",
+  "start_url": "index.html",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "orientation": "portrait",
+  "theme_color": "#1a1a1a",
+  "lang": "en-ZA",
+  "dir": "ltr",
+  "categories": ["business", "productivity"],
   "icons": [
     {
-      "src": "https://i.postimg.cc/MKHb2QXz/Screenshot-20260718-073150-Gallery.jpg",
+      "src": "https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
