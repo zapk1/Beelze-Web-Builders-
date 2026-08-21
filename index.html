@@ -15,7 +15,7 @@
 <meta name="geo.placename" content="Limpopo, South Africa">
 <meta name="geo.position" content="-23.4012;29.5917">
 <meta name="ICBM" content="-23.4012, 29.5917">
-<link rel="canonical" href__="https://beelzetech.beelzeapps.co.za/">
+<link rel="canonical" href="https://beelzetech.beelzeapps.co.za/">
 
 <!-- GOOGLE SEARCH CONSOLE — paste your verification code here after registering -->
 <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE">
@@ -26,11 +26,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Beelze Web Builders">
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="manifest" href__="manifest.json">
+<link rel="manifest" href="manifest.json">
 
 <!-- FAVICONS / APP ICON -->
-<link rel="icon" type="image/png" href__="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png">
-<link rel="apple-touch-icon" href__="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png">
+<link rel="icon" type="image/png" href="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png">
+<link rel="apple-touch-icon" href="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png">
 
 <!-- OPEN GRAPH (WhatsApp / Facebook) -->
 <meta property="og:type" content="website">
@@ -48,10 +48,10 @@
 <meta name="twitter:description" content="We build professional, modern websites for any industry. From R15,000 once-off. Face-to-face delivery in Limpopo, serving all of South Africa.">
 <meta name="twitter:image" content="https://media.base44.com/images/public/6a659286224c719ce6fd255e/38ae91b95_file_00000000257881f4b1842f0adee6b583.png">
 
-<!-- PRECONNECT + FONTS (fixed: href not href__) -->
-<link rel="preconnect" href__="https://fonts.googleapis.com">
-<link rel="preconnect" href__="https://fonts.gstatic.com" crossorigin>
-<link href__="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- PRECONNECT + FONTS (fixed: href not href) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- LUCIDE ICONS -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -184,8 +184,8 @@
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--yellow-dim); border: 1px solid rgba(255,193,7,0.25); padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--yellow-2); }
   .hero-badge .dot { width: 8px; height: 8px; background: var(--yellow); border-radius: 50%; box-shadow: 0 0 10px var(--yellow); animation: pulse-dot 2s infinite; }
   @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
-  .hero h1 { font-size: 44px; font-weight: 900; line-height: 1.12; letter-spacing: -1.5px; }
-  .hero h1 .yellow { color: var(--yellow-2); }
+    .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.08; letter-spacing: -1.8px; color: #0a0a0a; text-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+  .hero h1 .yellow { background: linear-gradient(135deg, #ffc107 0%, #ff8f00 50%, #e65100 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
   .hero-subtitle { font-size: 16px; color: var(--gray-1); line-height: 1.7; max-width: 620px; }
   .hero-inner { padding: 0; width: 100%; }
      .hero-image { width: 100%; margin: 0 auto; border-radius: 14px; overflow: hidden; max-width: 100%; }
@@ -258,6 +258,159 @@
     .included-grid .included-item { flex: 0 0 150px; }
   }
   
+    /* ===== Premium Website Price Card (picture 2 style) ===== */
+  .pw-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); border: 1px solid var(--border); }
+  .pw-head { background: #f44336; color: #fff; padding: 28px 20px 24px; text-align: center; position: relative; }
+  .pw-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.18); border: none; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .pw-close svg { width: 20px; height: 20px; }
+  .pw-crown { width: 64px; height: 64px; border-radius: 16px; background: #d32f2f; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+  .pw-crown svg { width: 34px; height: 34px; color: #fff; }
+  .pw-h { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
+  .pw-sub { font-size: 14px; font-weight: 500; opacity: 0.95; margin-top: 6px; }
+  .pw-body { padding: 26px 28px 28px; text-align: center; }
+  .pw-heroimg { width: 100%; max-height: 200px; object-fit: cover; border-radius: 14px; margin-bottom: 20px; }
+  .pw-checks { display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 560px; margin: 0 auto 24px; }
+  .pw-check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .pw-check svg { width: 22px; height: 22px; color: #4caf50; flex-shrink: 0; margin-top: 1px; }
+  .pw-price { font-size: 48px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
+  .pw-price .per { font-size: 18px; font-weight: 500; color: var(--gray-2); }
+  .pw-btns { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 22px auto 0; }
+  .pw-btn { width: 100%; background: #f44336; color: #fff; padding: 15px; border-radius: 12px; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; box-shadow: 0 6px 16px rgba(244,67,54,0.3); transition: var(--transition); text-decoration: none; }
+  .pw-btn:hover { background: #d32f2f; transform: translateY(-2px); }
+  .pw-btn svg { width: 20px; height: 20px; }
+  .pw-later { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--gray-2); cursor: pointer; }
+  .pw-later:hover { color: var(--ink); }
+
+  /* ===== Trusted-by rotating belt ===== */
+  .belt { padding: 26px 0 10px; overflow: hidden; }
+  .belt-title { text-align: center; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-2); margin-bottom: 16px; }
+  .belt-track { display: flex; gap: 36px; width: max-content; animation: belt 28s linear infinite; }
+  .belt:hover .belt-track { animation-play-state: paused; }
+  @keyframes belt { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .belt-chip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: #fff; border: 1px solid var(--border); border-radius: 50px; font-size: 15px; font-weight: 800; color: var(--ink); white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .belt-chip .e { font-size: 20px; }
+
+  /* ===== Header market button ===== */
+  .market-btn { background: none; padding: 6px; display: flex; align-items: center; color: #f44336; }
+  .market-btn svg { width: 26px; height: 26px; }
+
+  /* ===== Website Market section ===== */
+  .mkt { padding: 60px 0 80px; background: #fff; }
+  .mkt-head { text-align: center; margin-bottom: 36px; }
+  .mkt-head h2 { font-size: 30px; font-weight: 900; letter-spacing: -1px; }
+  .mkt-head h2 .red { color: #f44336; }
+  .mkt-head p { font-size: 15px; color: var(--gray-1); margin-top: 6px; }
+  .mkt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .mkt-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
+  .mkt-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); border-color: rgba(244,67,54,0.3); }
+  .mkt-img { width: 100%; height: 160px; object-fit: cover; display: block; }
+  .mkt-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .mkt-title { font-size: 16px; font-weight: 800; color: var(--ink); }
+  .mkt-desc { font-size: 13px; color: var(--gray-1); line-height: 1.5; flex: 1; }
+  .mkt-price { font-size: 22px; font-weight: 900; color: #f44336; }
+  .mkt-btns { display: flex; gap: 8px; margin-top: 4px; }
+  .mkt-btn { flex: 1; padding: 11px; border-radius: 10px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; border: none; text-decoration: none; }
+  .mkt-btn.buy { background: #f44336; color: #fff; }
+  .mkt-btn.call { background: #fff; color: #f44336; border: 2px solid #f44336; }
+  .mkt-btn.email { background: #fff; color: #f44336; border: 2px solid #f44336; }
+  .mkt-btn svg { width: 16px; height: 16px; }
+  @media (max-width: 700px) { .mkt-grid { grid-template-columns: 1fr; } }
+
+  /* ===== Mini Call/Email buttons ===== */
+  .pw-mini-row { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; width: 100%; }
+  .pw-mini { flex: 1; background: #fff; color: #f44336; border: 2px solid #f44336; padding: 11px; border-radius: 10px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; text-decoration: none; transition: var(--transition); }
+  .pw-mini:hover { background: #fef2f2; }
+  .pw-mini svg { width: 16px; height: 16px; }
+
+  /* ===== Live Website Preview Cards ===== */
+  .pv-card { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+  .pv-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(244,67,54,0.15); border-color: rgba(244,67,54,0.3); }
+    .pv-preview-wrap { position: relative; width: 100%; height: 360px; background: #f8fafc; overflow: hidden; border-bottom: 1px solid var(--border); cursor: pointer; display: flex; justify-content: center; }
+  .pv-iframe { width: 390px; height: 780px; border: none; transform: scale(0.74); transform-origin: top center; pointer-events: none; }
+  .pv-prev-hint { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.65); color:#fff; font-size:11px; font-weight:700; padding:6px 14px; border-radius:50px; z-index:3; pointer-events:none; white-space:nowrap; transition: opacity .2s; }
+  .pv-card.active .pv-prev-hint { opacity: 0; }
+  .pv-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.7) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 16px; opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .pv-card.active .pv-overlay { opacity: 1; pointer-events: auto; }
+  .pv-ov-name { color: #fff; font-size: 17px; font-weight: 800; text-align: center; line-height: 1.3; max-width: 92%; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  .pv-controls { display: flex; gap: 14px; }
+  .pv-ctrl { width: 50px; height: 50px; border-radius: 50%; background: #fff; color: #f44336; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.3); transition: var(--transition); }
+  .pv-ctrl:hover { background: #f44336; color: #fff; transform: scale(1.08); }
+  .pv-ctrl svg { width: 22px; height: 22px; }
+  .pv-sale-tag { position: absolute; top: 10px; left: 10px; background: #f44336; color: #fff; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 50px; z-index: 2; box-shadow: 0 2px 8px rgba(244,67,54,0.4); }
+  .pv-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .pv-title { font-size: 16px; font-weight: 800; color: var(--ink); }
+    .pv-desc { font-size: 13px; color: var(--gray-1); line-height: 1.5; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pv-desc.expanded { -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; }
+  .pv-more { align-self: flex-start; background: none; border: none; color: #f44336; font-size: 12px; font-weight: 700; padding: 2px 0 0; cursor: pointer; }
+  .pv-more:hover { text-decoration: underline; }
+  .pv-rev { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px 12px; display: flex; align-items: center; gap: 8px; }
+  .pv-rev svg { width: 18px; height: 18px; color: #16a34a; flex-shrink: 0; }
+  .pv-rev .pv-rev-txt { font-size: 12px; color: #166534; font-weight: 700; line-height: 1.3; }
+  .pv-price-row { display: flex; align-items: baseline; justify-content: space-between; margin-top: 4px; }
+  .pv-price { font-size: 22px; font-weight: 900; color: #f44336; }
+  .pv-period { font-size: 12px; font-weight: 600; color: var(--gray-2); }
+  .pv-btns { display: flex; gap: 8px; margin-top: 6px; }
+  .pv-btn { flex: 1; padding: 10px; border-radius: 10px; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 5px; cursor: pointer; border: none; text-decoration: none; transition: var(--transition); }
+  .pv-btn.pay { background: #f44336; color: #fff; }
+  .pv-btn.pay:hover { background: #d32f2f; }
+  .pv-btn.ghost { background: #fff; color: #f44336; border: 2px solid #f44336; }
+  .pv-btn.ghost:hover { background: #fef2f2; }
+  .pv-btn svg { width: 15px; height: 15px; }
+  .pv-empty { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--gray-2); }
+  .pv-empty svg { width: 48px; height: 48px; margin: 0 auto 14px; opacity: 0.3; }
+  .pv-empty p { font-size: 15px; font-weight: 600; }
+
+  /* ===== Fullscreen Website Viewer ===== */
+  .pv-viewer { position: fixed; inset: 0; z-index: 4000; background: #1a1a1a; display: none; flex-direction: column; }
+  .pv-viewer.open { display: flex; }
+  .pv-viewer-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #0f0f0f; border-bottom: 1px solid #333; flex-shrink: 0; }
+  .pv-viewer-title { color: #fff; font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .pv-viewer-title svg { width: 20px; height: 20px; color: #f44336; }
+  .pv-viewer-actions { display: flex; gap: 8px; align-items: center; }
+  .pv-viewer-zoom { color: #fff; font-size: 13px; font-weight: 700; background: #333; padding: 6px 12px; border-radius: 8px; }
+  .pv-viewer-btn { width: 40px; height: 40px; border-radius: 10px; background: #333; color: #fff; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); }
+  .pv-viewer-btn:hover { background: #f44336; }
+  .pv-viewer-btn svg { width: 20px; height: 20px; }
+  .pv-viewer-frame { flex: 1; overflow: auto; display: flex; justify-content: center; background: #2a2a2a; }
+    .pv-viewer-iframe { border: none; background: #fff; transition: width .2s; }
+  .pv-viewer-iframe.mobile { width: 100% !important; min-width: 100%; height: 100%; margin: 0; border-radius: 0; box-shadow: none; }
+  .pv-viewer-frame.mobile-view { align-items: flex-start !important; }
+  .pv-mode-btn { color:#fff; font-size:12px; font-weight:800; background:#333; padding:8px 14px; border-radius:8px; display:flex; align-items:center; gap:6px; cursor:pointer; border:none; }
+  .pv-mode-btn:hover { background:#f44336; }
+  .pv-mode-btn svg { width:18px; height:18px; }
+
+  /* ===== Admin Upload Form ===== */
+  .adm-upld { padding: 16px 20px 48px; max-width: 560px; margin: 0 auto; width: 100%; overflow-y: auto; flex: 1; }
+  .adm-upld h3 { font-size: 16px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .adm-upld h3 svg { width: 20px; height: 20px; color: #f44336; }
+  .upld-field { margin-bottom: 14px; }
+  .upld-field label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-2); margin-bottom: 6px; }
+  .upld-field input, .upld-field textarea, .upld-field select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 14px; font-family: inherit; color: var(--ink); background: #fff; transition: var(--transition); }
+  .upld-field input:focus, .upld-field textarea:focus, .upld-field select:focus { outline: none; border-color: #f44336; }
+  .upld-field textarea { resize: vertical; min-height: 120px; font-family: 'Courier New', monospace; font-size: 12px; }
+  .upld-file-btn { display: flex; align-items: center; gap: 10px; padding: 14px; border: 2px dashed #f44336; border-radius: 12px; cursor: pointer; color: #f44336; font-weight: 700; font-size: 14px; background: #fef2f2; transition: var(--transition); }
+  .upld-file-btn:hover { background: #fee2e2; }
+  .upld-file-btn svg { width: 22px; height: 22px; }
+  .upld-file-name { font-size: 12px; color: var(--gray-1); margin-top: 6px; }
+  .upld-submit { width: 100%; background: #f44336; color: #fff; padding: 15px; border-radius: 12px; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; margin-top: 8px; box-shadow: 0 6px 16px rgba(244,67,54,0.3); }
+  .upld-submit:hover { background: #d32f2f; }
+  .upld-submit svg { width: 18px; height: 18px; }
+  .upld-list { margin-top: 24px; }
+  .upld-item { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .upld-item-info { flex: 1; min-width: 0; }
+  .upld-item-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .upld-item-meta { font-size: 11px; color: var(--gray-2); margin-top: 2px; }
+  .upld-item-del { background: #fee2e2; color: #dc2626; border: none; border-radius: 8px; padding: 8px 10px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+  .upld-item-del:hover { background: #dc2626; color: #fff; }
+  .upld-item-del svg { width: 14px; height: 14px; }
+  .upld-tabs { display: flex; gap: 6px; margin-bottom: 16px; background: var(--bg-2); padding: 4px; border-radius: 12px; }
+  .upld-tab { flex: 1; padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 700; color: var(--gray-1); background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .upld-tab.active { background: #fff; color: #f44336; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+  .upld-tab svg { width: 16px; height: 16px; }
+
+
+    .belt-logo { width: 22px; height: 22px; object-fit: contain; flex-shrink: 0; }
   
     /* Checkout */
   .chk-title-box { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 800; color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
@@ -366,6 +519,9 @@
         <span class="sub">Web Builders</span>
       </div>
     </div>
+        <button class="market-btn" id="marketBtn" aria-label="Marketplace" title="Website & App Marketplace">
+      <i data-lucide="store"></i>
+    </button>
     <button class="menu-btn" id="menuBtn" aria-label="Menu">
       <i data-lucide="more-vertical"></i>
     </button>
@@ -375,43 +531,74 @@
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-badge animate-in">
-        <span class="dot"></span>
-        Professional Web Development
-      </div>
-      <h1 class="animate-in delay-1">
-        We Build Websites That <span class="yellow">Build Your Business</span>
+            <h1 class="animate-in delay-1">
+        We Build <span class="yellow">Multimillion Websites</span> for Big Companies & Businesses
       </h1>
       <p class="hero-subtitle animate-in delay-2">
-        Professional, fast and modern websites that help you attract more clients and grow your brand online.
+        Professional, fast and modern websites for big companies, businesses and normal businesses. Minimum R550,000 once-off.
       </p>
- <div class="hero-image animate-in delay-3">
-  <img src="https://i.postimg.cc/vBT8fjYj/file-00000000767081f4b5fe05974c05461f.png" alt="Beelze Web Builders — what's included">
-</div>
-    </div>
-  </div>
+      <div class="belt animate-in delay-3">
+        <div class="belt-title">Trusted by online sellers</div>
+         <div class="belt-track">
+          <span class="belt-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="belt-logo"> Amazon</span>
+          <span class="belt-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay" class="belt-logo"> eBay</span>
+          <span class="belt-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Etsy_logo.svg" alt="Etsy" class="belt-logo"> Etsy</span>
+          <span class="belt-chip"><img src="https://media.base44.com/images/public/user_6a882cb098cdbfe1ee7a25a5/489113478_1280px-Takealot_logosvg1.png" alt="Takealot" class="belt-logo"> Takealot</span>
+          <span class="belt-chip"><img src="https://media.base44.com/images/public/user_6a882cb098cdbfe1ee7a25a5/4d252bc2c_Alibaba-Logo.png" alt="Alibaba" class="belt-logo"> Alibaba</span>
+          <span class="belt-chip"><img src="https://media.base44.com/images/public/user_6a882cb098cdbfe1ee7a25a5/09a47a7a4_shopify-icon-logo.png" alt="Shopify" class="belt-logo"> Shopify</span>
+          <!-- duplicate set for seamless loop -->
+          <span class="belt-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="belt-logo"> Amazon</span>
+          <span class="belt-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay" class="belt-logo"> eBay</span>
+          <span class="belt-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Etsy_logo.svg" alt="Etsy" class="belt-logo"> Etsy</span>
+          <span class="belt-chip"><img src="https://media.base44.com/images/public/user_6a882cb098cdbfe1ee7a25a5/489113478_1280px-Takealot_logosvg1.png" alt="Takealot" class="belt-logo"> Takealot</span>
+          <span class="belt-chip"><img src="https://media.base44.com/images/public/user_6a882cb098cdbfe1ee7a25a5/4d252bc2c_Alibaba-Logo.png" alt="Alibaba" class="belt-logo"> Alibaba</span>
+          <span class="belt-chip"><img src="https://media.base44.com/images/public/user_6a882cb098cdbfe1ee7a25a5/09a47a7a4_shopify-icon-logo.png" alt="Shopify" class="belt-logo"> Shopify</span>
+        </div>
+      </div>
+
 </section>
 
 <section class="pricing" id="contact">
   <div class="container">
-    <div class="pricing-box">
-      <span class="pricing-tag">Website Building</span>
-      <div class="pricing-price"><span class="cur">R</span>15 000</div>
-      <div class="pricing-title">Custom Website Building Package — Once-off Setup</div>
-      <div class="pricing-features">
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Website for any industry — business, gambling, shopping, lifestyle, company</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Professional .co.za domain registered for you</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Professional email with full login details</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Free database hosting with major providers</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Monthly maintenance — R1,000/month for updates & support</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Full ownership — we visit you & hand over the code</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> APK conversion of your website</div>
-        <div class="pricing-feature"><i data-lucide="check-circle"></i> Ads placed on your website if you want them</div>
+    <div class="pw-card">
+      <div class="pw-head">
+        <button class="pw-close" onclick="document.getElementById('websiteMarket').scrollIntoView({behavior:'smooth'})"><i data-lucide="x"></i></button>
+        <div class="pw-crown"><i data-lucide="crown"></i></div>
+        <div class="pw-h">Build Your Website</div>
+        <div class="pw-sub">Custom multimillion-rand websites for big companies & businesses</div>
       </div>
-            <button id="getStartedBtn" class="btn btn-primary" style="font-size:15px;padding:15px 32px;">
-        <i data-lucide="rocket"></i>
-        Pay for Website Creation 
-      </button>
+      <div class="pw-body">
+        <img class="pw-heroimg" src="https://i.postimg.cc/0yfdHFWL/Screenshot-20260821-131828-Gallery.jpg" alt="What's included">
+        <div class="pw-checks">
+          <div class="pw-check"><i data-lucide="check-circle-2"></i> Website for any industry — business, gambling, shopping, lifestyle, company</div>
+          <div class="pw-check"><i data-lucide="check-circle-2"></i> Professional .co.za domain registered for you</div>
+          <div class="pw-check"><i data-lucide="check-circle-2"></i> Professional email with full login details</div>
+          <div class="pw-check"><i data-lucide="check-circle-2"></i> Free database hosting with major providers</div>
+          <div class="pw-check"><i data-lucide="check-circle-2"></i> Monthly maintenance & full ownership — code handed over</div>
+          <div class="pw-check"><i data-lucide="check-circle-2"></i> APK conversion of your website</div>
+        </div>
+        <div class="pw-price">R550,000 <span class="per">once-off</span></div>
+         <div class="pw-btns">
+          <button class="pw-btn" id="getStartedBtn"><i data-lucide="credit-card"></i> Pay for Website Creation</button>
+          <div class="pw-mini-row">
+            <a class="pw-mini" href="tel:0687790223"><i data-lucide="phone"></i> Call</a>
+            <a class="pw-mini" href="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> Email</a>
+          </div>
+        </div>
+        <span class="pw-later" onclick="document.getElementById('websiteMarket').scrollIntoView({behavior:'smooth'})">Maybe later</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mkt" id="websiteMarket">
+  <div class="container">
+    <div class="mkt-head">
+      <h2>Website <span class="red">Market</span></h2>
+      <p>Fully built websites — tap to try them live, scroll, zoom & buy</p>
+    </div>
+    <div class="mkt-grid" id="marketList">
+      <div class="pv-empty"><i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i><p>Loading websites…</p></div>
     </div>
   </div>
 </section>
@@ -501,7 +688,7 @@
 <div class="overlay-body">
     <div class="ov-box red">
       <div class="ov-img"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=70" alt="Email professional"></div>
-      <div class="ov-num red">beelze.apps@darkmasterclothing.co.za</div>
+            <div class="ov-num red">info@beelzewebbuilders.co.za</div>
     </div>
     <ol class="overlay-steps">
       <li><i data-lucide="mail"></i> Open your email app.</li>
@@ -510,7 +697,7 @@
       <li><i data-lucide="check-circle-2"></i> When everything is fine we will ask for payment and start the work.</li>
     </ol>
     <div class="overlay-cta email">
-      <a href__="mailto:beelze.apps@darkmasterclothing.co.za"><i data-lucide="send"></i> Send Email</a>
+            <a href="mailto:info@beelzewebbuilders.co.za"><i data-lucide="send"></i> Send Email</a>
     </div>
   </div>
 </div>
@@ -531,7 +718,106 @@
       <li><i data-lucide="credit-card"></i> We will request the payment and continue from there.</li>
     </ol>
         <div class="overlay-cta phone">
-      <a href__="tel:0687790223"><i data-lucide="phone-call"></i> 068 779 0223</a>
+      <a href="tel:0687790223"><i data-lucide="phone-call"></i> 068 779 0223</a>
+    </div>
+  </div>
+</div>
+
+<!-- MARKETPLACE OVERLAY -->
+<div class="overlay" id="marketOverlay">
+  <div class="overlay-bar">
+    <h2 style="color:#f44336;"><i data-lucide="store"></i> Website & App Market</h2>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body">
+    <p style="text-align:center;font-size:14px;color:var(--gray-1);margin-bottom:20px;">Fully built websites & apps for sale — from R850,000 up to millions. Press <b>Buy</b> to pay, we'll call you for details.</p>
+    <div class="mkt-grid" id="marketOverlayList"></div>
+  </div>
+</div>
+
+<!-- FULLSCREEN WEBSITE VIEWER -->
+<div class="pv-viewer" id="pvViewer">
+  <div class="pv-viewer-bar" style="display:none;">
+    <div class="pv-viewer-title"><i data-lucide="monitor"></i> <span id="pvViewerName">Website Preview</span></div>
+    <div class="pv-viewer-actions">
+      <button class="pv-mode-btn" id="pvModeBtn"><i data-lucide="smartphone"></i> <span id="pvModeLabel">Mobile</span></button>
+      <span class="pv-viewer-zoom" id="pvZoomLabel">100%</span>
+      <button class="pv-viewer-btn" id="pvZoomOut"><i data-lucide="zoom-out"></i></button>
+      <button class="pv-viewer-btn" id="pvZoomIn"><i data-lucide="zoom-in"></i></button>
+      <button class="pv-viewer-btn" id="pvZoomReset"><i data-lucide="maximize-2"></i></button>
+      <button class="pv-viewer-btn" id="pvCloseViewer"><i data-lucide="x"></i></button>
+    </div>
+  </div>
+  <button onclick="document.getElementById('pvViewer').classList.remove('open');document.getElementById('pvViewerIframe').srcdoc='';" style="position:absolute;top:12px;right:12px;z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;"><i data-lucide="x" style="width:22px;height:22px;"></i></button>
+  <div class="pv-viewer-frame" id="pvViewerFrame">
+    <iframe class="pv-viewer-iframe" id="pvViewerIframe" srcdoc="<!doctype html><html><head></head><body></body></html>"></iframe>
+  </div>
+</div>
+
+<!-- ADMIN WEBSITE UPLOAD OVERLAY -->
+<div class="overlay" id="adminUploadOverlay">
+  <div class="adm-bar">
+    <h2><i data-lucide="code-2"></i> Website Manager</h2>
+    <div class="adm-actions">
+      <button class="logout" id="admUploadClose"><i data-lucide="log-out"></i> Close</button>
+    </div>
+  </div>
+  <div class="adm-upld">
+    <div class="upld-tabs">
+      <button class="upld-tab active" id="tabUpload"><i data-lucide="upload"></i> Upload Website</button>
+      <button class="upld-tab" id="tabList"><i data-lucide="list"></i> My Websites</button>
+    </div>
+
+    <!-- Upload tab -->
+    <div id="uploadPanel">
+      <h3><i data-lucide="file-code"></i> Add a Website for Sale</h3>
+      <div class="upld-field">
+        <label>Website Name *</label>
+        <input type="text" id="upldName" placeholder="e.g. E-commerce Store">
+      </div>
+      <div class="upld-field">
+        <label>Short Description</label>
+        <input type="text" id="upldDesc" placeholder="Full online shop with cart & payments">
+      </div>
+      <div class="upld-field">
+        <label>Price (R) *</label>
+        <input type="number" id="upldPrice" placeholder="850000">
+      </div>
+      <div class="upld-field">
+        <label>Revenue it can generate (R) *</label>
+        <input type="number" id="upldRevenue" placeholder="50000">
+      </div>
+      <div class="upld-field">
+        <label>Revenue period *</label>
+        <select id="upldPeriod">
+          <option value="monthly">Monthly</option>
+          <option value="weekly">Weekly</option>
+          <option value="daily">Daily</option>
+          <option value="yearly">Yearly</option>
+        </select>
+      </div>
+      <div class="upld-field">
+        <label>Upload HTML file (OR paste code below)</label>
+        <label class="upld-file-btn" for="upldFile">
+          <i data-lucide="upload-cloud"></i>
+          <span id="upldFileLabel">Choose .html file…</span>
+        </label>
+        <input type="file" id="upldFile" accept=".html,.htm,text/html" style="display:none;">
+        <div class="upld-file-name" id="upldFileName"></div>
+      </div>
+      <div class="upld-field">
+        <label>OR paste HTML code here</label>
+        <textarea id="upldHtml" placeholder="<!doctype html>&#10;<html>…paste your full website code here…</html>"></textarea>
+      </div>
+      <button class="upld-submit" id="upldSubmit"><i data-lucide="check"></i> Save & Publish to Market</button>
+    </div>
+
+    <!-- List tab -->
+    <div id="listPanel" style="display:none;">
+      <h3><i data-lucide="globe"></i> Your Live Websites</h3>
+      <div class="upld-list" id="upldList">
+        <div class="pv-empty"><i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i><p>Loading…</p></div>
+      </div>
     </div>
   </div>
 </div>
@@ -547,10 +833,10 @@
     <!-- Checkout form -->
     <div class="chk-form" id="chkForm">
       <div class="chk-summary">
-        <div class="row"><span>Custom Website Package</span><span>R15,000</span></div>
+                <div class="row"><span id="chkItemName">Custom Website Package</span><span id="chkItemPrice">R550,000</span></div>
         <div class="row"><span>.co.za domain + email</span><span>Included</span></div>
         <div class="row"><span>APK + delivery</span><span>Included</span></div>
-        <div class="row total"><span>Total once-off</span><span>R15,000</span></div>
+        <div class="row total"><span>Total once-off</span><span id="chkTotal">R550,000</span></div>
       </div>
 
             <div class="chk-label">Choose a payment method</div>
@@ -666,6 +952,7 @@
   <div class="adm-bar">
     <h2><i data-lucide="layout-dashboard"></i> Payments & Orders</h2>
     <div class="adm-actions">
+      <button class="clear" id="admUploadBtn" style="background:#f44336;color:#fff;"><i data-lucide="code-2"></i> Website Manager</button>
       <button class="clear" id="admClear"><i data-lucide="trash-2"></i> Clear All</button>
       <button class="logout" id="admLogout"><i data-lucide="log-out"></i> Logout</button>
     </div>
@@ -686,19 +973,97 @@
       </div>
     </div>
     <div class="footer-contact">
-      <a href__="tel:0687790223"><i data-lucide="phone"></i> 068 779 0223</a>
-      <a href__="mailto:beelze.apps@darkmasterclothing.co.za"><i data-lucide="mail"></i> beelze.apps@darkmasterclothing.co.za</a>
-      <a href__="https://wa.me/27687790223"><i data-lucide="message-circle"></i> WhatsApp 27 68 779 0223</a>
+      <a href="tel:0687790223"><i data-lucide="phone"></i> 068 779 0223</a>
+      <a href="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> info@beelzewebbuilders.co.za</a>
+      <a href="https://wa.me/27687790223"><i data-lucide="message-circle"></i> WhatsApp 27 68 779 0223</a>
       <a><i data-lucide="map-pin"></i> Limpopo, South Africa</a>
     </div>
   </div>
-  <div class="footer-inner" style="margin-top:18px;">
+    <div class="footer-inner" style="margin-top:18px;">
     <p class="footer-copy">&copy; 2024 Beelze Web Builders. All rights reserved.</p>
+        <a id="privacyLink" style="font-size:13px;color:#dc2626;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:underline;"><i data-lucide="shield-check" style="width:15px;height:15px;"></i> Read the terms and conditions to understand how we work</a>
   </div>
 </footer>
 
 
+ <!-- PRIVACY & COMPLIANCE OVERLAY -->
+<div class="overlay" id="privacyOverlay">
+  <div class="overlay-bar">
+    <h2 style="color:var(--ink);"><i data-lucide="shield-check"></i> Privacy & POPIA Compliance</h2>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body" style="max-width:680px;">
+    <div style="background:#f8f9fa;border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:20px;">
+      <h3 style="font-size:18px;font-weight:900;margin-bottom:6px;">Beelze Web Builders — Privacy Policy</h3>
+      <p style="font-size:13px;color:var(--gray-2);">Last updated: August 2026 · POPIA Compliant</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.7;color:var(--ink);margin-bottom:16px;">
+      Beelze Web Builders ("we", "us", "our") is a website development business based in Limpopo, South Africa. We build, sell and maintain professional websites for companies and individuals across South Africa. This Privacy Policy explains what personal information we collect, why we collect it, and how we protect it in line with the <strong>Protection of Personal Information Act (POPIA)</strong> of South Africa.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">1. Information We Collect</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      When you place an order, request a quote, or contact us, we collect: your full name, business/company name, phone number, WhatsApp number, email address, the type of website you want, and any extra details you choose to share. When you upload a website to our market, we store the website name, description, price and the HTML code you submit.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">2. How We Use Your Information</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      We use your information only to: build and deliver your website, contact you about your order and payment, provide monthly maintenance and support, and keep a record of the transaction for accounting and tax purposes. We do <strong>not</strong> sell, rent or share your personal information with any third party for marketing.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">3. Payments & Banking Details</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      Payments are made via EFT / bank transfer to our GoTyme business account. We collect your payment reference to match your deposit to your order. We never store your card numbers or banking login details — all card payments are handled directly by your bank.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">4. Data Storage</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      Your order details are stored securely in a cloud database accessible only to the business owner (admin). Uploaded website HTML is stored so buyers can preview and purchase the finished website. We retain order records for as long as legally required for tax and accounting purposes.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">5. Your Rights Under POPIA</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      You have the right to: access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (where legally allowed), and object to processing. To exercise any of these rights, email us at <a href__="mailto:ceo@beelzechat.co.za" style="color:#f44336;font-weight:700;">ceo@beelzechat.co.za</a>.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">6. Cookies & Website Tracking</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      This website does not use tracking cookies to profile visitors. Analytics, if added, will be aggregated and anonymous. Any website we build for you will have its own cookie policy that you control.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">7. Children's Privacy</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      Our services are intended for businesses and adults. We do not knowingly collect personal information from children under 18 without a parent or guardian's consent.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">8. Security</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      We take reasonable technical and organisational steps to protect your information: encrypted database storage, restricted admin access protected by a password, and secure payment references. No method of transmission over the internet is 100% secure, but we do our best.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">9. Information Officer (POPIA)</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      Our Information Officer for POPIA complaints is the CEO. Contact: <a href__="mailto:ceo@beelzechat.co.za" style="color:#f44336;font-weight:700;">ceo@beelzechat.co.za</a> · <a href__="tel:0687790223" style="color:#f44336;font-weight:700;">068 779 0223</a>. You may also lodge a complaint with the Information Regulator of South Africa.
+    </p>
+
+    <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">10. Changes to This Policy</h4>
+    <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
+      We may update this Privacy Policy from time to time. The latest version will always be available on this page with the updated date shown at the top.
+    </p>
+
+    <div style="background:#fff7e6;border:1px solid #ffe089;border-radius:12px;padding:16px 18px;margin:24px 0;">
+      <p style="font-size:14px;line-height:1.6;color:var(--ink);"><strong>Confirmation:</strong> By placing an order, uploading a website, or contacting Beelze Web Builders, you confirm that you have read and understood this Privacy Policy and you consent to Beelze Web Builders processing your personal information as described above, in compliance with POPIA.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:24px;">
+      <button class="pw-btn" style="width:auto;padding:14px 44px;background:#16a34a;box-shadow:none;margin:0 auto;" onclick="closeOverlay(document.getElementById('privacyOverlay'))"><i data-lucide="check"></i> I Understand & Agree</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 
 <!-- FIREBASE (modular ESM, same as Dark Master Store) -->
 <script type="module">
@@ -753,12 +1118,228 @@
   function closeOverlay(el) { el.classList.remove('open'); }
   document.getElementById('emailBtn').addEventListener('click', () => openOverlay('emailOverlay'));
   document.getElementById('phoneBtn').addEventListener('click', () => openOverlay('phoneOverlay'));
+  document.getElementById('marketBtn').addEventListener('click', () => openOverlay('marketOverlay'));
+
+    // ===== Websites collection (Firestore) =====
+  window.bwbWebsitesCollection = collection(window.bwbDb, 'bwb_websites');
+
+  // ===== Load websites from Firestore & render live-preview cards =====
+  let _bwbSitesUnsub = null;
+  function renderMarket() {
+    if (!window.bwbWebsitesCollection) { setTimeout(renderMarket, 400); return; }
+    if (_bwbSitesUnsub) _bwbSitesUnsub();
+    const q = window.bwbFb.query(window.bwbWebsitesCollection, window.bwbFb.orderBy('created','desc'));
+        _bwbSitesUnsub = window.bwbFb.onSnapshot(q, snap => {
+      const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      window.__bwbSiteCache = {};
+      items.forEach(it => { window.__bwbSiteCache[it.name] = it; });
+      document.getElementById('marketBtn').addEventListener('click', () => openOverlay('marketOverlay'));
+
+  // ===== Admin Website Manager =====
+  let upldFileContent = '';
+  document.getElementById('upldFile').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    document.getElementById('upldFileLabel').textContent = file.name;
+    document.getElementById('upldFileName').textContent = 'Reading file…';
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      upldFileContent = ev.target.result;
+      document.getElementById('upldFileName').textContent = file.name + ' (' + Math.round(file.size/1024) + ' KB) — ready';
+      document.getElementById('upldHtml').value = '';
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById('upldSubmit').addEventListener('click', async () => {
+    const name = document.getElementById('upldName').value.trim();
+    const desc = document.getElementById('upldDesc').value.trim();
+    const price = Number(document.getElementById('upldPrice').value) || 0;
+    const revenue = Number(document.getElementById('upldRevenue').value) || 0;
+    const period = document.getElementById('upldPeriod').value;
+    const pastedHtml = document.getElementById('upldHtml').value;
+    const html = upldFileContent || pastedHtml;
+    if (!name) { alert('Please enter a website name.'); return; }
+    if (!html) { alert('Please upload an HTML file OR paste the HTML code.'); return; }
+    if (html.length > 900000) { alert('HTML is too large (max ~900KB for Firestore). Please reduce it.'); return; }
+
+    const btn = document.getElementById('upldSubmit');
+    const old = btn.innerHTML;
+    btn.disabled = true; btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Saving…';
+    lucide.createIcons();
+
+    try {
+      await window.bwbFb.addDoc(window.bwbWebsitesCollection, {
+        name, desc, price, revenue, period, html,
+        created: new Date().toISOString()
+      });
+      // reset form
+      document.getElementById('upldName').value = '';
+      document.getElementById('upldDesc').value = '';
+      document.getElementById('upldPrice').value = '';
+      document.getElementById('upldRevenue').value = '';
+      document.getElementById('upldHtml').value = '';
+      upldFileContent = '';
+      document.getElementById('upldFileLabel').textContent = 'Choose .html file…';
+      document.getElementById('upldFileName').textContent = '';
+      document.getElementById('upldFile').value = '';
+      alert('Website published to the market!');
+    } catch(e) { alert('Error saving: ' + e.message); }
+
+    btn.disabled = false; btn.innerHTML = old; lucide.createIcons();
+  });
+
+  // Tabs
+  document.getElementById('tabUpload').addEventListener('click', () => {
+    document.getElementById('tabUpload').classList.add('active');
+    document.getElementById('tabList').classList.remove('active');
+    document.getElementById('uploadPanel').style.display = '';
+    document.getElementById('listPanel').style.display = 'none';
+    lucide.createIcons();
+  });
+  document.getElementById('tabList').addEventListener('click', () => {
+    document.getElementById('tabList').classList.add('active');
+    document.getElementById('tabUpload').classList.remove('active');
+    document.getElementById('listPanel').style.display = '';
+    document.getElementById('uploadPanel').style.display = 'none';
+    renderUploadList();
+    lucide.createIcons();
+  });
+
+  function renderUploadList() {
+    const el = document.getElementById('upldList');
+    if (!window.bwbWebsitesCollection) { setTimeout(renderUploadList, 400); return; }
+    window.bwbFb.getDocs(window.bwbWebsitesCollection).then(snap => {
+      const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      if (!items.length) { el.innerHTML = '<div class="pv-empty"><i data-lucide="globe"></i><p>No websites uploaded yet.</p></div>'; lucide.createIcons(); return; }
+      el.innerHTML = items.map(it => 
+        '<div class="upld-item">'+
+          '<div class="upld-item-info">'+
+            '<div class="upld-item-name">'+esc(it.name||'')+'</div>'+
+            '<div class="upld-item-meta">R'+Number(it.price||0).toLocaleString()+' · '+(it.revenue?'R'+Number(it.revenue).toLocaleString()+' '+(it.period||''):'no revenue set')+'</div>'+
+          '</div>'+
+          '<button class="upld-item-del" onclick="deleteWebsite(\''+it.id+'\')"><i data-lucide="trash-2"></i></button>'+
+        '</div>'
+      ).join('');
+      lucide.createIcons();
+    });
+  }
+  async function deleteWebsite(id) {
+    if (!confirm('Delete this website from the market?')) return;
+    try { await window.bwbFb.deleteDoc(window.bwbFb.doc(window.bwbDb,'bwb_websites',id)); } catch(e){ console.log(e); }
+  }
+  window.deleteWebsite = deleteWebsite;
+
+  // Open Website Manager from admin panel
+  document.getElementById('admUploadBtn').addEventListener('click', () => {
+    closeOverlay(document.getElementById('adminPanelOverlay'));
+    openOverlay('adminUploadOverlay');
+    renderUploadList();
+  });
+  document.getElementById('admUploadClose').addEventListener('click', () => {
+    closeOverlay(document.getElementById('adminUploadOverlay'));
+  });
+        let html;
+      if (!items.length) {
+        html = '<div class="pv-empty"><i data-lucide="globe"></i><p>No websites for sale yet. Admin can upload in the Website Manager.</p></div>';
+      } else {
+        html = items.map(previewCardHTML).join('');
+      }
+      const a = document.getElementById('marketList'); if (a) a.innerHTML = html;
+      const b = document.getElementById('marketOverlayList'); if (b) b.innerHTML = html;
+      lucide.createIcons();
+    });
+  }
+     function previewCardHTML(it) {
+    const safeName = String(it.name||'').replace(/'/g,"\\'");
+    const revTxt = it.revenue ? 'Can generate R' + Number(it.revenue).toLocaleString() + ' ' + (it.period||'monthly') : '';
+    const descLong = it.desc && String(it.desc).length > 80;
+    return '<div class="pv-card">'+
+      '<div class="pv-sale-tag">SALE</div>'+
+'<div class="pv-preview-wrap" onclick="this.closest(\'.pv-card\').classList.toggle(\'active\')">'+
+        '<iframe class="pv-iframe" srcdoc="'+escAttr(it.html||'')+'" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>'+
+        '<div class="pv-prev-hint">Tap to view • Mobile preview</div>'+
+        '<div class="pv-overlay">'+
+          '<div class="pv-ov-name">'+esc(it.name||'')+'</div>'+
+          '<div class="pv-controls">'+
+            '<button class="pv-ctrl" onclick="event.stopPropagation(); openViewer(\''+safeName+'\')" title="Open fullscreen"><i data-lucide="maximize-2"></i></button>'+
+            '<button class="pv-ctrl" onclick="event.stopPropagation(); openCheckout(\''+safeName+'\','+(it.price||0)+')" title="Pay"><i data-lucide="credit-card"></i></button>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="pv-body">'+
+        '<div class="pv-title">'+esc(it.name||'')+'</div>'+
+        '<div class="pv-desc">'+esc(it.desc||'')+'</div>'+
+        (descLong ? '<button class="pv-more" onclick="var d=this.previousElementSibling; d.classList.toggle(\'expanded\'); this.textContent=d.classList.contains(\'expanded\')?\'Show less\':\'Show more\';">Show more</button>' : '')+
+        (revTxt ? '<div class="pv-rev"><i data-lucide="trending-up"></i><span class="pv-rev-txt">'+revTxt+'</span></div>' : '')+
+        '<div class="pv-price-row"><span class="pv-price">R'+Number(it.price||0).toLocaleString()+'</span></div>'+
+        '<div class="pv-btns">'+
+          '<button class="pv-btn pay" onclick="openCheckout(\''+safeName+'\','+(it.price||0)+')"><i data-lucide="credit-card"></i> Pay</button>'+
+          '<a class="pv-btn ghost" href__="tel:0687790223"><i data-lucide="phone"></i> Call</a>'+
+          '<a class="pv-btn ghost" href__="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> Email</a>'+
+        '</div>'+
+      '</div></div>';
+  }
+
+  function escAttr(s) { return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  window.renderMarket = renderMarket;
+  renderMarket();
+
+  // ===== Fullscreen Website Viewer (zoom + scroll + interact) =====
+    // ===== Fullscreen Website Viewer (zoom + scroll + interact) =====
+  let pvZoom = 100;
+  let pvMode = 'mobile';
+  function openViewer(name) {
+    const item = findSiteByName(name);
+    if (!item) return;
+    document.getElementById('pvViewerName').textContent = item.name;
+    document.getElementById('pvViewerIframe').srcdoc = item.html || '';
+    pvZoom = 100; pvMode = 'mobile'; applyMode(); applyZoom();
+    document.getElementById('pvViewer').classList.add('open');
+    lucide.createIcons();
+  }
+  function findSiteByName(name) {
+    let found = null;
+    document.querySelectorAll('.pv-card').forEach(c => { if (c.querySelector('.pv-title').textContent === name) found = c; });
+    // fallback: read from firestore cache
+    return window.__bwbSiteCache && window.__bwbSiteCache[name] ? window.__bwbSiteCache[name] : { name: name, html: '' };
+  }
+  function applyMode() {
+    const f = document.getElementById('pvViewerIframe');
+    const frame = document.getElementById('pvViewerFrame');
+    f.classList.toggle('mobile', pvMode === 'mobile');
+    frame.classList.toggle('mobile-view', pvMode === 'mobile');
+    document.getElementById('pvModeLabel').textContent = pvMode === 'mobile' ? 'Mobile' : 'Desktop';
+  }
+  function applyZoom() {
+    const f = document.getElementById('pvViewerIframe');
+    if (pvMode === 'desktop') { f.style.width = pvZoom + '%'; } else { f.style.width = '390px'; }
+    document.getElementById('pvZoomLabel').textContent = pvZoom + '%';
+  }
+  document.getElementById('pvModeBtn').addEventListener('click', () => { pvMode = pvMode === 'mobile' ? 'desktop' : 'mobile'; applyMode(); applyZoom(); });
+  document.getElementById('pvZoomIn').addEventListener('click', () => { pvZoom = Math.min(200, pvZoom + 10); applyZoom(); });
+  document.getElementById('pvZoomOut').addEventListener('click', () => { pvZoom = Math.max(50, pvZoom - 10); applyZoom(); });
+  document.getElementById('pvZoomReset').addEventListener('click', () => { pvZoom = 100; applyZoom(); });
+  document.getElementById('pvCloseViewer').addEventListener('click', () => {
+    document.getElementById('pvViewer').classList.remove('open');
+    document.getElementById('pvViewerIframe').srcdoc = '';
+  });
+  window.openViewer = openViewer;
+
 
     // Get Started payment flow
-  document.getElementById('getStartedBtn').addEventListener('click', () => {
+function openCheckout(itemName, amount) {
+    window.__bwbItemName = itemName;
+    window.__bwbAmount = amount;
     resetCheckout();
+    document.getElementById('chkItemName').textContent = itemName;
+    const formatted = 'R' + Number(amount).toLocaleString();
+    document.getElementById('chkItemPrice').textContent = formatted;
+    document.getElementById('chkTotal').textContent = formatted;
     openOverlay('payOverlay');
-  });
+  }
+  window.openCheckout = openCheckout;
+  document.getElementById('getStartedBtn').addEventListener('click', () => openCheckout('Custom Website Package', 550000));
   
   
     // Send order email to BOTH Beelze addresses + save to Firestore
@@ -779,7 +1360,7 @@
             customer_email: order.email || '—',
             customer_phone: order.phone,
             customer_address: order.business + ' · ' + order.type,
-            order_items: 'Website Package x1 = R15,000\nNotes: ' + (order.notes || '—'),
+            order_items: (window.__bwbItemName || 'Website Package') + ' x1 = R' + Number(order.amount).toLocaleString() + '\nNotes: ' + (order.notes || '—'),
             order_total: 'R' + Number(order.amount).toLocaleString(),
             payment_method: order.method.toUpperCase(),
             reply_to: order.email || 'ceo@beelzechat.co.za'
@@ -839,7 +1420,7 @@
       type: type,
       notes: document.getElementById('chkNotes').value.trim(),
       method: chkMethod,
-      amount: 15000,
+      amount: window.__bwbAmount || 550000,
       created: new Date().toISOString()
     };
 
@@ -916,7 +1497,7 @@
       const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       const total = list.length;
       const eft = list.filter(o => (o.method||'eft')==='eft').length;
-      const revenue = total * 15000;
+      const revenue = total * 550000;
       document.getElementById('admStats').innerHTML =
         '<div class="adm-stat accent"><div class="num">'+total+'</div><div class="lbl">Total Orders</div></div>'+
         '<div class="adm-stat"><div class="num">R'+revenue.toLocaleString()+'</div><div class="lbl">Revenue</div></div>'+
@@ -963,12 +1544,13 @@
   function esc(s) { return String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
   
-  document.querySelectorAll('[data-close]').forEach(b => {
+    document.querySelectorAll('[data-close]').forEach(b => {
     b.addEventListener('click', () => closeOverlay(b.closest('.overlay')));
   });
   document.querySelectorAll('.overlay').forEach(o => {
     o.addEventListener('click', (e) => { if (e.target === o) closeOverlay(o); });
   });
+  document.getElementById('privacyLink').addEventListener('click', () => openOverlay('privacyOverlay'));
 
 </script>
 
