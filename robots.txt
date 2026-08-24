@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://beelzetech.beelzeapps.co.za/sitemap.xml
+Sitemap: https://beelzewebbuilders.beelzeapps.co.za//sitemap.xml
