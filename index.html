@@ -842,7 +842,7 @@
             <div class="chk-label">Choose a payment method</div>
       <div class="chk-methods">
         <!-- EFT (active) -->
-        <div class="chk-method selected" data-method="eft" style="border:2.5px solid #ff6600;background:#fff;">
+                <div class="chk-method" data-method="eft" style="border:1.5px solid var(--border);background:#fff;">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:34px;width:auto;object-fit:contain;flex-shrink:0;">
           <div class="info"><div class="t">EFT / Bank Transfer</div><div class="d">Pay via bank deposit — details below</div></div>
           <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">ACTIVE</span>
@@ -853,11 +853,11 @@
           <div class="info"><div class="t">Capitec Pay</div><div class="d">Unavailable</div></div>
           <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
         </div>
-        <!-- PayFast -->
-        <div class="chk-method" data-method="payfast" style="opacity:.7;">
+        <!-- PayFast (ACTIVE) -->
+        <div class="chk-method selected" data-method="payfast" style="border:2.5px solid #0866ff;background:#fff;">
           <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/1d0e3b189_White-on-Blue-2-1-1-1.jpg" alt="PayFast" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;border-radius:8px;">
-          <div class="info"><div class="t">PayFast</div><div class="d">Unavailable</div></div>
-          <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
+          <div class="info"><div class="t">PayFast</div><div class="d">Card / Instant EFT — secure online</div></div>
+          <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">ACTIVE</span>
         </div>
         <!-- Ozow -->
         <div class="chk-method" data-method="ozow" style="opacity:.7;">
@@ -868,7 +868,7 @@
       </div>
 
             <!-- Bank details — GoTyme (same account as Dark Master Store) -->
-      <div class="chk-bank show" id="chkBank">
+      <div class="chk-bank" id="chkBank">
         <div class="copy-line"><span><strong>Bank:</strong> GoTyme Bank</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('GoTyme Bank')">copy</button></div>
         <div class="copy-line"><span><strong>Account holder:</strong> Beelze Web Builders</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('Beelze Web Builders')">copy</button></div>
         <div class="copy-line"><span><strong>Account no:</strong> 5300 3587 427</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('5300 3587 427')">copy</button></div>
@@ -915,10 +915,10 @@
     </div>
 
     <!-- Success screen -->
-    <div class="chk-success" id="chkSuccess">
-      <div class="icon"><i data-lucide="check"></i></div>
-      <h3>Order received!</h3>
-      <p>Thank you. We've recorded your order and will contact you shortly to confirm payment and start building your website.</p>
+<div class="chk-success" id="chkSuccess">
+      <div class="icon"><i data-lucide="circle-check-big"></i></div>
+      <h3>Payment Successful!</h3>
+      <p>Thank you. Your PayFast payment was successful and your order has been recorded. We will contact you shortly to start building your website.</p>
       <div class="ref" id="chkRef">Order ref: BWB-000000</div>
       <p style="font-size:13px;color:var(--gray-2);">Keep this reference number. Our team will reach out on the phone/WhatsApp you provided.</p>
       <button class="done" onclick="closeOverlay(document.getElementById('payOverlay')); resetCheckout();">
@@ -1068,7 +1068,8 @@
 <!-- FIREBASE (modular ESM, same as Dark Master Store) -->
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-  import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+  import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
 
   const firebaseConfig = {
     apiKey: "AIzaSyC1ucCwM7ebqN-gWHT2NmkqYdK3KZBWv5o",
@@ -1083,7 +1084,7 @@
   window.bwbDb = getFirestore(fbApp);
   window.bwbOrdersCollection = collection(window.bwbDb, 'bwb_orders');
   // expose helpers without breaking the ESM scope
-  window.bwbFb = { collection, getDocs, addDoc, deleteDoc, doc, onSnapshot, query, orderBy };
+  window.bwbFb = { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy };
 
 
 
@@ -1381,12 +1382,12 @@ function openCheckout(itemName, amount) {
     } catch(e) { console.log('Firestore save error', e); }
   }
 
-    let chkMethod = 'eft';
+      let chkMethod = 'payfast';
   document.querySelectorAll('.chk-method').forEach(m => {
     m.addEventListener('click', () => {
-      if (m.dataset.method !== 'eft') { alert('This payment method is currently unavailable. Please use EFT / Bank Transfer.'); return; }
       document.querySelectorAll('.chk-method').forEach(x => { x.classList.remove('selected'); x.style.border='1.5px solid var(--border)'; });
-      m.classList.add('selected'); m.style.border='2.5px solid #ff6600';
+      m.classList.add('selected');
+      m.style.border = m.dataset.method === 'payfast' ? '2.5px solid #0866ff' : '2.5px solid #ff6600';
       chkMethod = m.dataset.method;
       document.getElementById('chkBank').classList.toggle('show', chkMethod === 'eft');
       lucide.createIcons();
@@ -1406,7 +1407,9 @@ function openCheckout(itemName, amount) {
     const business = document.getElementById('chkBusiness').value.trim();
     const phone = document.getElementById('chkPhone').value.trim();
     const type = document.getElementById('chkType').value;
+    const email = document.getElementById('chkEmail').value.trim();
     if (!name || !business || !phone || !type) { alert('Please fill in all required fields.'); return; }
+    if (chkMethod !== 'payfast') { alert('Please select PayFast to pay online.'); return; }
 
     const ref = 'BWB-' + Date.now().toString().slice(-6);
     document.getElementById('chkRef').textContent = 'Order ref: ' + ref;
@@ -1416,25 +1419,66 @@ function openCheckout(itemName, amount) {
       name: name,
       business: business,
       phone: phone,
-      email: document.getElementById('chkEmail').value.trim(),
+      email: email,
       type: type,
       notes: document.getElementById('chkNotes').value.trim(),
       method: chkMethod,
       amount: window.__bwbAmount || 550000,
+      item_name: window.__bwbItemName || 'Custom Website Package',
+      status: 'pending',
+      paid: false,
       created: new Date().toISOString()
     };
 
     const btn = document.getElementById('chkSubmit');
     const oldText = btn.innerHTML;
-    btn.disabled = true; btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Sending...';
+    btn.disabled = true; btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Connecting to PayFast...';
     lucide.createIcons();
 
-    await bwbCreateOrder(order);   // email + firestore
+    // 1) Save pending order to Firestore (admin sees it instantly)
+    await bwbCreateOrder(order);
 
-    btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
-    document.getElementById('chkForm').style.display = 'none';
-    document.getElementById('chkSuccess').classList.add('show');
-    lucide.createIcons();
+    // 2) Ask your Cloudflare worker for the PayFast URL + form fields
+    const base = window.location.origin + window.location.pathname;
+    let pfRes;
+    try {
+      const r = await fetch('https://beelzewebbuilders.white-mouse-5467.workers.dev/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: String(order.amount) + '.00',
+          itemName: order.item_name,
+          itemDesc: order.type + ' — ' + order.business,
+          nameFirst: order.name,
+          email: order.email,
+          orderRef: order.ref,
+          returnUrl: base + '?pf=return&ref__=' + order.ref,
+          cancelUrl: base + '?pf=cancel&ref__=' + order.ref
+        })
+      });
+      pfRes = await r.json();
+    } catch (e) {
+      btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
+      alert('Could not reach PayFast. Try again. (' + e.message + ')');
+      return;
+    }
+    if (!pfRes || !pfRes.url || !pfRes.fields) {
+      btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
+      alert('PayFast setup error. Please contact us.');
+      return;
+    }
+
+    // 3) Build a hidden form and submit -> redirects user to PayFast
+    const f = document.createElement('form');
+    f.method = 'POST';
+    f.action = pfRes.url;
+    Object.keys(pfRes.fields).forEach(k => {
+      const i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = pfRes.fields[k] || '';
+      f.appendChild(i);
+    });
+    document.body.appendChild(f);
+    f.submit();
   });
 
 
@@ -1448,6 +1492,44 @@ function openCheckout(itemName, amount) {
     document.getElementById('chkType').value = '';
     document.getElementById('chkNotes').value = '';
   }
+
+  // ===== PayFast return / cancel handler =====
+  async function handlePayFastReturn() {
+    const p = new URLSearchParams(window.location.search);
+    const pf = p.get('pf');
+    const ref = p.get('ref');
+    if (!pf || !ref) return;
+
+    if (pf === 'return') {
+      // mark order paid in Firestore -> admin updates instantly via onSnapshot
+      try {
+        const snap = await window.bwbFb.getDocs(window.bwbOrdersCollection);
+        const found = snap.docs.find(d => (d.data().ref || '') === ref);
+        if (found) {
+          await window.bwbFb.updateDoc(found.ref, {
+            status: 'paid',
+            paid: true,
+            paid_at: new Date().toISOString()
+          });
+        }
+      } catch (e) { console.log('update paid error', e); }
+
+      document.getElementById('chkRef').textContent = 'Order ref: ' + ref;
+      document.getElementById('chkForm').style.display = 'none';
+      document.getElementById('chkSuccess').classList.add('show');
+      lucide.createIcons();
+      openOverlay('payOverlay');
+    } else if (pf === 'cancel') {
+      try {
+        const snap = await window.bwbFb.getDocs(window.bwbOrdersCollection);
+        const found = snap.docs.find(d => (d.data().ref || '') === ref);
+        if (found) await window.bwbFb.updateDoc(found.ref, { status: 'cancelled', paid: false });
+      } catch (e) { console.log('update cancel error', e); }
+      alert('Your PayFast payment was cancelled. The order was saved as cancelled.');
+    }
+    history.replaceState({}, document.title, window.location.pathname);
+  }
+  setTimeout(handlePayFastReturn, 600);
 
   // ---- Admin access: triple-press the BEELZE name ----
   let logoTaps = [];
@@ -1487,38 +1569,52 @@ function openCheckout(itemName, amount) {
     if (e.key === 'Enter') document.getElementById('adminLoginBtn').click();
   });
 
-  let _bwbUnsub = null;
+    let _bwbUnsub = null;
+  function statusBadge(o) {
+    const s = (o.status || 'pending').toLowerCase();
+    if (s === 'paid' || o.paid === true) {
+      return '<span style="display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#16a34a;font-size:12px;font-weight:800;padding:5px 12px;border-radius:50px;"><i data-lucide="circle-check-big"></i> PAID & VERIFIED</span>';
+    }
+    if (s === 'cancelled') {
+      return '<span style="display:inline-flex;align-items:center;gap:6px;background:#fee2e2;color:#dc2626;font-size:12px;font-weight:800;padding:5px 12px;border-radius:50px;"><i data-lucide="circle-x"></i> CANCELLED</span>';
+    }
+    return '<span style="display:inline-flex;align-items:center;gap:6px;background:#fef3c7;color:#b45309;font-size:12px;font-weight:800;padding:5px 12px;border-radius:50px;"><i data-lucide="clock"></i> PENDING PAYMENT</span>';
+  }
   function renderAdmin() {
     if (!window.bwbOrdersCollection) { setTimeout(renderAdmin, 400); return; }
-    // Live listener — admin auto-updates when a new order lands in Firestore
     if (_bwbUnsub) _bwbUnsub();
     const q = window.bwbFb.query(window.bwbOrdersCollection, window.bwbFb.orderBy('created','desc'));
     _bwbUnsub = window.bwbFb.onSnapshot(q, snap => {
       const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       const total = list.length;
-      const eft = list.filter(o => (o.method||'eft')==='eft').length;
-      const revenue = total * 550000;
+      const paid = list.filter(o => o.status==='paid' || o.paid===true).length;
+      const pending = list.filter(o => (o.status||'pending')==='pending' && o.paid!==true).length;
+      const revenue = list.filter(o => o.status==='paid' || o.paid===true).reduce((s,o)=> s + Number(o.amount||0), 0);
       document.getElementById('admStats').innerHTML =
         '<div class="adm-stat accent"><div class="num">'+total+'</div><div class="lbl">Total Orders</div></div>'+
-        '<div class="adm-stat"><div class="num">R'+revenue.toLocaleString()+'</div><div class="lbl">Revenue</div></div>'+
-        '<div class="adm-stat"><div class="num">'+eft+'</div><div class="lbl">EFT</div></div>'+
-        '<div class="adm-stat"><div class="num">'+(total-eft)+'</div><div class="lbl">Other</div></div>';
+        '<div class="adm-stat" style="background:#dcfce7;"><div class="num" style="color:#16a34a;">'+paid+'</div><div class="lbl">Paid & Verified</div></div>'+
+        '<div class="adm-stat"><div class="num">R'+revenue.toLocaleString()+'</div><div class="lbl">Verified Revenue</div></div>'+
+        '<div class="adm-stat"><div class="num">'+pending+'</div><div class="lbl">Pending</div></div>';
 
       const el = document.getElementById('admList');
       if (!list.length) { el.innerHTML = '<div class="adm-empty"><i data-lucide="inbox"></i><p>No orders yet.</p></div>'; lucide.createIcons(); return; }
       el.innerHTML = list.map(o => {
         const d = new Date(o.created);
         const ds = d.toLocaleDateString('en-ZA') + ' ' + d.toLocaleTimeString('en-ZA',{hour:'2-digit',minute:'2-digit'});
+        const paidAt = o.paid_at ? new Date(o.paid_at).toLocaleString('en-ZA') : '—';
         return '<div class="adm-card" data-id="'+o.id+'">'+
           '<div class="adm-card-head"><span class="ref">'+(o.ref||o.id)+'</span><span class="date">'+ds+'</span>'+
           '<button class="del" onclick="deleteOrder(\''+o.id+'\')"><i data-lucide="trash-2"></i> Delete</button></div>'+
           '<div class="adm-card-body">'+
+            '<div class="item full" style="margin-bottom:8px;">'+statusBadge(o)+'</div>'+
             '<div class="item"><span class="k">Name</span><span class="v">'+esc(o.name)+'</span></div>'+
             '<div class="item"><span class="k">Business</span><span class="v">'+esc(o.business)+'</span></div>'+
             '<div class="item"><span class="k">Phone</span><span class="v">'+esc(o.phone)+'</span></div>'+
             '<div class="item"><span class="k">Email</span><span class="v">'+esc(o.email||'—')+'</span></div>'+
             '<div class="item"><span class="k">Website Type</span><span class="v">'+esc(o.type)+'</span></div>'+
-            '<div class="item"><span class="k">Payment</span><span class="v"><span class="badge '+(o.method||'eft')+'">'+(o.method||'eft').toUpperCase()+' · R'+Number(o.amount||15000).toLocaleString()+'</span></span></div>'+
+            '<div class="item"><span class="k">Amount</span><span class="v">R'+Number(o.amount||0).toLocaleString()+'</span></div>'+
+            '<div class="item"><span class="k">Method</span><span class="v">'+esc((o.method||'payfast').toUpperCase())+'</span></div>'+
+            '<div class="item"><span class="k">Paid At</span><span class="v">'+esc(paidAt)+'</span></div>'+
             (o.notes?('<div class="item full"><span class="k">Notes</span><span class="v">'+esc(o.notes)+'</span></div>'):'')+
           '</div></div>';
       }).join('');
