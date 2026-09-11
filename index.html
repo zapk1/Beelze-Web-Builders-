@@ -268,6 +268,14 @@
     .included-grid .included-item { flex: 0 0 150px; }
   }
   
+    /* ===== Admin proof-of-payment lightbox ===== */
+  .proof-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px; }
+  .proof-modal.show { display: flex; }
+  .proof-modal img { max-width: 92%; max-height: 88vh; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); object-fit: contain; }
+  .proof-close { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 50%; background: #fff; border: none; color: #f44336; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
+  .proof-close svg { width: 24px; height: 24px; }
+
+  
     /* ===== Premium Website Price Card (picture 2 style) ===== */
   /* ===== Premium Website Price Card ===== */
   .pw-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.10); border: 1px solid var(--border); }
@@ -1195,6 +1203,11 @@
   </div>
 </div>
 
+<div class="proof-modal" id="proofModal" onclick="if(event.target===this)closeProof()">
+  <button class="proof-close" onclick="closeProof()"><i data-lucide="x"></i></button>
+  <img id="proofModalImg" src="" alt="Proof of payment">
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 
@@ -1223,7 +1236,7 @@
 
   lucide.createIcons();
   // EmailJS init — same account as Dark Master Store
-  if (window.emailjs) { try { emailjs.init('qCNJIG5387KRxY4Zn'); } catch(e){} }
+  if (window.emailjs) { try { emailjs.init('kbYCrFaEHUjCixoUu'); } catch(e){} }
   function scrollToSection(id) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1278,6 +1291,21 @@
       lucide.createIcons();
     });
   }
+
+
+  function viewProof(url) {
+    document.getElementById('proofModalImg').src = url;
+    document.getElementById('proofModal').classList.add('show');
+    lucide.createIcons();
+  }
+  function closeProof() {
+    document.getElementById('proofModal').classList.remove('show');
+    document.getElementById('proofModalImg').src = '';
+  }
+  window.viewProof = viewProof;
+  window.closeProof = closeProof;
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProof(); });
+
 
     // ===== Admin Website Manager =====
   let upldFileContent = '';
@@ -1486,11 +1514,11 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          service_id: 'service_s5xw50d',
-          template_id: 'template_8w66avp',
-          user_id: 'qCNJIG5387KRxY4Zn',
+          service_id: 'service_sdtk9cc',
+          template_id: 'template_7wbmude',
+          user_id: 'kbYCrFaEHUjCixoUu',
           template_params: {
-            email: 'ceo@beelzechat.co.za, beelze.apps@gmail.com',
+            email: 'support@beelzechat.co.za',
             order_id: order.ref,
             customer_name: order.name,
             customer_email: order.email || '—',
@@ -1499,7 +1527,8 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
             order_items: (window.__bwbItemName || 'Website Package') + ' x1 = R' + Number(order.amount).toLocaleString() + '\nNotes: ' + (order.notes || '—'),
             order_total: 'R' + Number(order.amount).toLocaleString(),
             payment_method: order.method.toUpperCase(),
-            reply_to: order.email || 'ceo@beelzechat.co.za'
+            proof_url: order.proof_url || '—',
+            reply_to: order.email || 'support@beelzechat.co.za'
           }
         })
       });
@@ -1858,7 +1887,7 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
             '<div class="item"><span class="k">Amount</span><span class="v">R'+Number(o.amount||0).toLocaleString()+'</span></div>'+
             '<div class="item"><span class="k">Method</span><span class="v">'+esc((o.method||'payfast').toUpperCase())+'</span></div>'+
             '<div class="item"><span class="k">Paid At</span><span class="v">'+esc(paidAt)+'</span></div>'+
-            (o.proof_url?('<div class="item full"><span class="k">Proof of payment</span><a href__="'+o.proof_url+'" target="_blank" rel="noopener"><img src="'+o.proof_url+'" alt="Proof of payment" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer;display:block;"></a></div>'):'')+
+            (o.proof_url?('<div class="item full"><span class="k">Proof of payment — click to view</span><img src="'+o.proof_url+'" alt="Proof of payment" onclick="viewProof(\''+o.proof_url+'\')" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:zoom-in;display:block;"></div>'):'')+
             (o.notes?('<div class="item full"><span class="k">Notes</span><span class="v">'+esc(o.notes)+'</span></div>'):'')+
           '</div></div>';
       }).join('');
