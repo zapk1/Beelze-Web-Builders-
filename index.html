@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>Beelze Web Builders — Professional Website Development in South Africa</title>
-<meta name="description" content="Beelze Web Builders builds professional, fast and modern websites for any industry — business, gambling, shopping, lifestyle, company. From R1,560,000 once-off. .co.za domain, professional email, free hosting, monthly maintenance. Face-to-face delivery in Limpopo, serving all of South Africa.">
+<meta name="description" content="Beelze Web Builders builds professional, fast and modern websites for any industry — business, gambling, shopping, lifestyle, company. From R2,000,000 once-off. .co.za domain, professional email, free hosting, monthly maintenance. Face-to-face delivery in Limpopo, serving all of South Africa.">
 <meta name="keywords" content="Beelze Web Builders, website builders South Africa, web development Limpopo Polokwane City , custom websites SA, business website, ecommerce website, gambling website, .co.za domain, professional email, website maintenance, beelzetech, beelzeapps">
 <meta name="author" content="Beelze Web Builders (CEO: ceo@beelzechat.co.za)">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="Beelze Web Builders">
 <meta property="og:url" content="https://beelzewebbuilders.co.za/">
 <meta property="og:title" content="Beelze Web Builders — Professional Website Development in South Africa">
-<meta property="og:description" content="We build professional, fast and modern websites for any industry. From R1 560 000 once-off. .co.za domain, email, hosting & maintenance included. Face-to-face delivery in Limpopo.">
+<meta property="og:description" content="We build professional, fast and modern websites for any industry. From R2 000 000 once-off. .co.za domain, email, hosting & maintenance included. Face-to-face delivery in Limpopo.">
 <meta property="og:image" content="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png">
 <meta property="og:image:alt" content="Beelze Web Builders logo">
 <meta property="og:locale" content="en_ZA">
@@ -269,25 +269,30 @@
   }
   
     /* ===== Premium Website Price Card (picture 2 style) ===== */
-  .pw-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); border: 1px solid var(--border); }
-  .pw-head { background: #f44336; color: #fff; padding: 28px 20px 24px; text-align: center; position: relative; }
-  .pw-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.18); border: none; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  /* ===== Premium Website Price Card ===== */
+  .pw-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.10); border: 1px solid var(--border); }
+  .pw-head { background: #fff; color: var(--ink); padding: 24px 20px 18px; text-align: center; position: relative; border-bottom: 1px solid var(--border); }
+  .pw-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(244,67,54,0.1); border: none; color: #f44336; display: flex; align-items: center; justify-content: center; cursor: pointer; }
   .pw-close svg { width: 20px; height: 20px; }
-  .pw-crown { width: 64px; height: 64px; border-radius: 16px; background: #d32f2f; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-  .pw-crown svg { width: 34px; height: 34px; color: #fff; }
-  .pw-h { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
-  .pw-sub { font-size: 14px; font-weight: 500; opacity: 0.95; margin-top: 6px; }
+  .pw-head .pw-logo { width: 52px; height: 52px; border-radius: 14px; object-fit: cover; margin: 0 auto 8px; box-shadow: 0 4px 14px rgba(244,67,54,0.18); }
+  .pw-head .pw-brand { font-size: 15px; font-weight: 900; color: var(--ink); letter-spacing: 0.5px; margin-bottom: 12px; }
+  .pw-head .pw-brand span { color: var(--gray-2); font-weight: 700; }
+  .pw-h { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; color: #f44336; }
+  .pw-sub { font-size: 14px; font-weight: 500; color: var(--gray-1); margin-top: 6px; }
   .pw-body { padding: 26px 28px 28px; text-align: center; }
-  .pw-heroimg { width: 100%; max-height: 200px; object-fit: cover; border-radius: 14px; margin-bottom: 20px; }
+  .pw-heroimg { width: 100%; max-height: none; height: auto; object-fit: contain; border-radius: 16px; margin-bottom: 20px; }
   .pw-checks { display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 560px; margin: 0 auto 24px; }
   .pw-check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink); line-height: 1.5; }
   .pw-check svg { width: 22px; height: 22px; color: #4caf50; flex-shrink: 0; margin-top: 1px; }
   .pw-price { font-size: 48px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
   .pw-price .per { font-size: 18px; font-weight: 500; color: var(--gray-2); }
-  .pw-btns { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 22px auto 0; }
-  .pw-btn { width: 100%; background: #f44336; color: #fff; padding: 15px; border-radius: 12px; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; box-shadow: 0 6px 16px rgba(244,67,54,0.3); transition: var(--transition); text-decoration: none; }
-  .pw-btn:hover { background: #d32f2f; transform: translateY(-2px); }
-  .pw-btn svg { width: 20px; height: 20px; }
+  .pw-btns { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 22px auto 0; }
+    .pw-btn { width: 100%; background: #ffffff; color: #0f0f0f; padding: 16px 18px; border-radius: 18px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; border: 2px solid #e0e0e0; box-shadow: 0 10px 28px rgba(0,0,0,0.18), 0 3px 8px rgba(0,0,0,0.10); transition: var(--transition); text-decoration: none; }
+  .pw-btn:hover { transform: translateY(-1px); box-shadow: 0 16px 38px rgba(0,0,0,0.22), 0 3px 8px rgba(0,0,0,0.10); border-color: #f44336; }
+  .pw-btn svg { width: 18px; height: 18px; }
+  .pw-btn .pw-btn-logo { width: 26px; height: 26px; border-radius: 8px; object-fit: cover; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.30); }
+  .pw-btn.deposit { background: #ffffff; color: #0f0f0f; border-color: #e0e0e0; }
+  .pw-btn.deposit:hover { background: #ffffff; border-color: #f59e0b; }
   .pw-later { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--gray-2); cursor: pointer; }
   .pw-later:hover { color: var(--ink); }
 
@@ -320,7 +325,7 @@
   .mkt-desc { font-size: 13px; color: var(--gray-1); line-height: 1.5; flex: 1; }
   .mkt-price { font-size: 22px; font-weight: 900; color: #f44336; }
   .mkt-btns { display: flex; gap: 8px; margin-top: 4px; }
-  .mkt-btn { flex: 1; padding: 11px; border-radius: 10px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; border: none; text-decoration: none; }
+    .mkt-btn { flex: 1; padding: 10px 16px; border-radius: 50px; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; border: none; text-decoration: none; transition: var(--transition); }
   .mkt-btn.buy { background: #f44336; color: #fff; }
   .mkt-btn.call { background: #fff; color: #f44336; border: 2px solid #f44336; }
   .mkt-btn.email { background: #fff; color: #f44336; border: 2px solid #f44336; }
@@ -329,7 +334,7 @@
 
   /* ===== Mini Call/Email buttons ===== */
   .pw-mini-row { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; width: 100%; }
-  .pw-mini { flex: 1; background: #fff; color: #f44336; border: 2px solid #f44336; padding: 11px; border-radius: 10px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; text-decoration: none; transition: var(--transition); }
+    .pw-mini { flex: 1; background: #fff; color: #f44336; border: 1.5px solid #f44336; padding: 10px 16px; border-radius: 50px; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; text-decoration: none; transition: var(--transition); box-shadow: 0 3px 10px rgba(244,67,54,0.08); }
   .pw-mini:hover { background: #fef2f2; }
   .pw-mini svg { width: 16px; height: 16px; }
 
@@ -361,7 +366,7 @@
   .pv-price { font-size: 22px; font-weight: 900; color: #f44336; }
   .pv-period { font-size: 12px; font-weight: 600; color: var(--gray-2); }
   .pv-btns { display: flex; gap: 8px; margin-top: 6px; }
-  .pv-btn { flex: 1; padding: 10px; border-radius: 10px; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 5px; cursor: pointer; border: none; text-decoration: none; transition: var(--transition); }
+    .pv-btn { flex: 1; padding: 9px 14px; border-radius: 50px; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; border: none; text-decoration: none; transition: var(--transition); box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
   .pv-btn.pay { background: #f44336; color: #fff; }
   .pv-btn.pay:hover { background: #d32f2f; }
   .pv-btn.ghost { background: #fff; color: #f44336; border: 2px solid #f44336; }
@@ -447,15 +452,67 @@
   .chk-field input, .chk-field textarea, .chk-field select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius); font-size: 14px; font-family: inherit; color: var(--ink); background: #fff; transition: var(--transition); }
   .chk-field input:focus, .chk-field textarea:focus, .chk-field select:focus { outline: none; border-color: var(--accent); }
   .chk-field textarea { resize: vertical; min-height: 70px; }
-  .chk-field select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23888' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+    .chk-field select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23888' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+
+  /* Custom white dropdown for website type */
+  .chk-dd { position: relative; }
+  .chk-dd-trig { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 14px; font-size: 14px; color: var(--ink); background: #fff; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: var(--transition); }
+  .chk-dd-trig:focus { outline: none; border-color: #f44336; box-shadow: 0 0 0 3px rgba(244,67,54,0.1); }
+  .chk-dd-trig .ph { color: var(--gray-2); }
+  .chk-dd-trig svg { width: 18px; height: 18px; color: var(--gray-2); transition: var(--transition); }
+  .chk-dd-trig.open svg { transform: rotate(180deg); }
+  .chk-dd-pop { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 16px 40px rgba(0,0,0,0.2); z-index: 50; overflow: hidden; display: none; }
+  .chk-dd-pop.open { display: block; }
+  .chk-dd-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+  .chk-dd-head img { width: 36px; height: 36px; border-radius: 10px; object-fit: cover; }
+  .chk-dd-head .bn { font-size: 14px; font-weight: 900; color: var(--ink); }
+  .chk-dd-head .bn span { color: var(--gray-2); font-weight: 700; }
+  .chk-dd-opt { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; font-size: 14px; font-weight: 600; color: var(--ink); cursor: pointer; border-bottom: 1px solid var(--bg-3); transition: background .15s; }
+  .chk-dd-opt:last-child { border-bottom: none; }
+  .chk-dd-opt:hover { background: var(--bg-2); }
+  .chk-dd-opt.selected { color: #f44336; }
+  .chk-dd-opt .dot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border-2); flex-shrink: 0; transition: var(--transition); }
+  .chk-dd-opt.selected .dot { border-color: #f44336; background: #f44336; box-shadow: inset 0 0 0 3px #fff; }
   .chk-bank { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: 13px; line-height: 1.8; color: var(--ink); display: none; }
   .chk-bank.show { display: block; }
   .chk-bank .copy-line { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   .chk-bank .copy-btn { background: none; border: 1px solid var(--border-2); border-radius: 6px; padding: 3px 8px; font-size: 11px; font-weight: 600; color: var(--gray-1); }
-  .chk-bank .copy-btn:hover { background: var(--bg-3); }
-  .chk-submit { width: 100%; background: var(--accent); color: #fff; padding: 14px; border-radius: var(--radius); font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition); margin-top: 4px; position: sticky; bottom: 0; }
-  .chk-submit:hover { background: #000; transform: translateY(-1px); }
+    .chk-bank .copy-btn:hover { background: var(--bg-3); }
+  .chk-pay { display: none; }
+  .chk-brand { text-align: center; margin-bottom: 18px; }
+  .chk-brand img { width: 46px; height: 46px; border-radius: 14px; object-fit: cover; margin: 0 auto 8px; }
+  .chk-brand-name { font-size: 17px; font-weight: 900; color: var(--ink); letter-spacing: 0.5px; }
+  .chk-brand-name span { color: var(--gray-2); font-weight: 700; }
+  .chk-ref-box { position: relative; background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 14px 16px; margin-bottom: 16px; text-align: center; }
+  .chk-ref-box .k { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-2); margin-bottom: 4px; }
+  .chk-ref-box .v { font-size: 19px; font-weight: 900; color: var(--ink); letter-spacing: 0.5px; }
+  .chk-ref-box .copy-btn { position: absolute; top: 10px; right: 10px; background: none; border: 1px solid var(--border-2); border-radius: 50px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--gray-1); cursor: pointer; }
+  .chk-paydetails { background: var(--bg-2); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; margin-bottom: 18px; font-size: 13px; line-height: 1.8; color: var(--ink); }
+  .chk-paydetails .copy-line { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .chk-paydetails .copy-btn { background: none; border: 1px solid var(--border-2); border-radius: 50px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--gray-1); cursor: pointer; }
+  .chk-paydetails .copy-btn:hover { background: var(--bg-3); }
+    .chk-notice { display: flex; gap: 10px; align-items: flex-start; background: #fef2f2; border: 1.5px solid rgba(220, 38, 38, 0.35); border-radius: 16px; padding: 13px 15px; margin-bottom: 18px; font-size: 13px; line-height: 1.6; color: #991b1b; }
+  .chk-notice svg { width: 19px; height: 19px; flex-shrink: 0; color: #dc2626; margin-top: 1px; }
+  .chk-notice strong { font-weight: 900; }
+  .chk-proof { position: relative; margin-bottom: 12px; }
+  .chk-proof img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 14px; border: 1.5px solid var(--border); display: block; }
+  .chk-proof-x { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; background: #fff; color: #dc2626; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+  .chk-proof-x svg { width: 16px; height: 16px; }
+  .chk-upl-btn { width: 100%; background: #fff; color: var(--ink); border: 1.5px dashed var(--border-2); border-radius: 50px; padding: 11px 16px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; transition: var(--transition); }
+  .chk-upl-btn:hover { background: var(--bg-2); border-color: #f44336; color: #f44336; }
+  .chk-upl-btn svg { width: 17px; height: 17px; }
+  .chk-upl-note { text-align: center; font-size: 12px; font-weight: 700; margin-top: 8px; min-height: 16px; }
+  .chk-tick { display: flex; align-items: center; gap: 10px; background: var(--bg-2); border: 1.5px solid var(--border); border-radius: 50px; padding: 10px 16px; margin: 14px 0; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; }
+  .chk-tick input { display: none; }
+  .chk-tick #chkTickIcon { width: 20px; height: 20px; color: #9ca3af; border: 2px solid #d1d5db; border-radius: 50%; flex-shrink: 0; background: #fff; transition: var(--transition); }
+  .chk-tick.ticked #chkTickIcon { color: #fff; background: #16a34a; border-color: #16a34a; }
+  .chk-back { width: 100%; background: none; border: none; color: var(--gray-2); font-size: 13px; font-weight: 700; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; margin-top: 6px; }
+  .chk-back:hover { color: var(--ink); }
+  .chk-back svg { width: 15px; height: 15px; }
+  .chk-submit { width: 100%; background: #ffffff; color: #0f0f0f; padding: 15px 18px; border-radius: 50px; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #e0e0e0; box-shadow: 0 10px 28px rgba(0,0,0,0.18), 0 3px 8px rgba(0,0,0,0.10); transition: var(--transition); text-decoration: none; }
+  .chk-submit:hover { transform: translateY(-1px); box-shadow: 0 16px 38px rgba(0,0,0,0.22), 0 3px 8px rgba(0,0,0,0.10); border-color: #f44336; }
   .chk-submit svg { width: 18px; height: 18px; }
+  .chk-submit .chk-submit-logo { width: 24px; height: 24px; border-radius: 6px; object-fit: cover; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.30); }
   /* Success screen */
   .chk-success { text-align: center; padding: 30px 16px; display: none; }
   .chk-success.show { display: block; }
@@ -464,8 +521,32 @@
   .chk-success h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
   .chk-success p { font-size: 14px; color: var(--gray-1); line-height: 1.6; max-width: 360px; margin: 0 auto 18px; }
   .chk-success .ref { display: inline-block; background: var(--yellow-dim); border: 1px solid rgba(255,193,7,0.3); color: var(--yellow-2); font-weight: 700; font-size: 13px; padding: 8px 18px; border-radius: 50px; margin-bottom: 20px; }
-  .chk-success .done { background: var(--ink); color: #fff; padding: 13px 30px; border-radius: var(--radius); font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+  .chk-success .done { background: var(--ink); color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
   .chk-success .done svg { width: 18px; height: 18px; }
+
+  /* ===== Step 1 brand header (logo + name on info form) ===== */
+  .chk-form-head { text-align: center; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 2px dashed rgba(244,67,54,0.2); }
+  .chk-form-head img { width: 52px; height: 52px; border-radius: 16px; object-fit: cover; margin: 0 auto 10px; box-shadow: 0 4px 14px rgba(244,67,54,0.18); }
+  .chk-form-head .hn { font-size: 19px; font-weight: 900; color: #1a1a1a; letter-spacing: 0.5px; }
+  .chk-form-head .hn span { color: #888; font-weight: 700; }
+  .chk-form-head .tag { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; background: rgba(255,193,7,0.12); border: 1px solid rgba(255,193,7,0.3); color: #b45309; font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+  .chk-form-head .tag svg { width: 13px; height: 13px; }
+  .chk-field label { display: flex; align-items: center; gap: 6px; }
+  .chk-field label svg { width: 15px; height: 15px; color: #f44336; flex-shrink: 0; }
+  .chk-field input, .chk-field textarea, .chk-field select { border-radius: 14px; }
+  .chk-field input:focus, .chk-field textarea:focus, .chk-field select:focus { border-color: #f44336; box-shadow: 0 0 0 3px rgba(244,67,54,0.1); }
+  .chk-summary { border-radius: 16px; border: 1.5px solid rgba(244,67,54,0.15); background: linear-gradient(135deg, #fff 0%, #fff9f9 100%); }
+  .chk-summary .total { color: #f44336; }
+
+  /* ===== GoTyme logo on payment details ===== */
+  .chk-gotyme { display: flex; align-items: center; justify-content: center; gap: 10px; background: #fff; border: 1.5px solid var(--border); border-radius: 50px; padding: 10px 22px; margin-bottom: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+  .chk-gotyme img { height: 30px; width: auto; object-fit: contain; }
+  .chk-gotyme .gl { font-size: 11px; font-weight: 800; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+  .chk-paydetails { border-radius: 18px; background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%); border: 1.5px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+
+  /* ===== Tyme Bank card banner on step 2 ===== */
+  .chk-card-banner { width: 100%; border-radius: 18px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1.5px solid var(--border); }
+  .chk-card-banner img { width: 100%; height: auto; display: block; }
 
   /* Admin login */
   .adm-login { text-align: center; padding: 40px 20px; max-width: 380px; margin: 0 auto; }
@@ -484,7 +565,8 @@
   .adm-bar h2 { font-size: 16px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
   .adm-bar h2 svg { width: 22px; height: 22px; color: var(--yellow-2); }
   .adm-actions { display: flex; gap: 8px; }
-  .adm-actions button { font-size: 13px; font-weight: 700; padding: 9px 14px; border-radius: 10px; display: flex; align-items: center; gap: 6px; }
+  .adm-actions button { font-size: 12px; font-weight: 800; padding: 7px 14px; border-radius: 50px; display: flex; align-items: center; gap: 6px; cursor: pointer; border: none; transition: var(--transition); box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+  .adm-actions button:hover { transform: translateY(-1px); }
   .adm-actions button svg { width: 16px; height: 16px; }
   .adm-actions .clear { background: #dc2626; color: #fff; }
   .adm-actions .logout { background: var(--bg-3); color: var(--ink); }
@@ -498,7 +580,7 @@
   .adm-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
   .adm-card-head .ref { font-size: 12px; font-weight: 800; color: var(--yellow-2); background: var(--yellow-dim); padding: 4px 10px; border-radius: 50px; }
   .adm-card-head .date { font-size: 11px; color: var(--gray-2); }
-  .adm-card-head .del { background: #fee2e2; color: #dc2626; border: none; border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+  .adm-card-head .del { background: #fee2e2; color: #dc2626; border: none; border-radius: 50px; padding: 5px 12px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; cursor: pointer; transition: var(--transition); }
   .adm-card-head .del svg { width: 14px; height: 14px; }
   .adm-card-head .del:hover { background: #dc2626; color: #fff; }
   .adm-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
@@ -547,7 +629,7 @@
         We Build <span class="yellow">Multimillion Websites</span> for Big Companies & Businesses
       </h1>
       <p class="hero-subtitle animate-in delay-2">
-        Professional, fast and modern websites for big companies, businesses and normal businesses. Minimum R1,560,000 once-off.
+        Professional, fast and modern websites for big companies, businesses and normal businesses. Minimum R2,000,000 once-off.
       </p>
       <div class="belt animate-in delay-3">
         <div class="belt-title">Trusted by online sellers</div>
@@ -575,12 +657,13 @@
     <div class="pw-card">
       <div class="pw-head">
         <button class="pw-close" onclick="document.getElementById('websiteMarket').scrollIntoView({behavior:'smooth'})"><i data-lucide="x"></i></button>
-        <div class="pw-crown"><i data-lucide="crown"></i></div>
+        <img class="pw-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
+        <div class="pw-brand">BEELZE <span>Web Builders</span></div>
         <div class="pw-h">Build Your Website</div>
         <div class="pw-sub">Custom multimillion-rand websites for big companies & businesses</div>
       </div>
-      <div class="pw-body">
-        <img class="pw-heroimg" src="https://i.postimg.cc/0yfdHFWL/Screenshot-20260821-131828-Gallery.jpg" alt="What's included">
+            <div class="pw-body">
+        <img class="pw-heroimg" src="https://media.base44.com/images/public/6a658880fd290e23c45fefa8/247ea4f50_file_00000000e50c8211a77245e5695fa9be.png" alt="What's included">
         <div class="pw-checks">
           <div class="pw-check"><i data-lucide="check-circle-2"></i> Website for any industry — business, gambling, shopping, lifestyle, company</div>
           <div class="pw-check"><i data-lucide="check-circle-2"></i> Professional .co.za domain registered for you</div>
@@ -589,11 +672,10 @@
           <div class="pw-check"><i data-lucide="check-circle-2"></i> Monthly maintenance & full ownership — code handed over</div>
           <div class="pw-check"><i data-lucide="check-circle-2"></i> APK conversion of your website</div>
         </div>
-        <div class="pw-price">R1,560,000 <span class="per">once-off</span></div>
-        <p style="font-size:13px;color:var(--gray-1);margin:6px 0 14px;font-weight:600;">Pay 50% now to start building, or pay the full amount upfront.</p>
         <div class="pw-btns">
-        <button class="pw-btn" id="getStartedBtn50" style="background:#ffc107;color:#000;box-shadow:0 6px 16px rgba(255,193,7,0.35);"><i data-lucide="check-circle-2"></i> Pay 50% Deposit</button>
-          <button class="pw-btn" id="getStartedBtn"><i data-lucide="credit-card"></i> Pay Full Amount — R1,560,000</button>
+          <button class="pw-btn" id="getStartedBtn"><img class="pw-btn-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze"> Pay Full Amount — R2,000,000</button>
+          <p style="font-size:13px;color:var(--gray-1);margin:6px 0 14px;font-weight:600;">Pay 50% now to start building, or pay the full amount upfront.</p>
+          <button class="pw-btn deposit" id="getStartedBtn50"><img class="pw-btn-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze"> Pay 50% Deposit</button>
           <div class="pw-mini-row">
             <a class="pw-mini" href="tel:0687790223"><i data-lucide="phone"></i> Call</a>
             <a class="pw-mini" href="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> Email</a>
@@ -846,99 +928,136 @@
 
     <!-- Checkout form -->
     <div class="chk-form" id="chkForm">
+      <div class="chk-form-head">
+        <img src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
+        <div class="hn">BEELZE <span>Web Builders</span></div>
+        <div class="tag"><i data-lucide="shield-check"></i> Secure Order Form</div>
+      </div>
+
       <div class="chk-summary">
-                <div class="row"><span id="chkItemName">Custom Website Package</span><span id="chkItemPrice">R1,560,000</span></div>
+           <div class="row"><span id="chkItemName">Custom Website Package</span><span id="chkItemPrice">R2,000,000</span></div>
         <div class="row"><span>.co.za domain + email</span><span>Included</span></div>
         <div class="row"><span>APK + delivery</span><span>Included</span></div>
-        <div class="row total"><span>Total once-off</span><span id="chkTotal">R1,560,000</span></div>
+        <div class="row total"><span>Total once-off</span><span id="chkTotal">R2,000,000</span></div>
       </div>
 
-            <div class="chk-label">Choose a payment method</div>
-      <div class="chk-methods">
-        <!-- EFT (active) -->
-                <div class="chk-method" data-method="eft" style="border:1.5px solid var(--border);background:#fff;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:34px;width:auto;object-fit:contain;flex-shrink:0;">
-          <div class="info"><div class="t">EFT / Bank Transfer</div><div class="d">Pay via bank deposit — details below</div></div>
-          <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">ACTIVE</span>
-        </div>
-        <!-- Capitec Pay -->
-        <div class="chk-method" data-method="capitec" style="opacity:.7;">
-          <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/791560577_CPIJO-7f69f481.png" alt="Capitec" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;background:#fff;border-radius:8px;padding:6px 10px;">
-          <div class="info"><div class="t">Capitec Pay</div><div class="d">Unavailable</div></div>
-          <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
-        </div>
-        <!-- PayFast (ACTIVE) -->
-        <div class="chk-method selected" data-method="payfast" style="border:2.5px solid #0866ff;background:#fff;">
-          <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/1d0e3b189_White-on-Blue-2-1-1-1.jpg" alt="PayFast" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;border-radius:8px;">
-          <div class="info"><div class="t">PayFast</div><div class="d">Card / Instant EFT — secure online</div></div>
-          <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">ACTIVE</span>
-        </div>
-        <!-- Ozow -->
-        <div class="chk-method" data-method="ozow" style="opacity:.7;">
-          <img src="https://media.base44.com/images/public/6a51d96fee42dc8f3ecba289/90c3d812f_Ozow-Logo.png" alt="Ozow" style="height:40px;width:auto;object-fit:contain;flex-shrink:0;border-radius:8px;">
-          <div class="info"><div class="t">Ozow</div><div class="d">Unavailable</div></div>
-          <span style="background:#374151;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;">NOT AVAILABLE</span>
+      <div class="chk-field">
+        <label><i data-lucide="user"></i> Full name *</label>
+        <input type="text" id="chkName" placeholder="Your full name">
+      </div>
+      <div class="chk-field">
+        <label><i data-lucide="building-2"></i> Business / Company name *</label>
+        <input type="text" id="chkBusiness" placeholder="e.g. Dark Master Clothing">
+      </div>
+      <div class="chk-field">
+        <label><i data-lucide="phone"></i> Phone / WhatsApp *</label>
+        <input type="tel" id="chkPhone" placeholder="06x xxx xxxx">
+      </div>
+      <div class="chk-field">
+        <label><i data-lucide="mail"></i> Email *</label>
+        <input type="email" id="chkEmail" placeholder="you@email.com">
+      </div>
+            <div class="chk-field">
+        <label><i data-lucide="globe"></i> Type of website you want *</label>
+        <input type="hidden" id="chkType">
+        <div class="chk-dd" id="chkTypeDD">
+          <div class="chk-dd-trig" id="chkTypeTrig" onclick="toggleChkTypeDD(event)">
+            <span class="ph" id="chkTypeLbl">Select a type...</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="chk-dd-pop" id="chkTypePop">
+            <div class="chk-dd-head">
+              <img src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
+              <div class="bn">BEELZE <span>Web Builders</span></div>
+            </div>
+            <div class="chk-dd-opt" onclick="pickChkType('')"><span>Select a type...</span><span class="dot"></span></div>
+            <div class="chk-dd-opt" onclick="pickChkType('Business / Company')"><span>Business / Company</span><span class="dot"></span></div>
+            <div class="chk-dd-opt" onclick="pickChkType('Gambling')"><span>Gambling</span><span class="dot"></span></div>
+            <div class="chk-dd-opt" onclick="pickChkType('Shopping / E-commerce')"><span>Shopping / E-commerce</span><span class="dot"></span></div>
+            <div class="chk-dd-opt" onclick="pickChkType('Lifestyle / Blog')"><span>Lifestyle / Blog</span><span class="dot"></span></div>
+            <div class="chk-dd-opt" onclick="pickChkType('Other')"><span>Other</span><span class="dot"></span></div>
+          </div>
         </div>
       </div>
 
-            <!-- Bank details — GoTyme (same account as Dark Master Store) -->
-      <div class="chk-bank" id="chkBank">
+      <div class="chk-field">
+        <label><i data-lucide="message-square"></i> Extra details (optional)</label>
+        <textarea id="chkNotes" placeholder="Features, location, anything we should know..."></textarea>
+      </div>
+
+      <button class="chk-submit" id="chkNext">
+        <img class="chk-submit-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze"> Next — Payment Details
+      </button>
+    </div>
+
+
+    <!-- STEP 2: Payment + proof of payment -->
+    <div class="chk-pay" id="chkPay">
+      <div class="chk-brand">
+        <img src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
+        <div class="chk-brand-name">BEELZE <span>Web Builders</span></div>
+      </div>
+
+      <div class="chk-ref-box">
+        <div class="k">Use this as your EFT payment reference</div>
+        <div class="v" id="chkRef">—</div>
+        <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('chkRef').textContent.trim())">copy</button>
+      </div>
+
+   <div class="chk-paydetails">
+        <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:10px;margin-bottom:14px;">
+          <img src="https://media.base44.com/images/public/6a78753829e5437c7aa56560/3db71cdd3_file_0000000078248211846e63b951f2f2ef.png" alt="GoTyme Bank card" style="width:130px;height:auto;border-radius:10px;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <div>
+            <div style="font-size:10px;font-weight:800;color:var(--gray-2);text-transform:uppercase;letter-spacing:1px;">Our Bank</div>
+            <div style="font-size:16px;font-weight:900;color:var(--ink);">GoTyme Bank</div>
+          </div>
+        </div>
         <div class="copy-line"><span><strong>Bank:</strong> GoTyme Bank</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('GoTyme Bank')">copy</button></div>
         <div class="copy-line"><span><strong>Account holder:</strong> Beelze Web Builders</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('Beelze Web Builders')">copy</button></div>
         <div class="copy-line"><span><strong>Account no:</strong> 5300 3587 427</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('5300 3587 427')">copy</button></div>
         <div class="copy-line"><span><strong>Branch code:</strong> 678 910</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('678 910')">copy</button></div>
         <div class="copy-line"><span><strong>Account type:</strong> Business Cheque</span></div>
-        <div class="copy-line"><span><strong>Reference:</strong> Your order ref below</span></div>
+        <div class="copy-line"><span><strong>Amount:</strong> <span id="chkPayAmount">R2,000,000</span></span> <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('chkPayAmount').textContent)">copy</button></div>
       </div>
 
-      <div class="chk-field">
-        <label>Full name *</label>
-        <input type="text" id="chkName" placeholder="Your full name">
+      <div class="chk-notice">
+        <i data-lucide="alert-circle"></i>
+        <div><strong>Go out and make the EFT deposit now.</strong> Pay the exact amount above using YOUR payment reference. Then come back here and attach the payment screenshot proof — <strong>without the proof picture we will NOT accept your payment</strong> and we will not build anything.</div>
       </div>
-      <div class="chk-field">
-        <label>Business / Company name *</label>
-        <input type="text" id="chkBusiness" placeholder="e.g. Dark Master Clothing">
+
+      <div class="chk-label">Attach proof of payment *</div>
+      <div class="chk-proof" id="chkProofBox" style="display:none;">
+        <img id="chkProofImg" src="" alt="Proof of payment">
+        <button type="button" class="chk-proof-x" id="chkProofRemove" title="Remove picture"><i data-lucide="x"></i></button>
       </div>
-      <div class="chk-field">
-        <label>Phone / WhatsApp *</label>
-        <input type="tel" id="chkPhone" placeholder="06x xxx xxxx">
-      </div>
-      <div class="chk-field">
-        <label>Email</label>
-        <input type="email" id="chkEmail" placeholder="you@email.com">
-      </div>
-      <div class="chk-field">
-        <label>Type of website you want *</label>
-        <select id="chkType">
-          <option value="">Select a type...</option>
-          <option>Business / Company</option>
-          <option>Gambling</option>
-          <option>Shopping / E-commerce</option>
-          <option>Lifestyle / Blog</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="chk-field">
-        <label>Extra details (optional)</label>
-        <textarea id="chkNotes" placeholder="Features, location, anything we should know..."></textarea>
-      </div>
+      <button type="button" class="chk-upl-btn" id="chkProofBtn"><i data-lucide="image-plus"></i> Upload proof of payment</button>
+      <input type="file" id="chkProofFile" accept="image/*" style="display:none;">
+      <div class="chk-upl-note" id="chkProofNote"></div>
+
+      <label class="chk-tick" id="chkTickWrap" for="chkTick">
+        <input type="checkbox" id="chkTick">
+        <i data-lucide="check" id="chkTickIcon"></i>
+        <span>I confirm I have made the EFT payment with the reference above</span>
+      </label>
 
       <button class="chk-submit" id="chkSubmit">
-        <i data-lucide="check"></i> Confirm & Send Order
+        <img class="chk-submit-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze"> Confirm & Send Order
       </button>
+      <button class="chk-back" id="chkBack"><i data-lucide="arrow-left"></i> Back to my details</button>
     </div>
 
     <!-- Success screen -->
 <div class="chk-success" id="chkSuccess">
       <div class="icon"><i data-lucide="circle-check-big"></i></div>
-      <h3>Payment Successful!</h3>
-      <p>Thank you. Your PayFast payment was successful and your order has been recorded. We will contact you shortly to start building your website.</p>
-      <div class="ref" id="chkRef">Order ref: BWB-000000</div>
+      <h3>Order Received!</h3>
+      <p>Thank you. Your order and proof of payment have been submitted with your reference. We will contact you shortly to start building your website.</p>
+      <div class="ref" id="chkRefDone">Order ref: BWB-000000</div>
       <p style="font-size:13px;color:var(--gray-2);">Keep this reference number. Our team will reach out on the phone/WhatsApp you provided.</p>
       <button class="done" onclick="closeOverlay(document.getElementById('payOverlay')); resetCheckout();">
         <i data-lucide="home"></i> Done
       </button>
     </div>
+
 
   </div>
 </div>
@@ -1028,7 +1147,7 @@
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">3. Payments & Banking Details</h4>
     <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
-      Payments can be made via <strong>EFT / bank transfer to our GoTyme business account</strong> or via <strong>PayFast</strong> (recommended — card or instant EFT, secure online). PayFast is the recommended method because it is instant and secure. <strong>Payment terms:</strong> you pay <strong>50% of the total amount first</strong> as a deposit so we can start building your website. Once building is complete, we visit you in person, hand over the full source code, and demonstrate how everything works on a laptop and on mobile. The remaining 50% is settled on delivery. We collect your payment reference to match your deposit to your order. We never store your card numbers or banking login details — all card payments are handled directly by your bank or PayFast.
+      Payments are made via <strong>EFT / bank transfer to our GoTyme business account</strong>. This is the only payment method we accept.
     </p>
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">4. Data Storage</h4>
@@ -1144,13 +1263,23 @@
     if (!window.bwbWebsitesCollection) { setTimeout(renderMarket, 400); return; }
     if (_bwbSitesUnsub) _bwbSitesUnsub();
     const q = window.bwbFb.query(window.bwbWebsitesCollection, window.bwbFb.orderBy('created','desc'));
-        _bwbSitesUnsub = window.bwbFb.onSnapshot(q, snap => {
+    _bwbSitesUnsub = window.bwbFb.onSnapshot(q, snap => {
       const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       window.__bwbSiteCache = {};
       items.forEach(it => { window.__bwbSiteCache[it.name] = it; });
-      document.getElementById('marketBtn').addEventListener('click', () => openOverlay('marketOverlay'));
+      let html;
+      if (!items.length) {
+        html = '<div class="pv-empty"><i data-lucide="globe"></i><p>No websites for sale yet. Admin can upload in the Website Manager.</p></div>';
+      } else {
+        html = items.map(previewCardHTML).join('');
+      }
+      const a = document.getElementById('marketList'); if (a) a.innerHTML = html;
+      const b = document.getElementById('marketOverlayList'); if (b) b.innerHTML = html;
+      lucide.createIcons();
+    });
+  }
 
-  // ===== Admin Website Manager =====
+    // ===== Admin Website Manager =====
   let upldFileContent = '';
   document.getElementById('upldFile').addEventListener('change', (e) => {
     const file = e.target.files[0];
@@ -1188,7 +1317,6 @@
         name, desc, price, revenue, period, html,
         created: new Date().toISOString()
       });
-      // reset form
       document.getElementById('upldName').value = '';
       document.getElementById('upldDesc').value = '';
       document.getElementById('upldPrice').value = '';
@@ -1204,7 +1332,6 @@
     btn.disabled = false; btn.innerHTML = old; lucide.createIcons();
   });
 
-  // Tabs
   document.getElementById('tabUpload').addEventListener('click', () => {
     document.getElementById('tabUpload').classList.add('active');
     document.getElementById('tabList').classList.remove('active');
@@ -1227,7 +1354,7 @@
     window.bwbFb.getDocs(window.bwbWebsitesCollection).then(snap => {
       const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       if (!items.length) { el.innerHTML = '<div class="pv-empty"><i data-lucide="globe"></i><p>No websites uploaded yet.</p></div>'; lucide.createIcons(); return; }
-      el.innerHTML = items.map(it => 
+      el.innerHTML = items.map(it =>
         '<div class="upld-item">'+
           '<div class="upld-item-info">'+
             '<div class="upld-item-name">'+esc(it.name||'')+'</div>'+
@@ -1245,7 +1372,6 @@
   }
   window.deleteWebsite = deleteWebsite;
 
-  // Open Website Manager from admin panel
   document.getElementById('admUploadBtn').addEventListener('click', () => {
     closeOverlay(document.getElementById('adminPanelOverlay'));
     openOverlay('adminUploadOverlay');
@@ -1254,17 +1380,8 @@
   document.getElementById('admUploadClose').addEventListener('click', () => {
     closeOverlay(document.getElementById('adminUploadOverlay'));
   });
-        let html;
-      if (!items.length) {
-        html = '<div class="pv-empty"><i data-lucide="globe"></i><p>No websites for sale yet. Admin can upload in the Website Manager.</p></div>';
-      } else {
-        html = items.map(previewCardHTML).join('');
-      }
-      const a = document.getElementById('marketList'); if (a) a.innerHTML = html;
-      const b = document.getElementById('marketOverlayList'); if (b) b.innerHTML = html;
-      lucide.createIcons();
-    });
-  }
+
+
      function previewCardHTML(it) {
     const safeName = String(it.name||'').replace(/'/g,"\\'");
     const revTxt = it.revenue ? 'Can generate R' + Number(it.revenue).toLocaleString() + ' ' + (it.period||'monthly') : '';
@@ -1289,9 +1406,9 @@
         (revTxt ? '<div class="pv-rev"><i data-lucide="trending-up"></i><span class="pv-rev-txt">'+revTxt+'</span></div>' : '')+
         '<div class="pv-price-row"><span class="pv-price">R'+Number(it.price||0).toLocaleString()+'</span></div>'+
         '<div class="pv-btns">'+
-          '<button class="pv-btn pay" onclick="openCheckout(\''+safeName+'\','+(it.price||0)+')"><i data-lucide="credit-card"></i> Pay</button>'+
-          '<a class="pv-btn ghost" href__="tel:0687790223"><i data-lucide="phone"></i> Call</a>'+
-          '<a class="pv-btn ghost" href__="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> Email</a>'+
+          '<button class="pv-btn pay" onclick="openCheckout(\''+safeName+'\','+(it.price||0)+')"><i data-lucide="credit-card"></i> Pay R'+Number(it.price||0).toLocaleString()+'</button>'+
+          '<a class="pv-btn ghost" href="tel:0687790223"><i data-lucide="phone"></i> Call</a>'+
+          '<a class="pv-btn ghost" href="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> Email</a>'+
         '</div>'+
       '</div></div>';
   }
@@ -1351,11 +1468,12 @@ function openCheckout(itemName, amount) {
     const formatted = 'R' + Number(amount).toLocaleString();
     document.getElementById('chkItemPrice').textContent = formatted;
     document.getElementById('chkTotal').textContent = formatted;
+    document.getElementById('chkPayAmount').textContent = formatted;
     openOverlay('payOverlay');
   }
   window.openCheckout = openCheckout;
-document.getElementById('getStartedBtn').addEventListener('click', () => openCheckout('Custom Website Package (Full Payment)', 1560000));
-document.getElementById('getStartedBtn50').addEventListener('click', () => openCheckout('Custom Website Package (50% Deposit to Start)', 780000));
+document.getElementById('getStartedBtn').addEventListener('click', () => openCheckout('Custom Website Package (Full Payment)', 2000000));
+document.getElementById('getStartedBtn50').addEventListener('click', () => openCheckout('Custom Website Package (50% Deposit to Start)', 1000000));
 
 
   
@@ -1399,17 +1517,9 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
     } catch(e) { console.log('Firestore save error', e); }
   }
 
-      let chkMethod = 'payfast';
-  document.querySelectorAll('.chk-method').forEach(m => {
-    m.addEventListener('click', () => {
-      document.querySelectorAll('.chk-method').forEach(x => { x.classList.remove('selected'); x.style.border='1.5px solid var(--border)'; });
-      m.classList.add('selected');
-      m.style.border = m.dataset.method === 'payfast' ? '2.5px solid #0866ff' : '2.5px solid #ff6600';
-      chkMethod = m.dataset.method;
-      document.getElementById('chkBank').classList.toggle('show', chkMethod === 'eft');
-      lucide.createIcons();
-    });
-  });
+      let chkMethod = 'eft';
+    // Only EFT available — no method switching needed
+
 
   // ---- Orders stored in localStorage ----
   const ORDERS_KEY = 'bwb_orders';
@@ -1418,30 +1528,148 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
 
   
 
-  // Confirm & send order
-  document.getElementById('chkSubmit').addEventListener('click', async () => {
+  // ===== Two-step checkout: details -> payment + proof of payment =====
+  const DRAFT_KEY = 'bwb_checkout_draft';
+  let proofUrl = '';
+
+  function readDraft() { try { return JSON.parse(localStorage.getItem(DRAFT_KEY)) || null; } catch(e) { return null; } }
+  function writeDraft(d) { localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); }
+  function clearDraft() { localStorage.removeItem(DRAFT_KEY); }
+
+  function genRef(email, name) {
+    const base = ((email ? email.split('@')[0] : '') || name || 'CLIENT').replace(/[^a-zA-Z0-9]/g,'').toUpperCase().slice(0,6);
+    return 'BWB-' + (base || 'CLIENT') + '-' + Date.now().toString().slice(-4);
+  }
+
+  function showPayStep() {
+    document.getElementById('chkForm').style.display = 'none';
+    document.getElementById('chkPay').style.display = 'block';
+    lucide.createIcons();
+  }
+
+  // Step 1 -> Step 2 (no payment without full details)
+    // Custom website-type dropdown
+  window.toggleChkTypeDD = function(e) {
+    if (e) e.stopPropagation();
+    const trig = document.getElementById('chkTypeTrig');
+    const pop = document.getElementById('chkTypePop');
+    trig.classList.toggle('open');
+    pop.classList.toggle('open');
+  };
+  window.pickChkType = function(val) {
+    document.getElementById('chkType').value = val;
+    document.getElementById('chkTypeLbl').textContent = val || 'Select a type...';
+    document.getElementById('chkTypeLbl').style.color = val ? 'var(--ink)' : 'var(--gray-2)';
+    document.querySelectorAll('#chkTypePop .chk-dd-opt').forEach(o => {
+      o.classList.toggle('selected', o.querySelector('span').textContent.trim() === (val || 'Select a type...'));
+    });
+    document.getElementById('chkTypeTrig').classList.remove('open');
+    document.getElementById('chkTypePop').classList.remove('open');
+  };
+  // Close dropdown when tapping outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#chkTypeDD')) {
+      document.getElementById('chkTypeTrig').classList.remove('open');
+      document.getElementById('chkTypePop').classList.remove('open');
+    }
+  });
+
+  document.getElementById('chkNext').addEventListener('click', () => {
     const name = document.getElementById('chkName').value.trim();
     const business = document.getElementById('chkBusiness').value.trim();
     const phone = document.getElementById('chkPhone').value.trim();
     const type = document.getElementById('chkType').value;
     const email = document.getElementById('chkEmail').value.trim();
-    if (!name || !business || !phone || !type) { alert('Please fill in all required fields.'); return; }
-    if (chkMethod !== 'payfast') { alert('Please select PayFast to pay online.'); return; }
+    if (!name || !business || !phone || !type || !email) { alert('Please fill in ALL required fields before payment.'); return; }
+    const ref = genRef(email, name);
+    document.getElementById('chkRef').textContent = ref;
+    writeDraft({
+      ref: ref, name: name, business: business, phone: phone, email: email,
+      type: type, notes: document.getElementById('chkNotes').value.trim(),
+      item: window.__bwbItemName || 'Custom Website Package',
+      amount: window.__bwbAmount || 2000000
+    });
+    showPayStep();
+  });
 
-    const ref = 'BWB-' + Date.now().toString().slice(-6);
-    document.getElementById('chkRef').textContent = 'Order ref: ' + ref;
+  // Back to details
+  document.getElementById('chkBack').addEventListener('click', () => {
+    document.getElementById('chkPay').style.display = 'none';
+    document.getElementById('chkForm').style.display = '';
+  });
+
+  // ===== Proof of payment upload — Cloudflare R2 =====
+  const R2_WORKER_URL = 'https://beelzechat-storage-worker.white-mouse-5467.workers.dev';
+  const R2_PUBLIC_BUCKET_URL = 'https://pub-730c026431a641358f01194bd545a5f4.r2.dev';
+  async function uploadProofToR2(file) {
+    const fd = new FormData();
+    fd.append('file', file);
+    const res = await fetch(R2_WORKER_URL, { method: 'POST', body: fd });
+    if (!res.ok) throw new Error('Upload failed (' + res.status + ')');
+    const data = await res.json();
+    if (!data.key) throw new Error('No file key returned');
+    return R2_PUBLIC_BUCKET_URL.replace(/\/+$/, '') + '/' + data.key;
+  }
+  document.getElementById('chkProofBtn').addEventListener('click', () => document.getElementById('chkProofFile').click());
+  document.getElementById('chkProofFile').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const note = document.getElementById('chkProofNote');
+    const btn = document.getElementById('chkProofBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Uploading...';
+    note.textContent = 'Uploading your proof of payment...';
+    note.style.color = 'var(--gray-2)';
+    lucide.createIcons();
+    try {
+      proofUrl = await uploadProofToR2(file);
+      document.getElementById('chkProofImg').src = proofUrl;
+      document.getElementById('chkProofBox').style.display = '';
+      btn.innerHTML = '<i data-lucide="image-plus"></i> Replace proof of payment';
+      note.textContent = 'Uploaded. Tap the X to remove and re-upload.';
+      note.style.color = '#16a34a';
+    } catch (err) {
+      btn.innerHTML = '<i data-lucide="image-plus"></i> Upload proof of payment';
+      note.textContent = 'Upload failed — please try again.';
+      note.style.color = '#dc2626';
+    }
+    e.target.value = '';
+    btn.disabled = false;
+    lucide.createIcons();
+  });
+  document.getElementById('chkProofRemove').addEventListener('click', () => {
+    proofUrl = '';
+    document.getElementById('chkProofImg').src = '';
+    document.getElementById('chkProofBox').style.display = 'none';
+    document.getElementById('chkProofBtn').innerHTML = '<i data-lucide="image-plus"></i> Upload proof of payment';
+    document.getElementById('chkProofNote').textContent = '';
+    lucide.createIcons();
+  });
+
+  // Confirm tick styling
+  document.getElementById('chkTick').addEventListener('change', (e) => {
+    document.getElementById('chkTickWrap').classList.toggle('ticked', e.target.checked);
+  });
+
+  // Confirm & send order — needs proof picture + confirm tick
+  document.getElementById('chkSubmit').addEventListener('click', async () => {
+    const draft = readDraft();
+    if (!draft) { alert('Please complete your details first.'); document.getElementById('chkBack').click(); return; }
+    if (!proofUrl) { alert('Please attach your proof of payment picture.'); return; }
+    if (!document.getElementById('chkTick').checked) { alert('Please tick the confirmation to send your order.'); return; }
 
     const order = {
-      ref: ref,
-      name: name,
-      business: business,
-      phone: phone,
-      email: email,
-      type: type,
-      notes: document.getElementById('chkNotes').value.trim(),
+      ref: draft.ref,
+      name: draft.name,
+      business: draft.business,
+      phone: draft.phone,
+      email: draft.email,
+      type: draft.type,
+      notes: draft.notes,
       method: chkMethod,
-      amount: window.__bwbAmount || 1560000,
-      item_name: window.__bwbItemName || 'Custom Website Package',
+      amount: draft.amount,
+      item_name: draft.item,
+      proof_url: proofUrl,
       status: 'pending',
       paid: false,
       created: new Date().toISOString()
@@ -1449,58 +1677,49 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
 
     const btn = document.getElementById('chkSubmit');
     const oldText = btn.innerHTML;
-    btn.disabled = true; btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Connecting to PayFast...';
+    btn.disabled = true; btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;"></i> Sending your order...';
     lucide.createIcons();
 
-    // 1) Save pending order to Firestore (admin sees it instantly)
+    // Save order to Firestore (admin sees it instantly)
     await bwbCreateOrder(order);
+    clearDraft();
 
-    // 2) Ask your Cloudflare worker for the PayFast URL + form fields
-    const base = window.location.origin + window.location.pathname;
-    let pfRes;
-    try {
-      const r = await fetch('https://beelzewebbuilders.white-mouse-5467.workers.dev/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          amount: String(order.amount) + '.00',
-          itemName: order.item_name,
-          itemDesc: order.type + ' — ' + order.business,
-          nameFirst: order.name,
-          email: order.email,
-          orderRef: order.ref,
-          returnUrl: base + '?pf=return&ref__=' + order.ref,
-          cancelUrl: base + '?pf=cancel&ref__=' + order.ref
-        })
-      });
-      pfRes = await r.json();
-    } catch (e) {
-      btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
-      alert('Could not reach PayFast. Try again. (' + e.message + ')');
-      return;
-    }
-    if (!pfRes || !pfRes.url || !pfRes.fields) {
-      btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
-      alert('PayFast setup error. Please contact us.');
-      return;
-    }
-
-    // 3) Build a hidden form and submit -> redirects user to PayFast
-    const f = document.createElement('form');
-    f.method = 'POST';
-    f.action = pfRes.url;
-    Object.keys(pfRes.fields).forEach(k => {
-      const i = document.createElement('input');
-      i.type = 'hidden'; i.name = k; i.value = pfRes.fields[k] || '';
-      f.appendChild(i);
-    });
-    document.body.appendChild(f);
-    f.submit();
+    // Show success screen
+    document.getElementById('chkRefDone').textContent = 'Order ref: ' + draft.ref;
+    document.getElementById('chkPay').style.display = 'none';
+    document.getElementById('chkSuccess').classList.add('show');
+    lucide.createIcons();
+    btn.disabled = false; btn.innerHTML = oldText; lucide.createIcons();
   });
+
+  // ===== Restore unfinished checkout when the customer comes back =====
+  function restoreCheckout() {
+    const d = readDraft();
+    if (!d) return;
+    window.__bwbItemName = d.item;
+    window.__bwbAmount = d.amount;
+    const formatted = 'R' + Number(d.amount).toLocaleString();
+    document.getElementById('chkItemName').textContent = d.item;
+    document.getElementById('chkItemPrice').textContent = formatted;
+    document.getElementById('chkTotal').textContent = formatted;
+    document.getElementById('chkPayAmount').textContent = formatted;
+    document.getElementById('chkName').value = d.name || '';
+    document.getElementById('chkBusiness').value = d.business || '';
+    document.getElementById('chkPhone').value = d.phone || '';
+    document.getElementById('chkEmail').value = d.email || '';
+    document.getElementById('chkType').value = d.type || '';
+    document.getElementById('chkNotes').value = d.notes || '';
+    document.getElementById('chkRef').textContent = d.ref;
+    showPayStep();
+    openOverlay('payOverlay');
+  }
+    // no auto-open: checkout only opens when the customer clicks Pay
+
 
 
   function resetCheckout() {
     document.getElementById('chkForm').style.display = '';
+    document.getElementById('chkPay').style.display = 'none';
     document.getElementById('chkSuccess').classList.remove('show');
     document.getElementById('chkName').value = '';
     document.getElementById('chkBusiness').value = '';
@@ -1508,6 +1727,13 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
     document.getElementById('chkEmail').value = '';
     document.getElementById('chkType').value = '';
     document.getElementById('chkNotes').value = '';
+    document.getElementById('chkTick').checked = false;
+    document.getElementById('chkTickWrap').classList.remove('ticked');
+    document.getElementById('chkProofBox').style.display = 'none';
+    document.getElementById('chkProofImg').src = '';
+    document.getElementById('chkProofBtn').innerHTML = '<i data-lucide="image-plus"></i> Upload proof of payment';
+    document.getElementById('chkProofNote').textContent = '';
+    lucide.createIcons();
   }
 
   // ===== PayFast return / cancel handler =====
@@ -1531,7 +1757,7 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
         }
       } catch (e) { console.log('update paid error', e); }
 
-      document.getElementById('chkRef').textContent = 'Order ref: ' + ref;
+      document.getElementById('chkRefDone').textContent = 'Order ref: ' + ref;
       document.getElementById('chkForm').style.display = 'none';
       document.getElementById('chkSuccess').classList.add('show');
       lucide.createIcons();
@@ -1632,6 +1858,7 @@ document.getElementById('getStartedBtn50').addEventListener('click', () => openC
             '<div class="item"><span class="k">Amount</span><span class="v">R'+Number(o.amount||0).toLocaleString()+'</span></div>'+
             '<div class="item"><span class="k">Method</span><span class="v">'+esc((o.method||'payfast').toUpperCase())+'</span></div>'+
             '<div class="item"><span class="k">Paid At</span><span class="v">'+esc(paidAt)+'</span></div>'+
+            (o.proof_url?('<div class="item full"><span class="k">Proof of payment</span><a href__="'+o.proof_url+'" target="_blank" rel="noopener"><img src="'+o.proof_url+'" alt="Proof of payment" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer;display:block;"></a></div>'):'')+
             (o.notes?('<div class="item full"><span class="k">Notes</span><span class="v">'+esc(o.notes)+'</span></div>'):'')+
           '</div></div>';
       }).join('');
