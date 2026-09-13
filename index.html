@@ -295,12 +295,9 @@
   .pw-price { font-size: 48px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
   .pw-price .per { font-size: 18px; font-weight: 500; color: var(--gray-2); }
   .pw-btns { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 22px auto 0; }
-    .pw-btn { width: 100%; background: #ffffff; color: #0f0f0f; padding: 16px 18px; border-radius: 18px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; border: 2px solid #e0e0e0; box-shadow: 0 10px 28px rgba(0,0,0,0.18), 0 3px 8px rgba(0,0,0,0.10); transition: var(--transition); text-decoration: none; }
-  .pw-btn:hover { transform: translateY(-1px); box-shadow: 0 16px 38px rgba(0,0,0,0.22), 0 3px 8px rgba(0,0,0,0.10); border-color: #f44336; }
-  .pw-btn svg { width: 18px; height: 18px; }
-  .pw-btn .pw-btn-logo { width: 26px; height: 26px; border-radius: 8px; object-fit: cover; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.30); }
-  .pw-btn.deposit { background: #ffffff; color: #0f0f0f; border-color: #e0e0e0; }
-  .pw-btn.deposit:hover { background: #ffffff; border-color: #f59e0b; }
+    .pw-pay { width: 100%; background: #ffffff; color: #0f0f0f; padding: 16px 18px; border-radius: 50px; font-size: 15px; font-weight: 900; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.10); transition: var(--transition); }
+.pw-pay:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.14); }
+.pw-pay .pw-pay-logo { height: 22px; width: auto; object-fit: contain; flex-shrink: 0; }
   .pw-later { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--gray-2); cursor: pointer; }
   .pw-later:hover { color: var(--ink); }
 
@@ -494,14 +491,32 @@
   .chk-ref-box { position: relative; background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 14px 16px; margin-bottom: 16px; text-align: center; }
   .chk-ref-box .k { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-2); margin-bottom: 4px; }
   .chk-ref-box .v { font-size: 19px; font-weight: 900; color: var(--ink); letter-spacing: 0.5px; }
-  .chk-ref-box .copy-btn { position: absolute; top: 10px; right: 10px; background: none; border: 1px solid var(--border-2); border-radius: 50px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--gray-1); cursor: pointer; }
+.chk-ref-box .v { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; }
+.chk-ref-box .copy-btn { background: none; border: 1px solid var(--border-2); border-radius: 50px; padding: 3px 12px; font-size: 11px; font-weight: 700; color: var(--gray-1); cursor: pointer; position: static; margin-top: 4px; }
   .chk-paydetails { background: var(--bg-2); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; margin-bottom: 18px; font-size: 13px; line-height: 1.8; color: var(--ink); }
-  .chk-paydetails .copy-line { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-  .chk-paydetails .copy-btn { background: none; border: 1px solid var(--border-2); border-radius: 50px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--gray-1); cursor: pointer; }
-  .chk-paydetails .copy-btn:hover { background: var(--bg-3); }
-    .chk-notice { display: flex; gap: 10px; align-items: flex-start; background: #fef2f2; border: 1.5px solid rgba(220, 38, 38, 0.35); border-radius: 16px; padding: 13px 15px; margin-bottom: 18px; font-size: 13px; line-height: 1.6; color: #991b1b; }
-  .chk-notice svg { width: 19px; height: 19px; flex-shrink: 0; color: #dc2626; margin-top: 1px; }
-  .chk-notice strong { font-weight: 900; }
+      .chk-bankbox { background: #fff; border: 1.5px solid var(--border); border-radius: 18px; padding: 12px 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+  .chk-bankbox-head { display: flex; align-items: center; gap: 12px; padding-bottom: 10px; margin-bottom: 2px; border-bottom: 1px solid var(--border); }
+  .chk-bankbox-head img { height: 26px; width: auto; object-fit: contain; flex-shrink: 0; }
+  .chk-bankbox-head span { font-size: 14px; font-weight: 900; color: var(--ink); }
+  .chk-bk-line { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .chk-bk-line:last-child { border-bottom: none; }
+  .chk-bk-line svg { width: 15px; height: 15px; color: #004677; flex-shrink: 0; }
+  .chk-bk-line .lb { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; color: var(--gray-2); min-width: 92px; flex-shrink: 0; }
+  .chk-bk-line .vl { font-size: 12.5px; font-weight: 900; color: var(--ink); flex: 1; min-width: 0; }
+  .chk-bk-line.amt .vl { color: #004677; font-size: 13px; }
+  .bk-copy { background: #f5f5f5; border: none; border-radius: 50px; padding: 3px 10px; font-size: 10px; font-weight: 800; color: var(--ink); cursor: pointer; flex-shrink: 0; margin-left: auto; }
+  .bk-copy:hover { background: #ececec; }
+  .chk-steps { background: #fff; border: 1.5px solid var(--border); border-radius: 18px; padding: 16px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); font-size: 13px; line-height: 1.55; color: var(--ink); }
+  .chk-steps-head { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .chk-steps-head img { height: 30px; width: auto; object-fit: contain; flex-shrink: 0; }
+  .chk-steps-head strong { font-size: 15px; font-weight: 900; }
+  .chk-steps .step { display: flex; align-items: center; gap: 10px; padding: 9px 0; }
+  .chk-steps .step .n { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .chk-steps .step svg { width: 17px; height: 17px; color: #004677; flex-shrink: 0; }
+  .chk-steps .step strong { font-weight: 900; }
+    .chk-steps-foot { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; font-size: 11.5px; line-height: 1.5; color: var(--gray-1); background: #f8f9fa; border-radius: 12px; padding: 10px 12px; }
+  .chk-steps-foot svg { width: 14px; height: 14px; color: #004677; flex-shrink: 0; margin-top: 2px; }  
+  .chk-steps-foot strong { font-weight: 900; color: var(--ink); }
   .chk-proof { position: relative; margin-bottom: 12px; }
   .chk-proof img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 14px; border: 1.5px solid var(--border); display: block; }
   .chk-proof-x { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; background: #fff; color: #dc2626; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
@@ -681,9 +696,7 @@
           <div class="pw-check"><i data-lucide="check-circle-2"></i> APK conversion of your website</div>
         </div>
         <div class="pw-btns">
-          <button class="pw-btn" id="getStartedBtn"><img class="pw-btn-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze"> Pay Full Amount — R2,000,000</button>
-          <p style="font-size:13px;color:var(--gray-1);margin:6px 0 14px;font-weight:600;">Pay 50% now to start building, or pay the full amount upfront.</p>
-          <button class="pw-btn deposit" id="getStartedBtn50"><img class="pw-btn-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze"> Pay 50% Deposit</button>
+                    <button class="pw-pay" id="payNowBtn"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay</button>
           <div class="pw-mini-row">
             <a class="pw-mini" href="tel:0687790223"><i data-lucide="phone"></i> Call</a>
             <a class="pw-mini" href="mailto:info@beelzewebbuilders.co.za"><i data-lucide="mail"></i> Email</a>
@@ -784,6 +797,20 @@
   <button id="phoneBtn"><i data-lucide="phone" class="ic-phone"></i> Phone</button>
 </div>
 
+<div class="overlay" id="payChoiceOverlay">
+  <div class="overlay-bar">
+    <h2><i data-lucide="credit-card"></i> Choose your payment</h2>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+    <img src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders" style="width:72px;height:72px;border-radius:20px;object-fit:cover;margin-bottom:14px;">
+    <div style="font-size:22px;font-weight:900;color:var(--ink);">BEELZE <span style="color:var(--gray-1);">Web Builders</span></div>
+    <p style="font-size:13px;color:var(--gray-1);font-weight:600;margin:8px 0 22px;">How would you like to pay for your website?</p>
+    <button class="pw-pay" id="choiceFull" style="margin-bottom:12px;"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay Full Amount — R2,000,000</button>
+    <button class="pw-pay" id="choice50"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay 50% Deposit — R1,000,000</button>
+    <p style="font-size:12px;color:var(--gray-2);font-weight:600;margin-top:18px;">Pay 50% now to start building, or pay the full amount upfront.</p>
+  </div>
+</div>
 <div class="overlay" id="emailOverlay">
   <div class="overlay-bar">
     <h2 style="color:#dc2626;"><i data-lucide="mail"></i> Email Us</h2>
@@ -929,7 +956,7 @@
 <!-- CHECKOUT OVERLAY -->
 <div class="overlay" id="payOverlay">
   <div class="overlay-bar">
-    <div class="chk-title-box"><i data-lucide="credit-card"></i> Checkout</div>
+    <div class="chk-title-box"><img src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec" style="height:15px;width:auto;object-fit:contain;"> Checkout</div>
     <button class="overlay-close" data-close><i data-lucide="x"></i></button>
   </div>
   <div class="overlay-body">
@@ -1013,24 +1040,38 @@
       </div>
 
    <div class="chk-paydetails">
-        <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:10px;margin-bottom:14px;">
-          <img src="https://media.base44.com/images/public/6a78753829e5437c7aa56560/3db71cdd3_file_0000000078248211846e63b951f2f2ef.png" alt="GoTyme Bank card" style="width:130px;height:auto;border-radius:10px;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-          <div>
-            <div style="font-size:10px;font-weight:800;color:var(--gray-2);text-transform:uppercase;letter-spacing:1px;">Our Bank</div>
-            <div style="font-size:16px;font-weight:900;color:var(--ink);">GoTyme Bank</div>
+        <img src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/7d778390c_file_00000000b15481f5b93c6a8f3f9cabba.png" alt="Capitec card" style="width:100%;height:auto;display:block;border-radius:16px;margin-bottom:12px;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:50px;padding:10px 22px;margin-bottom:14px;">
+          <img src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec" style="height:26px;width:auto;object-fit:contain;">
+          <div style="display:flex;flex-direction:column;justify-content:center;line-height:1.05;">
+            <div style="font-size:10px;font-weight:800;color:var(--gray-2);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Our Bank</div>
+            <div style="font-size:16px;font-weight:900;color:var(--ink);">Capitec Bank</div>
           </div>
         </div>
-        <div class="copy-line"><span><strong>Bank:</strong> GoTyme Bank</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('GoTyme Bank')">copy</button></div>
-        <div class="copy-line"><span><strong>Account holder:</strong> Beelze Web Builders</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('Beelze Web Builders')">copy</button></div>
-        <div class="copy-line"><span><strong>Account no:</strong> 5300 3587 427</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('5300 3587 427')">copy</button></div>
-        <div class="copy-line"><span><strong>Branch code:</strong> 678 910</span> <button class="copy-btn" onclick="navigator.clipboard.writeText('678 910')">copy</button></div>
-        <div class="copy-line"><span><strong>Account type:</strong> Business Cheque</span></div>
-        <div class="copy-line"><span><strong>Amount:</strong> <span id="chkPayAmount">R2,000,000</span></span> <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('chkPayAmount').textContent)">copy</button></div>
+         <div class="chk-bankbox">
+          <div class="chk-bankbox-head">
+            <img src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec">
+            <span>Our banking details</span>
+          </div>
+          <div class="chk-bk-line"><i data-lucide="landmark"></i><span class="lb">Bank</span><span class="vl">Capitec Bank</span> <button class="bk-copy" onclick="navigator.clipboard.writeText('Capitec Bank')">copy</button></div>
+          <div class="chk-bk-line"><i data-lucide="user"></i><span class="lb">Account holder</span><span class="vl">L K Ngwepe</span> <button class="bk-copy" onclick="navigator.clipboard.writeText('L K Ngwepe')">copy</button></div>
+          <div class="chk-bk-line"><i data-lucide="hash"></i><span class="lb">Account no</span><span class="vl">2037437125</span> <button class="bk-copy" onclick="navigator.clipboard.writeText('2037437125')">copy</button></div>
+          <div class="chk-bk-line"><i data-lucide="map-pin"></i><span class="lb">Branch code</span><span class="vl">470010</span> <button class="bk-copy" onclick="navigator.clipboard.writeText('470010')">copy</button></div>
+          <div class="chk-bk-line"><i data-lucide="wallet"></i><span class="lb">Account type</span><span class="vl">Savings Account</span></div>
+          <div class="chk-bk-line amt"><i data-lucide="banknote"></i><span class="lb">Amount to deposit</span><span class="vl" id="chkPayAmount">R2,000,000</span> <button class="bk-copy" onclick="navigator.clipboard.writeText(document.getElementById('chkPayAmount').textContent)">copy</button></div>
+        </div>
       </div>
 
-      <div class="chk-notice">
-        <i data-lucide="alert-circle"></i>
-        <div><strong>Go out and make the EFT deposit now.</strong> Pay the exact amount above using YOUR payment reference. Then come back here and attach the payment screenshot proof — <strong>without the proof picture we will NOT accept your payment</strong> and we will not build anything.</div>
+      <div class="chk-steps">
+        <div class="chk-steps-head">
+          <img src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec">
+          <div><strong>How to pay — follow these steps</strong></div>
+        </div>
+        <div class="step"><span class="n">1</span><i data-lucide="smartphone"></i><div>Open your banking app (Capitec or any other bank) on your phone.</div></div>
+        <div class="step"><span class="n">2</span><i data-lucide="send"></i><div>Deposit the exact amount into <strong>this bank account</strong> and use <strong>your reference</strong> above.</div></div>
+        <div class="step"><span class="n">3</span><i data-lucide="camera"></i><div>Take a <strong>screenshot</strong> of the successful payment.</div></div>
+        <div class="step"><span class="n">4</span><i data-lucide="paperclip"></i><div>Come back here and <strong>attach that screenshot</strong> below, then confirm.</div></div>
+      <div class="chk-steps-foot"><i data-lucide="clock"></i><span style="flex:1;min-width:0;">We will reply within <strong>30–60 minutes</strong> after your payment reflects. No screenshot = payment not accepted.</span></div>
       </div>
 
       <div class="chk-label">Attach proof of payment *</div>
@@ -1155,7 +1196,7 @@
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">3. Payments & Banking Details</h4>
     <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
-      Payments are made via <strong>EFT / bank transfer to our GoTyme business account</strong>. This is the only payment method we accept.
+      Payments are made via <strong>EFT / bank transfer to our Capitec account</strong>. This is the only payment method we accept.
     </p>
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">4. Data Storage</h4>
@@ -1165,7 +1206,7 @@
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">5. Your Rights Under POPIA</h4>
     <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
-      You have the right to: access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (where legally allowed), and object to processing. To exercise any of these rights, email us at <a href__="mailto:ceo@beelzechat.co.za" style="color:#f44336;font-weight:700;">ceo@beelzechat.co.za</a>.
+      You have the right to: access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (where legally allowed), and object to processing. To exercise any of these rights, email us at <a href="mailto:ceo@beelzechat.co.za" style="color:#f44336;font-weight:700;">ceo@beelzechat.co.za</a>.
     </p>
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">6. Cookies & Website Tracking</h4>
@@ -1185,7 +1226,7 @@
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">9. Information Officer (POPIA)</h4>
     <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
-      Our Information Officer for POPIA complaints is the CEO. Contact: <a href__="mailto:ceo@beelzechat.co.za" style="color:#f44336;font-weight:700;">ceo@beelzechat.co.za</a> · <a href__="tel:0687790223" style="color:#f44336;font-weight:700;">068 779 0223</a>. You may also lodge a complaint with the Information Regulator of South Africa.
+      Our Information Officer for POPIA complaints is the CEO. Contact: <a href="mailto:ceo@beelzechat.co.za" style="color:#f44336;font-weight:700;">ceo@beelzechat.co.za</a> · <a href="tel:0687790223" style="color:#f44336;font-weight:700;">068 779 0223</a>. You may also lodge a complaint with the Information Regulator of South Africa.
     </p>
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">10. Changes to This Policy</h4>
@@ -1500,8 +1541,10 @@ function openCheckout(itemName, amount) {
     openOverlay('payOverlay');
   }
   window.openCheckout = openCheckout;
-document.getElementById('getStartedBtn').addEventListener('click', () => openCheckout('Custom Website Package (Full Payment)', 2000000));
-document.getElementById('getStartedBtn50').addEventListener('click', () => openCheckout('Custom Website Package (50% Deposit to Start)', 1000000));
+document.getElementById('payNowBtn').addEventListener('click', () => openOverlay('payChoiceOverlay'));
+document.getElementById('choiceFull').addEventListener('click', () => { closeOverlay(document.getElementById('payChoiceOverlay')); openCheckout('Custom Website Package (Full Payment)', 2000000); });
+document.getElementById('choice50').addEventListener('click', () => { closeOverlay(document.getElementById('payChoiceOverlay')); openCheckout('Custom Website Package (50% Deposit to Start)', 1000000); });
+
 
 
   
