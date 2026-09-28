@@ -292,6 +292,12 @@
   .pw-checks { display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 560px; margin: 0 auto 24px; }
   .pw-check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink); line-height: 1.5; }
   .pw-check svg { width: 22px; height: 22px; color: #4caf50; flex-shrink: 0; margin-top: 1px; }
+  .pw-check.red svg { color: #dc2626; }
+  .pw-price-row { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin: 6px 0 4px; flex-wrap: wrap; }
+  .pw-price-old { font-size: 22px; font-weight: 700; color: var(--gray-2); text-decoration: line-through; }
+  .pw-price-new { font-size: 40px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
+  .pw-price-new.red { color: #dc2626; }
+  .pw-note { font-size: 13px; font-weight: 700; color: var(--gray-1); margin-top: 10px; text-align: center; }
   .pw-price { font-size: 48px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
   .pw-price .per { font-size: 18px; font-weight: 500; color: var(--gray-2); }
   .pw-btns { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 22px auto 0; }
@@ -677,16 +683,57 @@
 
 <section class="pricing" id="contact">
   <div class="container">
+
+    <!-- SIMPLE CHEAP WEBSITE (new, on top) -->
+    <div class="pw-card" style="margin-bottom:28px;">
+      <div class="pw-head">
+        <button class="pw-close" onclick="document.getElementById('websiteMarket').scrollIntoView({behavior:'smooth'})"><i data-lucide="x"></i></button>
+        <img class="pw-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
+        <div class="pw-brand">BEELZE <span>Web Builders</span></div>
+        <div class="pw-h" style="color:#dc2626;">Simple Cheap Website</div>
+        <div class="pw-sub">One-page website — affordable for everyone</div>
+      </div>
+      <div class="pw-body">
+        <img class="pw-heroimg" src="https://media.base44.com/images/public/6a229080e7ef797967332f6a/0d290a455_Screenshot_20260928_090759_Gallery.jpg" alt="Simple Cheap Website">
+        <div class="pw-price-row">
+          <span class="pw-price-new red">R15,000</span>
+        </div>
+        <div class="pw-checks">
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> Simple Cheap Website</div>
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> We build one page website</div>
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> We install lucide Creations and nice LAYOUT</div>
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> We install cart, and no merchant</div>
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> We will hand over the code</div>
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> No database installation</div>
+          <div class="pw-check red"><i data-lucide="check-circle-2"></i> No additional system</div>
+        </div>
+        <div class="pw-note">FOR New Development we will charge R10,000</div>
+        <div class="pw-btns">
+          <button class="pw-pay" id="payCheapBtn"><i data-lucide="credit-card" style="width:18px;height:18px;color:#dc2626;"></i> Pay R15,000</button>
+          <div class="pw-mini-row">
+            <a class="pw-mini" href="tel:0687790223"><i data-lucide="phone"></i> Call</a>
+            <a class="pw-mini" href="mailto:beelzewebbuilders@beelzechat.co.za"><i data-lucide="mail"></i> Email</a>
+          </div>
+        </div>
+        <span class="pw-later" onclick="document.getElementById('websiteMarket').scrollIntoView({behavior:'smooth'})">Maybe later</span>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL WEBSITE (existing, now with R850,000 price + R2,000,000 struck out) -->
     <div class="pw-card">
       <div class="pw-head">
         <button class="pw-close" onclick="document.getElementById('websiteMarket').scrollIntoView({behavior:'smooth'})"><i data-lucide="x"></i></button>
         <img class="pw-logo" src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
         <div class="pw-brand">BEELZE <span>Web Builders</span></div>
-        <div class="pw-h">Build Your Website</div>
+        <div class="pw-h">Professional Website</div>
         <div class="pw-sub">Custom multimillion-rand websites for big companies & businesses</div>
       </div>
-            <div class="pw-body">
+      <div class="pw-body">
         <img class="pw-heroimg" src="https://media.base44.com/images/public/6a658880fd290e23c45fefa8/247ea4f50_file_00000000e50c8211a77245e5695fa9be.png" alt="What's included">
+        <div class="pw-price-row">
+          <span class="pw-price-old">R2,000,000</span>
+          <span class="pw-price-new">R850,000</span>
+        </div>
         <div class="pw-checks">
           <div class="pw-check"><i data-lucide="check-circle-2"></i> Website for any industry — business, gambling, shopping, lifestyle, company</div>
           <div class="pw-check"><i data-lucide="check-circle-2"></i> Professional .co.za domain registered for you</div>
@@ -696,7 +743,7 @@
           <div class="pw-check"><i data-lucide="check-circle-2"></i> APK conversion of your website</div>
         </div>
         <div class="pw-btns">
-                    <button class="pw-pay" id="payNowBtn"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay</button>
+          <button class="pw-pay" id="payNowBtn"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay</button>
           <div class="pw-mini-row">
             <a class="pw-mini" href="tel:0687790223"><i data-lucide="phone"></i> Call</a>
             <a class="pw-mini" href="mailto:beelzewebbuilders@beelzechat.co.za"><i data-lucide="mail"></i> Email</a>
@@ -797,6 +844,49 @@
   <button id="phoneBtn"><i data-lucide="phone" class="ic-phone"></i> Phone</button>
 </div>
 
+<!-- SIMPLE CHEAP WEBSITE — details form before PayFast -->
+<div class="overlay" id="cheapCheckoutOverlay">
+  <div class="overlay-bar">
+    <div class="chk-title-box"><i data-lucide="credit-card" style="width:16px;height:16px;color:#dc2626;"></i> Simple Cheap Website — R15,000</div>
+    <button class="overlay-close" data-close><i data-lucide="x"></i></button>
+  </div>
+  <div class="overlay-body">
+    <div class="chk-form-head">
+      <img src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders">
+      <div class="hn">BEELZE <span>Web Builders</span></div>
+      <div class="tag" style="background:rgba(220,38,38,0.1);border-color:rgba(220,38,38,0.3);color:#dc2626;"><i data-lucide="shield-check"></i> One-page Website · R15,000</div>
+    </div>
+
+    <div class="chk-summary">
+      <div class="row"><span>Simple Cheap Website</span><span>R15,000</span></div>
+      <div class="row"><span>One page + cart + code handover</span><span>Included</span></div>
+      <div class="row total"><span>Total once-off</span><span>R15,000</span></div>
+    </div>
+
+    <div class="chk-field">
+      <label><i data-lucide="user"></i> Full name *</label>
+      <input type="text" id="cheapName" placeholder="Your full name">
+    </div>
+    <div class="chk-field">
+      <label><i data-lucide="phone"></i> Phone / WhatsApp *</label>
+      <input type="tel" id="cheapPhone" placeholder="06x xxx xxxx">
+    </div>
+    <div class="chk-field">
+      <label><i data-lucide="mail"></i> Email *</label>
+      <input type="email" id="cheapEmail" placeholder="you@email.com">
+    </div>
+    <div class="chk-field">
+      <label><i data-lucide="message-square"></i> What is the website for? (optional)</label>
+      <textarea id="cheapNotes" placeholder="Business name, what you sell, anything we should know..."></textarea>
+    </div>
+
+    <button class="chk-submit" id="cheapSubmit" style="border-color:#dc2626;">
+      <i data-lucide="credit-card" style="width:18px;height:18px;color:#dc2626;"></i> Pay R15,000 with PayFast
+    </button>
+    <p style="text-align:center;font-size:12px;color:var(--gray-2);margin-top:12px;">Your details are saved and sent to us, then you'll be redirected to PayFast to pay securely.</p>
+  </div>
+</div>
+
 <div class="overlay" id="payChoiceOverlay">
   <div class="overlay-bar">
     <h2><i data-lucide="credit-card"></i> Choose your payment</h2>
@@ -806,8 +896,8 @@
     <img src="https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png" alt="Beelze Web Builders" style="width:72px;height:72px;border-radius:20px;object-fit:cover;margin-bottom:14px;">
     <div style="font-size:22px;font-weight:900;color:var(--ink);">BEELZE <span style="color:var(--gray-1);">Web Builders</span></div>
     <p style="font-size:13px;color:var(--gray-1);font-weight:600;margin:8px 0 22px;">How would you like to pay for your website?</p>
-    <button class="pw-pay" id="choiceFull" style="margin-bottom:12px;"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay Full Amount — R2,000,000</button>
-    <button class="pw-pay" id="choice50"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay 50% Deposit — R1,000,000</button>
+    <button class="pw-pay" id="choiceFull" style="margin-bottom:12px;"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay Full Amount — R850,000</button>
+    <button class="pw-pay" id="choice50"><img class="pw-pay-logo" src="https://media.base44.com/images/public/69d65c79ded115a4ef63649f/dc4ab5958_CPIJO-7f69f481.png" alt="Capitec"> Pay 50% Deposit — R425,000</button>
     <p style="font-size:12px;color:var(--gray-2);font-weight:600;margin-top:18px;">Pay 50% now to start building, or pay the full amount upfront.</p>
   </div>
 </div>
@@ -970,10 +1060,10 @@
       </div>
 
       <div class="chk-summary">
-           <div class="row"><span id="chkItemName">Custom Website Package</span><span id="chkItemPrice">R2,000,000</span></div>
+           <div class="row"><span id="chkItemName">Custom Website Package</span><span id="chkItemPrice">R850,000</span></div>
         <div class="row"><span>.co.za domain + email</span><span>Included</span></div>
         <div class="row"><span>APK + delivery</span><span>Included</span></div>
-        <div class="row total"><span>Total once-off</span><span id="chkTotal">R2,000,000</span></div>
+        <div class="row total"><span>Total once-off</span><span id="chkTotal">R850,000</span></div>
       </div>
 
       <div class="chk-field">
@@ -1058,7 +1148,7 @@
           <div class="chk-bk-line"><i data-lucide="hash"></i><span class="lb">Account no</span><span class="vl">2037437125</span> <button class="bk-copy" onclick="navigator.clipboard.writeText('2037437125')">copy</button></div>
           <div class="chk-bk-line"><i data-lucide="map-pin"></i><span class="lb">Branch code</span><span class="vl">470010</span> <button class="bk-copy" onclick="navigator.clipboard.writeText('470010')">copy</button></div>
           <div class="chk-bk-line"><i data-lucide="wallet"></i><span class="lb">Account type</span><span class="vl">Savings Account</span></div>
-          <div class="chk-bk-line amt"><i data-lucide="banknote"></i><span class="lb">Amount to deposit</span><span class="vl" id="chkPayAmount">R2,000,000</span> <button class="bk-copy" onclick="navigator.clipboard.writeText(document.getElementById('chkPayAmount').textContent)">copy</button></div>
+          <div class="chk-bk-line amt"><i data-lucide="banknote"></i><span class="lb">Amount to deposit</span><span class="vl" id="chkPayAmount">R850,000</span> <button class="bk-copy" onclick="navigator.clipboard.writeText(document.getElementById('chkPayAmount').textContent)">copy</button></div>
         </div>
       </div>
 
@@ -1156,7 +1246,7 @@
     </div>
     <div class="footer-contact">
       <a href="tel:0687790223"><i data-lucide="phone"></i> 068 779 0223</a>
-            <a href__="mailto:beelzewebbuilders@beelzechat.co.za"><i data-lucide="mail"></i> beelzewebbuilders@beelzechat.co.za</a>
+            <a href="mailto:beelzewebbuilders@beelzechat.co.za"><i data-lucide="mail"></i> beelzewebbuilders@beelzechat.co.za</a>
       <a href="https://wa.me/27687790223"><i data-lucide="message-circle"></i> WhatsApp 27 68 779 0223</a>
       <a><i data-lucide="map-pin"></i> Limpopo, South Africa</a>
     </div>
@@ -1206,7 +1296,7 @@
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">5. Your Rights Under POPIA</h4>
     <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
-      You have the right to: access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (where legally allowed), and object to processing. To exercise any of these rights, email us at <a href__="mailto:beelzewebbuilders@beelzechat.co.za" style="color:#f44336;font-weight:700;">beelzewebbuilders@beelzechat.co.za</a>.
+      You have the right to: access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (where legally allowed), and object to processing. To exercise any of these rights, email us at <a href="mailto:beelzewebbuilders@beelzechat.co.za" style="color:#f44336;font-weight:700;">beelzewebbuilders@beelzechat.co.za</a>.
     </p>
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">6. Cookies & Website Tracking</h4>
@@ -1226,7 +1316,7 @@
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">9. Information Officer (POPIA)</h4>
     <p style="font-size:14px;line-height:1.7;color:var(--gray-1);margin-bottom:14px;">
-      Our Information Officer for POPIA complaints is the CEO. Contact: <a href__="mailto:beelzewebbuilders@beelzechat.co.za" style="color:#f44336;font-weight:700;">beelzewebbuilders@beelzechat.co.za</a> · <a href__="tel:0687790223" style="color:#f44336;font-weight:700;">068 779 0223</a>. You may also lodge a complaint with the Information Regulator of South Africa.
+      Our Information Officer for POPIA complaints is the CEO. Contact: <a href="mailto:beelzewebbuilders@beelzechat.co.za" style="color:#f44336;font-weight:700;">beelzewebbuilders@beelzechat.co.za</a> · <a href="tel:0687790223" style="color:#f44336;font-weight:700;">068 779 0223</a>. You may also lodge a complaint with the Information Regulator of South Africa.
     </p>
 
     <h4 style="font-size:15px;font-weight:800;margin:20px 0 8px;">10. Changes to This Policy</h4>
@@ -1542,8 +1632,106 @@ function openCheckout(itemName, amount) {
   }
   window.openCheckout = openCheckout;
 document.getElementById('payNowBtn').addEventListener('click', () => openOverlay('payChoiceOverlay'));
-document.getElementById('choiceFull').addEventListener('click', () => { closeOverlay(document.getElementById('payChoiceOverlay')); openCheckout('Custom Website Package (Full Payment)', 2000000); });
-document.getElementById('choice50').addEventListener('click', () => { closeOverlay(document.getElementById('payChoiceOverlay')); openCheckout('Custom Website Package (50% Deposit to Start)', 1000000); });
+
+  // ===== Simple Cheap Website — details form, then PayFast =====
+  const PAYFAST_WORKER_URL = 'https://payfastpayment.white-mouse-5467.workers.dev';
+  document.getElementById('payCheapBtn').addEventListener('click', () => {
+    // reset form
+    document.getElementById('cheapName').value = '';
+    document.getElementById('cheapPhone').value = '';
+    document.getElementById('cheapEmail').value = '';
+    document.getElementById('cheapNotes').value = '';
+    openOverlay('cheapCheckoutOverlay');
+  });
+
+  document.getElementById('cheapSubmit').addEventListener('click', async () => {
+    const name = document.getElementById('cheapName').value.trim();
+    const phone = document.getElementById('cheapPhone').value.trim();
+    const email = document.getElementById('cheapEmail').value.trim();
+    const notes = document.getElementById('cheapNotes').value.trim();
+    if (!name || !phone || !email) { alert('Please fill in your name, phone and email before paying.'); return; }
+
+    const ref = 'BWB-CHEAP-' + Date.now().toString().slice(-6);
+    const amount = 15000;
+    const btn = document.getElementById('cheapSubmit');
+    const oldHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i data-lucide="loader-2" style="animation:spin 1s linear infinite;width:18px;height:18px;color:#dc2626;"></i> Saving & redirecting…';
+    lucide.createIcons();
+
+    // 1) Save order to Firestore (admin sees it instantly)
+    try {
+      await window.bwbFb.addDoc(window.bwbOrdersCollection, {
+        ref, name, business: '—', phone, email, type: 'Simple Cheap Website',
+        notes, method: 'payfast', amount, item_name: 'Simple Cheap Website',
+        proof_url: '—', status: 'pending', paid: false,
+        created: new Date().toISOString()
+      });
+    } catch(e) { console.log('Firestore save error', e); }
+
+    // 2) Email notification to admin
+    try {
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: 'service_sdtk9cc',
+          template_id: 'template_7wbmude',
+          user_id: 'kbYCrFaEHUjCixoUu',
+          template_params: {
+            email: 'beelzewebbuilders@beelzechat.co.za',
+            order_id: ref,
+            customer_name: name,
+            customer_email: email,
+            customer_phone: phone,
+            customer_address: 'Simple Cheap Website',
+            order_items: 'Simple Cheap Website x1 = R15,000\nNotes: ' + (notes || '—'),
+            order_total: 'R15,000',
+            payment_method: 'PAYFAST',
+            proof_url: '—',
+            reply_to: email
+          }
+        })
+      });
+    } catch(e) { console.log('EmailJS error', e); }
+
+    // 3) Redirect to PayFast with customer info prefilled
+    try {
+      const res = await fetch(PAYFAST_WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: '15000.00',
+          itemName: 'Beelze Simple Cheap Website',
+          itemDesc: 'One-page website — code handover, no database',
+          orderRef: ref,
+          email: email,
+          nameFirst: name.split(' ')[0]
+        })
+      });
+      const data = await res.json();
+      if (!data.url || !data.fields) throw new Error('PayFast could not start.');
+      const pf = document.createElement('form');
+      pf.method = 'POST';
+      pf.action = data.url;
+      Object.entries(data.fields).forEach(([k, v]) => {
+        const inp = document.createElement('input');
+        inp.type = 'hidden';
+        inp.name = k;
+        inp.value = v;
+        pf.appendChild(inp);
+      });
+      document.body.appendChild(pf);
+      pf.submit();
+    } catch (e) {
+      alert('Pay error: ' + e.message);
+      btn.disabled = false;
+      btn.innerHTML = oldHTML;
+      lucide.createIcons();
+    }
+  });
+document.getElementById('choiceFull').addEventListener('click', () => { closeOverlay(document.getElementById('payChoiceOverlay')); openCheckout('Custom Website Package (Full Payment)', 850000); });
+document.getElementById('choice50').addEventListener('click', () => { closeOverlay(document.getElementById('payChoiceOverlay')); openCheckout('Custom Website Package (50% Deposit to Start)', 425000); });
 
 
 
