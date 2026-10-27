@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://beelzewebbuilders.beelzeapps.co.za/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a83efbd98ba62782a6ee822/aefb5677c_file_0000000015908246abfe949acadc4e06.png</image:loc>
+      <image:title>Beelze Web Builders — Professional Website Development</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a658880fd290e23c45fefa8/247ea4f50_file_00000000e50c8211a77245e5695fa9be.png</image:loc>
+      <image:title>What is included in the Beelze Web Builders package</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a229080e7ef797967332f6a/0d290a455_Screenshot_20260928_090759_Gallery.jpg</image:loc>
+      <image:title>Simple Cheap Website — one page from R15,000</image:title>
+    </image:image>
+  </url>
+
+</urlset>
