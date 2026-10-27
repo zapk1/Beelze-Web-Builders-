@@ -1,0 +1,13 @@
+# Beelze Web Builders — robots.txt
+User-agent: *
+Allow: /
+
+# Block payment return/cancel URLs (they'd otherwise become junk pages in Google)
+Disallow: /*?pf=return
+Disallow: /*?pf=cancel
+Disallow: /*?ref__=
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://beelzewebbuilders.beelzeapps.co.za/sitemap.xml
